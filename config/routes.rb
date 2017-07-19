@@ -16,6 +16,10 @@ Rails.application.routes.draw do
      root :to => "welcome#index"
      #@title => "Proyecto Job Search by IRSTRAT";
 
+  get 'home', to: 'home#index'
+
+
+
 end
 
 
