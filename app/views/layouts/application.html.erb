@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ProyJobstrat</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Proyecto Job Search by IRSTRAT</title>
+  <%= csrf_meta_tags %>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
+</head>
   <body>
     <%= yield %>
+
+
+
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+      <i class="ti-arrow-up"></i>
+    </a>
+
+    <div id="loading">
+      <div id="loading-center">
+        <div id="loading-center-absolute">
+          <div class="object" id="object_one"></div>
+          <div class="object" id="object_two"></div>
+          <div class="object" id="object_three"></div>
+          <div class="object" id="object_four"></div>
+          <div class="object" id="object_five"></div>
+          <div class="object" id="object_six"></div>
+          <div class="object" id="object_seven"></div>
+          <div class="object" id="object_eight"></div>
+        </div>
+      </div>
+    </div>
   </body>
+  <!-- Main JS  -->
+
 </html>
