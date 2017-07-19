@@ -1,3 +1,23 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :messageemployees
+
+  resources :aplicationjobs
+
+  resources :companies
+
+  resources :employees
+
+  resources :jobs
+
+  resources :articles
+
+  get 'welcome/index'
+     root :to => "welcome#index"
+     #@title => "Proyecto Job Search by IRSTRAT";
+
 end
+
+
+
+

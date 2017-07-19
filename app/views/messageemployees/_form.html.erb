@@ -1,0 +1,32 @@
+<%= form_for(messageemployee) do |f| %>
+  <% if messageemployee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(messageemployee.errors.count, "error") %> prohibited this messageemployee from being saved:</h2>
+
+      <ul>
+      <% messageemployee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :employee_id %>
+    <%= f.text_field :employee_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :company_id %>
+    <%= f.text_field :company_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mail %>
+    <%= f.text_area :mail %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

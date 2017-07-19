@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Aplicationjobs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Job</th>
+      <th>Employee</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aplicationjobs.each do |aplicationjob| %>
+      <tr>
+        <td><%= aplicationjob.job %></td>
+        <td><%= aplicationjob.employee %></td>
+        <td><%= aplicationjob.description %></td>
+        <td><%= link_to 'Show', aplicationjob %></td>
+        <td><%= link_to 'Edit', edit_aplicationjob_path(aplicationjob) %></td>
+        <td><%= link_to 'Destroy', aplicationjob, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aplicationjob', new_aplicationjob_path %>
