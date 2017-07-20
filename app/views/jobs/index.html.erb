@@ -54,7 +54,18 @@
 </div>
 
 
-
+<% @jobs.each do |job| %>
+    <tr>
+      <td><%= job.title %></td>
+      <td><%= job.country %></td>
+      <td><%= job.company %></td>
+      <td><%= job.publish_date %></td>
+      <td><%= job.active %></td>
+      <td><%= job.description %></td>
+      <td><%= job.picture %></td>
+      <td><%= link_to 'Show', job %>  <%= link_to 'Edit', edit_job_path(job) %>  <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+    </tr>
+<% end %>
 
 <br>
 

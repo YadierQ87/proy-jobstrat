@@ -4,7 +4,8 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all
+    #@jobs = Job.all
+    @jobs = Job.select("*").where(:active => true).order("id DESC");
   end
 
   # GET /jobs/1

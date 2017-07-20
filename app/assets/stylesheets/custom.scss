@@ -165,20 +165,39 @@ a:focus {
   color: #fff;
 }
 .section {
-  padding: 60px 0;
+  padding: 20px 0;
+}
+
+.red{
+  color: #ff4f57;
 }
 
  .content{
    padding-left: 25px; padding-right: 25px;
-   margin: 15px;
+   margin-top: -20px;
 }
 
 .section-title {
   font-size: 36px;
-  padding: 0px 0px 30px;
+  padding: 0px 0px 30px 0px;
   border-bottom: solid 1px #2C3E50;
   font-weight: 900;
 }
+
+.presentation-links {
+
+}
+
+ul.presentation-links > li {
+  display: inline-block; text-align: center; padding: 4px 4px 8px 8px;
+}
+
+ul.presentation-links > li > a {
+  padding: 4px 4px 8px 8px;
+  border-radius: 3px;
+  border: solid 1px #ff4f57;
+}
+
 .medium-title {
   font-size: 24px;
   padding: 10px 0;

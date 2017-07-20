@@ -7,8 +7,15 @@
   <%= javascript_include_tag 'application' %>
 
 </head>
+
   <body>
   <%= render 'bloques/head' %>
+
+  <div class="alert">
+    <% flash.each do |key, value| %>
+        <p> <%= value %> </p>
+    <% end %>
+  </div>
 
   <div class="container-fluid">
     <%= yield %>

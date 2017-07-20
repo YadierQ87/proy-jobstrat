@@ -22,7 +22,15 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails' , '~> 4'
+
+# Use jquery as the JavaScript library UI
+gem 'jquery-ui-rails' , '~> 6'
+
+gem "font-awesome-rails" , '~> 4'
+
+gem "rails-jquery-autocomplete" , '~> 1'
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
