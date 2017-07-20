@@ -2,24 +2,16 @@ class AdministrationController < ApplicationController
   def index
   end
 
-  #get 'adminjobs', to: 'home#index'
   def jobs
     @jobs = Job.all
   end
 
-  # GET /adminemployees
-  def adminemployees
-    @employees = Employee.all
+  def employees
   end
 
-  # GET /admincompanies
-  def admincompanies
-    @companies = Company.all
+  def companies
   end
 
-  # GET /admincategories
-  def admincategories
-    @categories = Category.all
+  def categories
   end
-
 end

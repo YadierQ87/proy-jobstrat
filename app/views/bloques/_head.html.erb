@@ -19,7 +19,7 @@
             <!-- Start Navigation List -->
             <ul class="nav navbar-nav">
               <li>
-                <%= link_to 'Home', "home" , class: "active"  %>
+                <%= link_to 'Home', controller: 'home'  %>
               </li>
               <li>
                 <%= link_to '(News)', controller: 'articles' %>
@@ -34,7 +34,7 @@
                 <%= link_to 'Companies', controller: 'companies' %>
               </li>
               <li>
-                <%= link_to 'Admin',"administration" %>
+                <%= link_to 'Admin', controller: 'administration' %>
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right float-right">

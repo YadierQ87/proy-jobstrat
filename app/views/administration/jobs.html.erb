@@ -1,0 +1,31 @@
+<h1>Administration Jobs   <%= link_to 'New Job', new_job_path %> </h1>
+
+<table class="table table-bordered table-action table-responsive">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Country</th>
+    <th>Company</th>
+    <th>Publish date</th>
+    <th>Active</th>
+    <th>Description</th>
+    <th>Picture</th>
+    <th >Actions</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @jobs.each do |job| %>
+      <tr>
+        <td><%= job.title %></td>
+        <td><%= job.country %></td>
+        <td><%= job.company %></td>
+        <td><%= job.publish_date %></td>
+        <td><%= job.active %></td>
+        <td><%= job.description %></td>
+        <td><%= job.picture %></td>
+        <td><%= link_to 'Show', job %>  <%= link_to 'Edit', edit_job_path(job) %>  <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
 
-  resources :categories
   get 'administration/index'
+
+  get 'administration/jobs'
+
+  get 'administration/employees'
+
+  get 'administration/companies'
+
+  get 'administration/categories'
+
+  resources :categories
 
   resources :messageemployees
 
@@ -16,14 +25,12 @@ Rails.application.routes.draw do
   resources :articles
 
   get 'welcome/index'
-     root :to => "welcome#index"
-     #@title => "Proyecto Job Search by IRSTRAT";
+      root :to => "welcome#index"
 
   get 'home', to: 'home#index'
 
   get 'administration', to: 'administration#index'
 
-  get 'administration/jobs', to: 'administration#admin-jobs'
 
 end
 

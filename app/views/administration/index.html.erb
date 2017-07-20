@@ -8,27 +8,22 @@
      </div>
     <div class="col-lg-4">
       <li>
-        <%= link_to 'CRUD Jobs',"administration/jobs" , @jobs => Job.all %>
+        <%= link_to 'CRUD Jobs', :action => 'jobs' %>
       </li>
     </div>
     <div class="col-lg-4">
       <li>
-        <%= link_to 'CRUD Employees', controller: 'employees' %>
+        <%= link_to 'CRUD Employees', :action => 'employees' %>
       </li>
     </div>
     <div class="col-lg-4">
       <li>
-        <%= link_to 'CRUD Companies', controller: 'companies' %>
+        <%= link_to 'CRUD Companies', :action => 'companies' %>
       </li>
     </div>
     <div class="col-lg-4">
       <li>
-        <%= link_to 'CRUD Leads', controller: 'jobs' %>
-      </li>
-    </div>
-    <div class="col-lg-4">
-      <li>
-        <%= link_to 'CRUD Categories', controller: 'categories' %>
+        <%= link_to 'CRUD Categories', :action => 'categories' %>
       </li>
     </div>
 
