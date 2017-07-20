@@ -14,4 +14,9 @@ class CreateCompanies < ActiveRecord::Migration[5.0]
       t.timestamps
     end
   end
+
+  def down
+    drop_table :companies
+  end
+
 end
