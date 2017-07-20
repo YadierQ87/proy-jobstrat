@@ -35,5 +35,15 @@
   <%= @job.picture %>
 </p>
 
+<p>
+  <strong>State:</strong>
+  <%= @job.state %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @job.category %>
+</p>
+
 <%= link_to 'Edit', edit_job_path(@job) %> |
 <%= link_to 'Back', jobs_path %>

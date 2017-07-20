@@ -8,10 +8,8 @@ class CreateCompanies < ActiveRecord::Migration[5.0]
       t.string :country
       t.string :contact
       t.string :email
-      t.string :user
-      t.string :passwd
-      t.string :chiefname
-
+      t.string :username
+      t.string :password
 
       t.timestamps
     end

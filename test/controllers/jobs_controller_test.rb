@@ -17,7 +17,7 @@ class JobsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create job" do
     assert_difference('Job.count') do
-      post jobs_url, params: { job: { active: @job.active, company_id: @job.company_id, country: @job.country, description: @job.description, picture: @job.picture, publish_date: @job.publish_date, title: @job.title } }
+      post jobs_url, params: { job: { active: @job.active, category_id: @job.category_id, company_id: @job.company_id, country: @job.country, description: @job.description, picture: @job.picture, publish_date: @job.publish_date, state: @job.state, title: @job.title } }
     end
 
     assert_redirected_to job_url(Job.last)
@@ -34,7 +34,7 @@ class JobsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update job" do
-    patch job_url(@job), params: { job: { active: @job.active, company_id: @job.company_id, country: @job.country, description: @job.description, picture: @job.picture, publish_date: @job.publish_date, title: @job.title } }
+    patch job_url(@job), params: { job: { active: @job.active, category_id: @job.category_id, company_id: @job.company_id, country: @job.country, description: @job.description, picture: @job.picture, publish_date: @job.publish_date, state: @job.state, title: @job.title } }
     assert_redirected_to job_url(@job)
   end
 

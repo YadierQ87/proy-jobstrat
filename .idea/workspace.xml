@@ -2,11 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63e744f8-90e4-44a3-b2e7-af0ffbe0d576" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/administration_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/administration_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/administration/index.html.erb" afterPath="$PROJECT_DIR$/app/views/administration/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bloques/_head.html.erb" afterPath="$PROJECT_DIR$/app/views/bloques/_head.html.erb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20170719142304_create_employees.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20170719142318_create_companies.rb" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/companies_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/companies_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/employees_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/employees_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/jobs_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/jobs_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/job.rb" afterPath="$PROJECT_DIR$/app/models/job.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/companies/_company.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/companies/_company.json.jbuilder" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/companies/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/companies/_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/companies/index.html.erb" afterPath="$PROJECT_DIR$/app/views/companies/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/companies/show.html.erb" afterPath="$PROJECT_DIR$/app/views/companies/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employees/_employee.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/employees/_employee.json.jbuilder" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employees/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/employees/_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employees/index.html.erb" afterPath="$PROJECT_DIR$/app/views/employees/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employees/show.html.erb" afterPath="$PROJECT_DIR$/app/views/employees/show.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/jobs/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/jobs/_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/jobs/_job.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/jobs/_job.json.jbuilder" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/jobs/show.html.erb" afterPath="$PROJECT_DIR$/app/views/jobs/show.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/controllers/administration_controller_test.rb" afterPath="$PROJECT_DIR$/test/controllers/administration_controller_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/controllers/companies_controller_test.rb" afterPath="$PROJECT_DIR$/test/controllers/companies_controller_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/controllers/employees_controller_test.rb" afterPath="$PROJECT_DIR$/test/controllers/employees_controller_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/controllers/jobs_controller_test.rb" afterPath="$PROJECT_DIR$/test/controllers/jobs_controller_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/companies.yml" afterPath="$PROJECT_DIR$/test/fixtures/companies.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/employees.yml" afterPath="$PROJECT_DIR$/test/fixtures/employees.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/jobs.yml" afterPath="$PROJECT_DIR$/test/fixtures/jobs.yml" />
     </list>
     <ignored path="proy-jobstrat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,8 +50,18 @@
       <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+            <state relative-caret-position="561">
+              <caret line="38" column="34" lean-forward="false" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jobs_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/jobs_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -47,67 +77,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20170719142230_create_jobs.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20170719142230_create_jobs.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="47" lean-forward="false" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="article.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/article.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="job.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/job.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/jobs/_form.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_job.json.jbuilder" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/jobs/_job.json.jbuilder">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/jobs/new.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/jobs/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="952">
@@ -193,20 +163,20 @@
         <option value="$PROJECT_DIR$/app/views/jobs/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/jobs/admin_job.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/jobs_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/custom.scss" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20170719142318_create_companies.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20170719142304_create_employees.rb" />
         <option value="$PROJECT_DIR$/app/views/jobs/adminjob.html.erb" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/administration_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/administration/jobs.html.erb" />
         <option value="$PROJECT_DIR$/app/views/administration/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/bloques/_head.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20170719142230_create_jobs.rb" />
         <option value="$PROJECT_DIR$/app/views/jobs/_form.html.erb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/jobs_controller.rb" />
       </list>
     </option>
   </component>
@@ -257,6 +227,12 @@
               <item name="proy-jobstrat" type="b2602c69:ProjectViewProjectNode" />
               <item name="proy-jobstrat" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proy-jobstrat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proy-jobstrat" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="proy-jobstrat" type="b2602c69:ProjectViewProjectNode" />
@@ -344,12 +320,12 @@
       <option name="presentableId" value="Default" />
       <updated>1500390465840</updated>
       <workItem from="1500394261438" duration="14488000" />
-      <workItem from="1500485779157" duration="22547000" />
+      <workItem from="1500485779157" duration="23085000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37035000" />
+    <option name="totallyTimeSpent" value="37573000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -646,14 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/jobs_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/administration/admin-jobs.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -713,62 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bloques/_head.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20170719142230_create_jobs.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="47" lean-forward="false" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/article.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/job.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/jobs/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/jobs/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/jobs/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -789,6 +701,70 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/job.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/article.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/jobs/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20170719142230_create_jobs.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="47" lean-forward="false" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bloques/_head.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="38" column="34" lean-forward="false" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/jobs_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/jobs/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding />
         </state>
       </provider>

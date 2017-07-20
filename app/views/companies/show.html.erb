@@ -35,5 +35,15 @@
   <%= @company.email %>
 </p>
 
+<p>
+  <strong>Username:</strong>
+  <%= @company.username %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @company.password %>
+</p>
+
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>

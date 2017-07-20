@@ -9,6 +9,9 @@ one:
   sex: MyString
   birth: 
   curriculum: MyText
+  username: MyString
+  password: MyString
+  country: MyString
 
 two:
   fullname: MyString
@@ -19,3 +22,6 @@ two:
   sex: MyString
   birth: 
   curriculum: MyText
+  username: MyString
+  password: MyString
+  country: MyString

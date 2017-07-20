@@ -8,6 +8,8 @@ one:
   country: MyString
   contact: MyString
   email: MyString
+  username: MyString
+  password: MyString
 
 two:
   company: MyString
@@ -17,3 +19,5 @@ two:
   country: MyString
   contact: MyString
   email: MyString
+  username: MyString
+  password: MyString

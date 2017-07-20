@@ -8,6 +8,8 @@ one:
   active: false
   description: MyText
   picture: MyString
+  state: MyString
+  category: one
 
 two:
   title: MyString
@@ -17,3 +19,5 @@ two:
   active: false
   description: MyText
   picture: MyString
+  state: MyString
+  category: two
