@@ -9,6 +9,8 @@ class CreateEmployees < ActiveRecord::Migration[5.0]
       t.string :sex
       t.timestamps :birth
       t.text :curriculum
+      t.string :user
+      t.string :passwd
 
       t.timestamps
     end

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :categories
+  get 'administration/index'
+
   resources :messageemployees
 
   resources :aplicationjobs
@@ -18,7 +21,9 @@ Rails.application.routes.draw do
 
   get 'home', to: 'home#index'
 
+  get 'administration', to: 'administration#index'
 
+  get 'administration/jobs', to: 'administration#admin-jobs'
 
 end
 

@@ -1,0 +1,49 @@
+<section class="section content">
+  <h2 class="section-title">Administration Section</h2>
+  <div class="row">
+     <div class="col-lg-4">
+       <li>
+         <%= link_to 'CRUD Articles(test)', controller: 'articles' %>
+       </li>
+     </div>
+    <div class="col-lg-4">
+      <li>
+        <%= link_to 'CRUD Jobs',"administration/jobs" , @jobs => Job.all %>
+      </li>
+    </div>
+    <div class="col-lg-4">
+      <li>
+        <%= link_to 'CRUD Employees', controller: 'employees' %>
+      </li>
+    </div>
+    <div class="col-lg-4">
+      <li>
+        <%= link_to 'CRUD Companies', controller: 'companies' %>
+      </li>
+    </div>
+    <div class="col-lg-4">
+      <li>
+        <%= link_to 'CRUD Leads', controller: 'jobs' %>
+      </li>
+    </div>
+    <div class="col-lg-4">
+      <li>
+        <%= link_to 'CRUD Categories', controller: 'categories' %>
+      </li>
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+</section>
+
+
+

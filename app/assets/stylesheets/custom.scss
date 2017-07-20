@@ -167,9 +167,16 @@ a:focus {
 .section {
   padding: 60px 0;
 }
+
+ .content{
+   padding-left: 25px; padding-right: 25px;
+   margin: 15px;
+}
+
 .section-title {
   font-size: 36px;
   padding: 0px 0px 30px;
+  border-bottom: solid 1px #2C3E50;
   font-weight: 900;
 }
 .medium-title {
@@ -772,6 +779,11 @@ nav#menu span.fa.fa-bars:hover {
   position: relative;
   width: 100%;
 }
+.separator {
+  padding-top: 20px;
+  border-bottom: solid 0.5px #2C3E50;
+}
+
 .section-intro:before {
   content: "";
   left: 0;
@@ -782,9 +794,10 @@ nav#menu span.fa.fa-bars:hover {
   position: absolute;
 }
 .search-container {
-  padding: 200px 0;
+  padding: 100px 0;
   display: inline-block;
   width: 100%;
+  background-color: #64676B;
   position: relative;
 }
 .search-container .form-control {

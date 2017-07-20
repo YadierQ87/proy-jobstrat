@@ -8,6 +8,8 @@ class CreateJobs < ActiveRecord::Migration[5.0]
       t.boolean :active
       t.text :description
       t.string :picture
+      t.string :state
+      t.references :category, foreign_key: true
 
       t.timestamps
     end

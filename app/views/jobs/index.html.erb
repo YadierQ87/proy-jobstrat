@@ -1,39 +1,61 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Jobs</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Country</th>
-      <th>Company</th>
-      <th>Publish date</th>
-      <th>Active</th>
-      <th>Description</th>
-      <th>Picture</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="search-container col-lg-12 container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Find the job that fits your life</h1><br><h2>More than <strong>12,000</strong> jobs are waiting to Kickstart your career!</h2>
+        <div class="content">
+          <form method="" action="">
+            <div class="row">
+              <div class="col-md-4 col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" type="text" placeholder="job title / keywords / company name">
+                  <i class="ti-time"></i>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" type="email" placeholder="city / province / zip code">
+                  <i class="ti-location-pin"></i>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="search-category-container">
+                  <label class="styled-select">
+                    <select class="dropdown-product selectpicker">
+                      <option>All Categories</option>
+                      <option>Finance</option>
+                      <option>IT & Engineering</option>
+                      <option>Education/Training</option>
+                      <option>Art/Design</option>
+                      <option>Sale/Markting</option>
+                      <option>Healthcare</option>
+                      <option>Science</option>
+                      <option>Food Services</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-1 col-sm-6">
+                <button type="button" class="btn btn-search-icon"><i class="ti-search"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="popular-jobs">
+          <b>Popular Keywords: </b>
+          <a href="#">Web Design</a>
+          <a href="#">Manager</a>
+          <a href="#">Programming</a>
+        </div>
+      </div>
+    </div>
+</div>
 
-  <tbody>
-    <% @jobs.each do |job| %>
-      <tr>
-        <td><%= job.title %></td>
-        <td><%= job.country %></td>
-        <td><%= job.company %></td>
-        <td><%= job.publish_date %></td>
-        <td><%= job.active %></td>
-        <td><%= job.description %></td>
-        <td><%= job.picture %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+
 
 <br>
 
-<%= link_to 'New Job', new_job_path %>
+
