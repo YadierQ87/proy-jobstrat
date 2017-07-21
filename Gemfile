@@ -29,6 +29,8 @@ gem 'jquery-ui-rails' , '~> 6'
 
 gem "font-awesome-rails" , '~> 4'
 
+gem 'font-awesome-sass', '~> 4.7.0'
+
 gem "rails-jquery-autocomplete" , '~> 1'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
