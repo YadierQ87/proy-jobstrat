@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 
   def index
+    @title = 'CRUD Articles'
     @articles = Article.all
   end
 

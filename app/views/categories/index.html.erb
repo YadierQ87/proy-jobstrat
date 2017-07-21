@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Categories</h1>
+<%= render "bloques/admin_section" %>
+<h1>Categories</h1> <%= link_to 'New Category', new_category_path %>
 
 <table>
   <thead>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Category', new_category_path %>
+

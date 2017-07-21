@@ -1,13 +1,24 @@
-<%= render "bloques/admin_section" %>
-
-
-
 <p id="notice"><%= notice %></p>
+<%= render "bloques/admin_section" %>
+<h1>Jobs</h1>
+<%= link_to 'New Jobs', new_job_path %>
 
+<table>
+  <thead>
+  <tr>
+    <th>title</th>
+    <th>country</th>
+    <th>company</th>
+    <th>publish_date</th>
+    <th>active</th>
+    <th>Sex</th>
+    <th>description</th>
+    <th>picture</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
 
-
-
-
+  <tbody>
 <% @jobs.each do |job| %>
     <tr>
       <td><%= job.title %></td>
@@ -20,7 +31,8 @@
       <td><%= link_to 'Show', job %>  <%= link_to 'Edit', edit_job_path(job) %>  <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
     </tr>
 <% end %>
+  </tbody>
+</table>
 
-<br>
 
 

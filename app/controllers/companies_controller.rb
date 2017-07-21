@@ -4,6 +4,7 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
+    @title = "CRUD Company"
     @companies = Company.all
   end
 

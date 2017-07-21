@@ -5,6 +5,7 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     #@jobs = Job.all
+    @title = 'CRUD Jobs'
     @jobs = Job.select("*").where(:active => true).order("id DESC");
   end
 
