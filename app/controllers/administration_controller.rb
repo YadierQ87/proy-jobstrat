@@ -1,11 +1,11 @@
 class AdministrationController < ApplicationController
+  #layout :admin_layout
   def index
     @title = 'Administration'
   end
 
   def jobs
     @title = 'CRUD Jobs'
-    @jobs = Job.all
   end
 
   def employees

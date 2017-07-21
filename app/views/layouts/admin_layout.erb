@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Job Search</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+
+</head>
+
+<body>
+<%= render 'bloques/admin_section' %>
+
+<div class="alert">
+  <% flash.each do |key, value| %>
+      <p> <%= value %> </p>
+  <% end %>
+</div>
+
+<div class="container-fluid">
+  <%= yield %>
+</div>
+
+<%= render 'bloques/footer' %>
+
+</body>
+
+</html>

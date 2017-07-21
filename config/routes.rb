@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
 
+  get 'information/index'
+
+  get 'information/jobs'
+
+  get 'information/employees'
+
+  get 'information/companies'
+
+  get 'information/categories'
+
+  get 'information/messages'
+
+  get 'information/usersettings'
+
+  get 'information/aplicationsms'
+
   resources :messageemployees
 
   resources :aplicationjobs

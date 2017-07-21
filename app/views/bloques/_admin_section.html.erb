@@ -5,19 +5,19 @@
   <div class="col-lg-8">
     <ul class="presentation-links">
       <li>
-        <%= link_to 'CRUD Articles(test)', controller: 'articles' %>
+        <%= link_to icon('pencil-square-o', 'CRUD Articles(test)') , controller: 'articles' %>
       </li>
       <li>
-        <%= link_to 'CRUD Jobs',  '/administration/jobs'  %>
+        <%= link_to icon('briefcase', 'CRUD Jobs'),  controller: 'jobs'  %>
       </li>
       <li>
-        <%= link_to 'CRUD Employees', '/administration/employees'  %>
+        <%= link_to icon('users', 'CRUD Employees'), controller: 'employees'  %>
       </li>
       <li>
-        <%= link_to 'CRUD Companies', '/administration/companies' %>
+        <%= link_to icon('building', 'CRUD Companies'), controller: 'companies' %>
       </li>
       <li>
-        <%= link_to 'CRUD Categories', '/administration/categories'  %>
+        <%= link_to icon('check-circle-o', 'CRUD Categories'), controller: 'categories'  %>
       </li>
     </ul>
   </div>

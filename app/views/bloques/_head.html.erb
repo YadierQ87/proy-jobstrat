@@ -22,24 +22,22 @@
                 <%= link_to 'Home', controller: 'home'  %>
               </li>
               <li>
-                <%= link_to '(News)', controller: 'articles' %>
+                <%= link_to '(News)', "/information/index" %>
               </li>
               <li>
-                <%= link_to 'Browser Jobs', controller: 'jobs' %>
+                <%= link_to 'Browser Jobs', "/information/jobs" %>
               </li>
               <li>
-                <%= link_to 'Candidates', controller: 'employees' %>
+                <%= link_to 'Candidates', "/information/employees" %>
               </li>
               <li>
-                <%= link_to 'Companies', controller: 'companies' %>
+                <%= link_to 'Companies', "/information/companies" %>
               </li>
               <li>
                 <%= link_to 'Admin', controller: 'administration' %>
               </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right float-right">
-              <li class="left"><a href="post-job.html"><i class="ti-pencil-alt"></i> Post A Job</a></li>
-              <li class="right"><a href="my-account.html"><i class="ti-lock"></i>  Log In</a></li>
+              <li class="left"><a href="post-job.html"><%= icon ("pencil-square-o") %> Post A Job</a></li>
+              <li class="right"><a href="my-account.html"><%= icon ("lock") %>  Log In</a></li>
             </ul>
           </div>
         </div>
@@ -82,8 +80,8 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right float-right">
-            <li class="left"><a href="post-job.html"><i class="ti-pencil-alt"></i> Post A Job</a></li>
-            <li class="right"><a href="my-account.html"><i class="ti-lock"></i>  Log In</a></li>
+            <li class="left"><a href="post-job.html"><%= icon ("pencil-square-o") %> Post A Job</a></li>
+            <li class="right"><a href="my-account.html"><%= icon ("lock") %> Log In</a></li>
           </ul>
         </ul>
         <!-- Mobile Menu End -->
