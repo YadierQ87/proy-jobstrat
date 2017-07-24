@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @title = 'CRUD Categories'
-    @categories = Category.all
+    @categories = Category.all.order("category").page(params[:page]).per(5)
   end
 
   # GET /categories/1
