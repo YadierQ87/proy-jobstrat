@@ -6,6 +6,11 @@ class CategoriesController < ApplicationController
   def index
     @title = 'CRUD Categories'
     @categories = Category.all.order("category").page(params[:page]).per(5)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @categories.to_csv }
+      #format.xls { send_data @categories.to_csv}
+    end
   end
 
   # GET /categories/1

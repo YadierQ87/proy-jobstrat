@@ -7,11 +7,20 @@
       Admin Category
     </div>
     <div class="panel-body">
-      <table class="table table-responsive table-bordered">
+      <p>
+
+      </p>
+      <table class="table table-responsive table-bordered" id="categories">
         <thead>
         <tr>
           <th>Category</th>
-          <th colspan="3"> <%= link_to icon('plus-circle','new'), new_category_path , class: "btn btn-sm btn-primary" %></th>
+          <th colspan="2"> Download:
+            <%= link_to "CSV", categories_path(format: "csv") %> |
+            <%= link_to "Excel", categories_path(format: "xls") %>
+          </th>
+          <th >
+            <%= link_to icon('plus-circle','new'), new_category_path , class: "" %>
+          </th>
         </tr>
         </thead>
         <tbody>
@@ -28,7 +37,7 @@
       <%= paginate @categories %>
     </div>
     <div class="panel-footer">
-      <span>category</span>
+      <i class="right">category</i>
     </div>
   </div>
 </div>
