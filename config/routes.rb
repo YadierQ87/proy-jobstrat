@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :countries
   get 'information/index'
 
   get 'information/jobs'

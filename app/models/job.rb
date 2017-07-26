@@ -2,7 +2,9 @@ class Job < ApplicationRecord
   belongs_to :company ,optional: true ,required: false
   belongs_to :category ,optional: true ,required: false
   #accepts_nested_attributes_for :category, allow_destroy: true
-  default_scope -> { order(created_at: :desc) }
+  default_scope -> {
+    order(created_at: :desc)
+  }
 
   #para descargar formato csv
   def self.to_csv
@@ -44,7 +46,7 @@ class Job < ApplicationRecord
           or_clauses = [
               "LOWER(jobs.title) LIKE ?",
               "LOWER(jobs.country) LIKE ?",
-              "LOWER(jobs.status) LIKE ?"
+              "LOWER(jobs.job_stat) LIKE ?"
           ].join(' OR ')
           "(#{ or_clauses })"
         }.join(' AND '),
@@ -64,8 +66,11 @@ class Job < ApplicationRecord
         raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")
     end
   }
-  scope :with_country_id, lambda { |country_ids|
-    where(:country_id => [*country_ids])
+  scope :with_category_id, lambda { |category_ids|
+    where(:category_id => [*category_ids])
+  }
+  scope :with_company_id, lambda { |company_ids|
+    where(:company_id => [*company_ids])
   }
   scope :with_created_at_gte, lambda { |ref_date|
     where('jobs.created_at >= ?', ref_date)
