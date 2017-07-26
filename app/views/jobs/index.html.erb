@@ -1,28 +1,21 @@
+<p id="notice"><%= notice %></p>
+<%= render "bloques/admin_section" %>
+<br>
+<div class="panel">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Admin Jobs
+    </div>
+    <div class="panel-body">
+      <p>
+        <%= link_to icon('plus-circle','new'), new_job_path %>
+        Download:
+        <%= link_to icon('file-code-o','CSV'), categories_path(format: "csv") %> |
+        <%= link_to icon('file-excel-o','Excel'), categories_path(format: "xls") %>
+      </p>
+
 <%= form_for_filterrific @filterrific do |f| %>
-    <div>
-      Search
-      <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
-      <%= f.text_field(
-              :search_query,
-              class: 'filterrific-periodically-observed'
-          ) %>
-    </div>
-    <div>
-      Country
-      <%= f.select(
-              :with_country_id,
-              @filterrific.select_options[:with_country_id],
-              { include_blank: '- Any -' }
-          ) %>
-    </div>
-    <div>
-      Registered after
-      <%= f.text_field(:with_created_at_gte, class: 'js-datepicker') %>
-    </div>
-    <div>
-      Sorted by
-      <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by]) %>
-    </div>
+
     <div>
       <%= link_to(
               'Reset filters',
@@ -34,6 +27,13 @@
 <% end %>
 
 <%= render(
-        partial: 'students/list',
-        locals: { students: @students }
+        partial: 'jobs/list',
+        locals: { jobs: @jobs }
     ) %>
+
+    </div>
+    <div class="panel-footer">
+      <i class="right">jobs</i>
+    </div>
+  </div>
+</div>

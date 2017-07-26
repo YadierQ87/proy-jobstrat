@@ -6,13 +6,12 @@ class JobsController < ApplicationController
   def index
     @title = 'CRUD Jobs'
     #@jobs = Job.select("*").where(:active => true).order("id DESC")
-    #@jobs = Job.all
-
+    #@jobs = Job.all.page(params[:page])
     @filterrific = initialize_filterrific(
         Job,
         params[:filterrific]
     ) or return
-    @jobs = @filterrific.find.page(params[:page])
+    @jobs = @filterrific.find.page(params[:page]).per(10)
 
     respond_to do |format|
       format.html
