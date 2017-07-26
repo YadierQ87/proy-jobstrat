@@ -12,12 +12,12 @@
 
 <p>
   <strong>Company:</strong>
-  <%= @job.company %>
+  <%= @job.company_id %>
 </p>
 
 <p>
   <strong>Publish date:</strong>
-  <%= @job.publish_date %>
+  <%= @job.publicate_at %>
 </p>
 
 <p>
@@ -37,12 +37,12 @@
 
 <p>
   <strong>State:</strong>
-  <%= @job.state %>
+  <%= @job.job_stat %>
 </p>
 
 <p>
   <strong>Category:</strong>
-  <%= @job.category %>
+  <%= @job.category_id %>
 </p>
 
 <%= link_to 'Edit', edit_job_path(@job) %> |

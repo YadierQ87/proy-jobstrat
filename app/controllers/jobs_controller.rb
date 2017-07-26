@@ -4,11 +4,19 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    #@jobs = Job.all
     @title = 'CRUD Jobs'
-    @jobs = Job.select("*").where(:active => true).order("id DESC")
+    #@jobs = Job.select("*").where(:active => true).order("id DESC")
+    #@jobs = Job.all
+
+    @filterrific = initialize_filterrific(
+        Job,
+        params[:filterrific]
+    ) or return
+    @jobs = @filterrific.find.page(params[:page])
+
     respond_to do |format|
       format.html
+      format.js
       format.csv { send_data @jobs.to_csv }
       format.xls
     end
@@ -32,6 +40,8 @@ class JobsController < ApplicationController
   # POST /jobs.json
   def create
     @job = Job.new(job_params)
+    @categories = Category.all.order("category")
+    @companies = Company.all.order("company")
 
     respond_to do |format|
       if @job.save
@@ -42,6 +52,7 @@ class JobsController < ApplicationController
         format.json { render json: @job.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /jobs/1

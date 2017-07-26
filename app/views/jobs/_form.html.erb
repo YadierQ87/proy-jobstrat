@@ -11,54 +11,55 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+    <div class="row panel">
+      <div class="field col-lg-6">
+        <%= f.label :title %>
+        <%= f.text_field :title  , class: "my-form-st" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :country %>
-    <%= f.text_field :country %>
-  </div>
+      <div class="field col-lg-6">
+        <%= f.label :country %>
+        <%= f.text_field :country  , class: "my-form-st" %>
+      </div>
 
-  <div class="field">
-    Aqui va el select de las compannias
-    <%= f.label :company_id %>
-    <%= f.text_field :company_id %>
-  </div>
+      <div class="field col-lg-6">
+        <%= f.label :company_id %>
+        <%=  collection_select(:company_id, 0, Company.all, :id, :company  , class: "my-form-st") %>
+      </div>
 
-  <div class="field">
-    <%= f.label :publicate_at %>
-    <%= f.text_field :publicate_at %>
-  </div>
+      <div class="field col-lg-6">
+        <%= f.label :publicate_at %>
+        <%= f.datetime_select :publicate_at  , class: "my-form-st" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :active %>
-    <%= f.check_box :active %>
-  </div>
+      <div class="field col-lg-6">
+        <%= f.label :active %>
+        <%= f.check_box :active  , class: "my-form-st" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+      <div class="field col-lg-6">
+        <%= f.label :description %>
+        <%= f.text_area :description  , class: "my-form-st" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :picture %>
-    <%= f.text_field :picture %>
-  </div>
+      <div class="field col-lg-6">
+        <%= f.label :picture %>
+        <%= f.text_field :picture  , class: "my-form-st" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :job_stat %>
-    <%= f.text_field :job_stat %>
-  </div>
+      <div class="field col-lg-6">
+        <%= f.label :job_stat %>
+        <%= f.text_field :job_stat  , class: "my-form-st" %>
+      </div>
 
-  <div class="field">
-    Aqui va el select de las categorias
-    <!--%= f.label :category_id %-->
-    <!--%= f.text_field :category_id %-->
-  </div>
+      <div class="field col-lg-6">
+        <%= f.label :category_id %>
+        <%=  collection_select(:category_id, 0, Category.all, :id, :category, class: "my-form-st") %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+      <div class="actions col-lg-6">
+        <%= f.submit %>
+      </div>
+    </div>
+
 <% end %>

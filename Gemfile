@@ -24,7 +24,11 @@ gem 'font-awesome-sass', '~> 4.7.0'
 
 gem "rails-jquery-autocomplete" , '~> 1'
 
+#para paginado
 gem "kaminari"
+
+#gema para filtrado y paginado + sorting
+gem 'filterrific'
 
 group :assets do
   gem 'sass-rails',   '~> 5.0'
