@@ -5,7 +5,12 @@ class CompaniesController < ApplicationController
   # GET /companies.json
   def index
     @title = "CRUD Company"
-    @companies = Company.all
+    @companies = Company.all.order("company")
+    respond_to do |format|
+      format.html
+      format.csv { send_data @companies.to_csv }
+      format.xls
+    end
   end
 
   # GET /companies/1

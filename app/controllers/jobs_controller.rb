@@ -6,7 +6,12 @@ class JobsController < ApplicationController
   def index
     #@jobs = Job.all
     @title = 'CRUD Jobs'
-    @jobs = Job.select("*").where(:active => true).order("id DESC");
+    @jobs = Job.select("*").where(:active => true).order("id DESC")
+    respond_to do |format|
+      format.html
+      format.csv { send_data @jobs.to_csv }
+      format.xls
+    end
   end
 
   # GET /jobs/1

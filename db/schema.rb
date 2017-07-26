@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170720183825) do
+ActiveRecord::Schema.define(version: 20170726152946) do
 
   create_table "aplicationjobs", force: :cascade do |t|
     t.integer  "job_id"
@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(version: 20170720183825) do
     t.string   "picture"
     t.date     "publicate_at"
     t.string   "job_stat"
+    t.integer  "category_id"
+    t.index ["category_id"], name: "index_jobs_on_category_id"
     t.index ["company_id"], name: "index_jobs_on_company_id"
   end
 

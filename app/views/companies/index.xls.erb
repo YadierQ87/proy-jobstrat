@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+          xmlns:o="urn:schemas-microsoft-com:office:office"
+          xmlns:x="urn:schemas-microsoft-com:office:excel"
+          xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+          xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Company</Data></Cell>
+        <Cell><Data ss:Type="String">Fullname</Data></Cell>
+        <Cell><Data ss:Type="String">Description</Data></Cell>
+        <Cell><Data ss:Type="String">Country</Data></Cell>
+        <Cell><Data ss:Type="String">Contact</Data></Cell>
+        <Cell><Data ss:Type="String">Email</Data></Cell>
+        <Cell><Data ss:Type="String">Username</Data></Cell>
+      </Row>
+      <% @companies.each do |company| %>
+          <Row>
+            <Cell><Data ss:Type="String"><%= company.company %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= company.fullname %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= company.description %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= company.country %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= company.contact %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= company.email %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= company.username %></Data></Cell>
+          </Row>
+      <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
+
