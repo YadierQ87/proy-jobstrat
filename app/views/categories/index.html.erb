@@ -13,7 +13,7 @@
         <%= link_to "CSV", categories_path(format: "csv") %> |
         <%= link_to "Excel", categories_path(format: "xls") %>
       </p>
-      <table class="table table-responsive table-bordered" id="tbcategories">
+      <table class="display" id="tbcategories" data-source="<%= categories_url(format: "json") %>">
         <thead>
         <tr>
           <th>Category</th>
@@ -26,7 +26,7 @@
               <td><%= category.category %> </td>
               <td> <%= link_to 'Show', category %> |
                 <%= link_to 'Edit', edit_category_path(category) %> |
-                <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %> 
+                <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %>
               </td>
             </tr>
         <% end %>

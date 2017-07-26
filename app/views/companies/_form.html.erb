@@ -11,52 +11,55 @@
     </div>
   <% end %>
 
-  <div class="field">
+ <div class="row panel">
+  <div class="field col-lg-6">
     <%= f.label :company %>
-    <%= f.text_field :company %>
+    <%= f.text_field :company , class: "my-form-st" %>
   </div>
 
-  <div class="field">
+  <div class="field col-lg-6">
     <%= f.label :fullname %>
-    <%= f.text_field :fullname %>
+    <%= f.text_field :fullname , class: "my-form-st" %>
   </div>
 
-  <div class="field">
+  <div class="field col-lg-6">
     <%= f.label :picture %>
-    <%= f.text_field :picture %>
+    <%= f.text_field :picture , class: "my-form-st" %>
   </div>
 
-  <div class="field">
+  <div class="field col-lg-6">
     <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.text_area :description , class: "my-form-st" %>
   </div>
 
-  <div class="field">
+  <div class="field col-lg-6">
     <%= f.label :country %>
-    <%= f.text_field :country %>
+    <%= f.text_field :country , class: "my-form-st" %>
   </div>
 
-  <div class="field">
+  <div class="field col-lg-6">
     <%= f.label :contact %>
-    <%= f.text_field :contact %>
+    <%= f.text_field :contact , class: "my-form-st" %>
   </div>
 
-  <div class="field">
+  <div class="field col-lg-6">
     <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email , class: "my-form-st" %>
   </div>
 
-  <div class="field">
+  <div class="field col-lg-6">
     <%= f.label :username %>
-    <%= f.text_field :username %>
+    <%= f.text_field :username , class: "my-form-st" %>
   </div>
 
-  <div class="field">
+  <div class="field col-lg-6">
     <%= f.label :password %>
-    <%= f.text_field :password %>
+    <%= f.text_field :password , class: "my-form-st" %>
   </div>
 
-  <div class="actions">
+  <div class="actions col-lg-6">
     <%= f.submit %>
   </div>
+ </div>
+
 <% end %>

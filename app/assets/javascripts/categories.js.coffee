@@ -2,7 +2,10 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->  $("#tbcategories").dataTable()
-    sPaginationType: "full_numbers"
-    bJQueryUI: true
+  sPaginationType: "full_numbers"
+  bJQueryUI: true
+  bProcessing: true
+  bServerSide: true
+  sAjaxSource: $('#tbcategories').data('source')
 
 
