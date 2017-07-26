@@ -8,33 +8,31 @@
     </div>
     <div class="panel-body">
       <p>
-
+        <%= link_to icon('plus-circle','new'), new_category_path , class: "" %> |
+        Download:
+        <%= link_to "CSV", categories_path(format: "csv") %> |
+        <%= link_to "Excel", categories_path(format: "xls") %>
       </p>
       <table class="table table-responsive table-bordered" id="tbcategories">
         <thead>
         <tr>
           <th>Category</th>
-          <th colspan="2"> Download:
-            <%= link_to "CSV", categories_path(format: "csv") %> |
-            <%= link_to "Excel", categories_path(format: "xls") %>
-          </th>
-          <th >
-            <%= link_to icon('plus-circle','new'), new_category_path , class: "" %>
-          </th>
+          <th>Actions</th>
         </tr>
         </thead>
         <tbody>
         <% @categories.each do |category| %>
             <tr>
-              <td><%= category.category %></td>
-              <td><%= link_to 'Show', category %></td>
-              <td><%= link_to 'Edit', edit_category_path(category) %></td>
-              <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= category.category %> </td>
+              <td> <%= link_to 'Show', category %> |
+                <%= link_to 'Edit', edit_category_path(category) %> |
+                <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %> 
+              </td>
             </tr>
         <% end %>
         </tbody>
       </table>
-      <%= paginate @categories %>
+      <%#= # paginate @categories %>
     </div>
     <div class="panel-footer">
       <i class="right">category</i>

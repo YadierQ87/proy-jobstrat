@@ -5,7 +5,8 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @title = 'CRUD Categories'
-    @categories = Category.all.order("category").page(params[:page]).per(5)
+    #@categories = Category.all.order("category").page(params[:page]).per(5)
+    @categories = Category.all.order("category")
     respond_to do |format|
       format.html
       format.csv { send_data @categories.to_csv }
