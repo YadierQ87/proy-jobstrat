@@ -1,25 +1,42 @@
 <p id="notice"><%= notice %></p>
-
 <%= render "bloques/admin_section" %>
-<h1>Lista de Post</h1>
-
-<table>
+<br>
+<div class="panel">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Lista de Post
+    </div>
+    <div class="panel-body">
+      <p>
+        <%= link_to icon('plus-circle','new'), new_article_path %>
+        Download:
+        <%= link_to icon('file-code-o','CSV'), categories_path(format: "csv") %> |
+        <%= link_to icon('file-excel-o','Excel'), categories_path(format: "xls") %>
+      </p>
+<table class="table table-bordered table-header table-stripered">
   <tr>
     <th>Title</th>
     <th>Text</th>
-    <th colspan="3"></th>
+    <th>Actions</th>
   </tr>
 
   <% @articles.each do |article| %>
       <tr>
         <td><%= article.title %></td>
         <td><%= article.text %></td>
-        <td><%= link_to 'Show', article_path(article) %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article_path(article),
-                        method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to icon('eye'), article_path(article) %>
+          <%= link_to icon('pencil-square-o'), edit_article_path(article) %>
+          <%= link_to icon('trash-o'), article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
   <% end %>
 </table>
 
-<%= link_to 'New article', new_article_path %>
+    </div>
+    <div class="panel-footer">
+      <i class="right">articles</i>
+    </div>
+  </div>
+</div>
+

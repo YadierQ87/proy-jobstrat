@@ -1,8 +1,19 @@
 <p id="notice"><%= notice %></p>
 <%= render "bloques/admin_section" %>
-<h1>Employees</h1>
-
-<table>
+<br>
+<div class="panel">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Admin Employees
+    </div>
+    <div class="panel-body">
+      <p>
+        <%= link_to icon('plus-circle','new'), new_employee_path %>
+        Download:
+        <%= link_to icon('file-code-o','CSV'), categories_path(format: "csv") %> |
+        <%= link_to icon('file-excel-o','Excel'), categories_path(format: "xls") %>
+      </p>
+<table class="table table-bordered table-header table-stripered">
   <thead>
     <tr>
       <th>Fullname</th>
@@ -42,6 +53,12 @@
   </tbody>
 </table>
 
-<br>
+    </div>
+    <div class="panel-footer">
+      <i class="right">employees</i>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'New Employee', new_employee_path %>
+
+

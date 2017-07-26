@@ -24,7 +24,6 @@
       <th>Contact</th>
       <th>Email</th>
       <th>Username</th>
-      <th>Password</th>
       <th> Actions </th>
     </tr>
   </thead>
@@ -40,10 +39,9 @@
         <td><%= company.contact %></td>
         <td><%= company.email %></td>
         <td><%= company.username %></td>
-        <td><%= company.password %></td>
-        <td><%= link_to icon('file-code-o'), company %> |
-          <%= link_to 'Edit', edit_company_path(company) %> |
-          <%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <td><%= link_to icon('eye'), company %>
+          <%= link_to icon('pencil-square-o'), edit_company_path(company) %>
+          <%= link_to icon('trash-o'), company, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
     <% end %>
