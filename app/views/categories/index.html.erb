@@ -24,9 +24,9 @@
         <% @categories.each do |category| %>
             <tr>
               <td><%= category.category %> </td>
-              <td> <%= link_to 'Show', category %> |
-                <%= link_to 'Edit', edit_category_path(category) %> |
-                <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <td> <%= link_to icon('eye'), category %> |
+                <%= link_to icon('pencil-square-o'), edit_category_path(category) %> |
+                <%= link_to icon('trash-o'), category, method: :delete, data: { confirm: 'Are you sure?' } %>
               </td>
             </tr>
         <% end %>

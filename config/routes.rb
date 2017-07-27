@@ -31,6 +31,8 @@ Rails.application.routes.draw do
 
   resources :articles
 
+  resources :users
+
   get 'welcome/index'
       root :to => "welcome#index"
 

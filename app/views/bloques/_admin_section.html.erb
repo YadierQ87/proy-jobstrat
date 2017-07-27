@@ -1,24 +1,18 @@
-<div class="section-title row">
-  <div class="col-lg-5">
-    <h6 class="left"> <span class="red">Section</span> <%= @title %> </h6>
+<div class="panel-normal row">
+  <div class="col-lg-2">
+    <h6 class="left"><strong> <span class="red">Section</span> <%= @title %> </strong> </h6>
   </div>
-  <div class="col-lg-7">
-    <ul class="presentation-links">
-      <li>
-        <%= link_to icon('pencil-square-o', 'Articles(test)') , controller: 'articles' %>
-      </li>
-      <li>
-        <%= link_to icon('briefcase', 'Jobs'),  controller: 'jobs'  %>
-      </li>
-      <li>
-        <%= link_to icon('users', 'Employees'), controller: 'employees'  %>
-      </li>
-      <li>
-        <%= link_to icon('building', 'Companies'), controller: 'companies' %>
-      </li>
-      <li>
-        <%= link_to icon('check-circle-o', 'Categories'), controller: 'categories'  %>
-      </li>
-    </ul>
+  <div class="col-lg-10">
+    <div class="right">
+      <%= link_to icon('pencil-square-o', 'Articles') , controller: 'articles'  %> /
+      <%= link_to icon('briefcase', 'Jobs'),  controller: 'jobs'  %> /
+      <%= link_to icon('users', 'Employees'), controller: 'employees'  %> /
+      <%= link_to icon('building', 'Companies'), controller: 'companies' %> /
+      <%= link_to icon('check-circle-o', 'Categories'), controller: 'categories'   %> /
+      <%= link_to icon('globe', 'Countries'), controller: 'countries'   %> /
+      <%= link_to icon('envelope-o', 'Messages'), controller: 'messageemployees'   %> /
+      <%= link_to icon('file-text-o', 'Aplications'), controller: 'aplicationjobs'   %> /
+      <%= link_to icon('user-secret', 'Users'), controller: 'users'   %>
+    </div>
   </div>
 </div>

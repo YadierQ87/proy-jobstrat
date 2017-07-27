@@ -25,8 +25,8 @@
           <td><%= job.description %></td>
           <td><%= job.picture %></td>
           <td><%= job.job_stat %></td>
-          <td><%= link_to icon('eye'), job %>  <%= link_to icon('pencil-square-o'), edit_job_path(job) %>
-            <%= link_to icon('trash-o'), job, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <td><%= link_to 'Show', job %>  <%= link_to 'Edit', edit_job_path(job) %>
+            <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
         </tr>
     <% end %>

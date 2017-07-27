@@ -45,9 +45,9 @@
         <td><%= employee.username %></td>
         <td><%= employee.password %></td>
         <td><%= employee.country %></td>
-        <td><%= link_to 'Show', employee %></td>
-        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to icon('eye'), employee %></td>
+        <td><%= link_to icon('pencil-square-o'), edit_employee_path(employee) %></td>
+        <td><%= link_to icon('trash-o'), employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

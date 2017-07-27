@@ -18,9 +18,9 @@
         <td><%= messageemployee.employee %></td>
         <td><%= messageemployee.company %></td>
         <td><%= messageemployee.mail %></td>
-        <td><%= link_to 'Show', messageemployee %></td>
-        <td><%= link_to 'Edit', edit_messageemployee_path(messageemployee) %></td>
-        <td><%= link_to 'Destroy', messageemployee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to icon('eye'), messageemployee %></td>
+        <td><%= link_to icon('pencil-square-o'), edit_messageemployee_path(messageemployee) %></td>
+        <td><%= link_to icon('trash-o'), messageemployee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

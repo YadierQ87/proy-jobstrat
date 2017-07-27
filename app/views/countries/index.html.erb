@@ -14,9 +14,9 @@
     <% @countries.each do |country| %>
       <tr>
         <td><%= country.country %></td>
-        <td><%= link_to 'Show', country %></td>
-        <td><%= link_to 'Edit', edit_country_path(country) %></td>
-        <td><%= link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to icon('eye'), country %></td>
+        <td><%= link_to icon('pencil-square-o'), edit_country_path(country) %></td>
+        <td><%= link_to icon('trash-o'), country, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

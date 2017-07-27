@@ -18,9 +18,9 @@
         <td><%= aplicationjob.job %></td>
         <td><%= aplicationjob.employee %></td>
         <td><%= aplicationjob.description %></td>
-        <td><%= link_to 'Show', aplicationjob %></td>
-        <td><%= link_to 'Edit', edit_aplicationjob_path(aplicationjob) %></td>
-        <td><%= link_to 'Destroy', aplicationjob, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to icon('eye'), aplicationjob %></td>
+        <td><%= link_to icon('pencil-square-o'), edit_aplicationjob_path(aplicationjob) %></td>
+        <td><%= link_to icon('trash-o'), aplicationjob, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
