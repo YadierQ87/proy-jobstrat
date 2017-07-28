@@ -1,42 +1,36 @@
 <div id="filterrific_results">
   <div>
-    <%= page_entries_info jobs %>
+    <%= page_entries_info aplicationjobs %>
   </div>
 
   <table class="table table-bordered table-header table-stripered">
+    <thead>
     <tr>
-      <th>title</th>
-      <th>country</th>
-      <th>company</th>
-      <th>publicate_at</th>
-      <th>active</th>
-      <th>description</th>
-      <th>picture</th>
-      <th>Status</th>
-      <th>Actions</th>
+      <th>Job</th>
+      <th>Employee</th>
+      <th>Description</th>
+      <th colspan="3"></th>
     </tr>
-    <% jobs.each do |job| %>
+    </thead>
+    <tbody>
+    <% aplicationjobs.each do |aplicationjob| %>
         <tr>
-          <td><%= job.title %></td>
-          <td><%= job.country %></td>
-          <td><%= job.company_id %></td>
-          <td><%= job.publicate_at %></td>
-          <td><%= job.active %></td>
-          <td><%= job.description %></td>
-          <td><%= job.picture %></td>
-          <td><%= job.job_stat %></td>
-          <td><%= link_to 'Show', job %>  <%= link_to 'Edit', edit_job_path(job) %>
-            <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
+          <td><%= aplicationjob.job %></td>
+          <td><%= aplicationjob.employee %></td>
+          <td><%= aplicationjob.description %></td>
+          <td><%= link_to icon('eye'), aplicationjob %></td>
+          <td><%= link_to icon('pencil-square-o'), edit_aplicationjob_path(aplicationjob) %></td>
+          <td><%= link_to icon('trash-o'), aplicationjob, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
     <% end %>
+    </tbody>
   </table>
 </div>
-<%  @total = (page_entries_info jobs).split('<b>')
+<%  @total = (page_entries_info aplicationjobs).split('<b>')
     if @total.size == 3
       @total = @total[2].split('</b>')
     end
 %>
 <% if @total[0].to_i >= 10 %>
-<%= paginate jobs %>
+<%= paginate aplicationjobs %>
 <% end  %>

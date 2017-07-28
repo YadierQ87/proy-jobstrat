@@ -4,7 +4,12 @@ class AplicationjobsController < ApplicationController
   # GET /aplicationjobs
   # GET /aplicationjobs.json
   def index
-    @aplicationjobs = Aplicationjob.all
+    #@aplicationjobs = Aplicationjob.all
+    @filterrific = initialize_filterrific(
+        Aplicationjob,
+        params[:filterrific]
+    ) or return
+    @aplicationjobs = @filterrific.find.page(params[:page]).per(params[:cantd])
   end
 
   # GET /aplicationjobs/1

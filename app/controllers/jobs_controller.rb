@@ -11,7 +11,7 @@ class JobsController < ApplicationController
         Job,
         params[:filterrific]
     ) or return
-    @jobs = @filterrific.find.page(params[:page]).per(10)
+    @jobs = @filterrific.find.page(params[:page]).per(params[:cantd])
 
     respond_to do |format|
       format.html
