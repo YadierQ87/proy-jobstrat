@@ -39,9 +39,11 @@ class Employee < ApplicationRecord
     where(
         terms.map {
           or_clauses = [
-              "LOWER(jobs.title) LIKE ?",
-              "LOWER(jobs.country) LIKE ?",
-              "LOWER(jobs.job_stat) LIKE ?"
+              "LOWER(employee.fullname) LIKE ?",
+              "LOWER(employee.contact) LIKE ?",
+              "LOWER(employee.email) LIKE ?",
+              "LOWER(employee.username) LIKE ?",
+              "LOWER(employee.country) LIKE ?",
           ].join(' OR ')
           "(#{ or_clauses })"
         }.join(' AND '),
@@ -56,22 +58,14 @@ class Employee < ApplicationRecord
       when /^created_at_/
         order("jobs.created_at #{ direction }")
       when /^name_/
-        order("LOWER(jobs.title) #{ direction }, LOWER(jobs.title) #{ direction }")
+        order("LOWER(employee.fullname) #{ direction }, LOWER(employee.contact) #{ direction }, LOWER(employee.email) #{ direction }, LOWER(employee.username) #{ direction }, LOWER(employee.country) #{ direction }")
       else
         raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")
     end
   }
-  scope :with_category_id, lambda { |category_ids|
-    where(:category_id => [*category_ids])
-  }
-  scope :with_company_id, lambda { |company_ids|
-    where(:company_id => [*company_ids])
-  }
   scope :with_created_at_gte, lambda { |ref_date|
-    where('jobs.created_at >= ?', ref_date)
+    where('employee.created_at >= ?', ref_date)
   }
-
-  delegate :name, :to => :country, :prefix => true
 
   def self.options_for_sorted_by
     [
@@ -80,10 +74,6 @@ class Employee < ApplicationRecord
         ['Registration date (oldest first)', 'created_at_asc'],
         ['Country (a-z)', 'country_name_asc']
     ]
-  end
-
-  def full_name
-    [last_name, first_name].compact.join(', ')
   end
 
   def decorated_created_at

@@ -4,7 +4,20 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    #@users = User.all
+    @filterrific = initialize_filterrific(
+        User,
+        params[:filterrific]
+    ) or return
+    @users = @filterrific.find.page(params[:page]).per(params[:cantd])
+
+    respond_to do |format|
+      @users = User.all
+      format.html
+      format.csv { send_data @users.to_csv }
+      format.xls
+    end
+
   end
 
   # GET /users/1

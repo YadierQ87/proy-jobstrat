@@ -64,11 +64,25 @@ p "Created #{Company.count} Company"
       company_id: Random.rand(26...30),
   )
 end
-
 p "Created #{Job.count} Jobs"
-
-
 #t = Time.now
 #puts t.strftime("%d/%m/%Y %H:%M:%S")
 #today =  Time.now
 #today.to_formatted_s(:db)
+
+#creando employees
+10.times do |index|
+  Employee.create!(
+      fullname: Faker::Name.name,
+      picture: Faker::Job.field,
+      description: Faker::Lorem.paragraph,
+      contact: Faker::PhoneNumber.phone_number,
+      email: Faker::Internet.email,
+      sex: "Male",
+      username: Faker::Internet.user_name,
+      password: Faker::Internet.password(min_length = 8, max_length = 16, mix_case = true, special_chars = false),
+      curriculum: Faker::Lorem.paragraph
+  )
+end
+
+

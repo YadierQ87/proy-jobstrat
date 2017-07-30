@@ -4,7 +4,21 @@ class LeadsController < ApplicationController
   # GET /leads
   # GET /leads.json
   def index
-    @leads = Lead.all
+    #@leads = Lead.all
+
+    @filterrific = initialize_filterrific(
+        Lead,
+        params[:filterrific]
+    ) or return
+    @leads = @filterrific.find.page(params[:page]).per(params[:cantd])
+
+    respond_to do |format|
+      format.html
+      format.js
+      format.csv { send_data @leads.to_csv }
+      format.xls
+    end
+
   end
 
   # GET /leads/1

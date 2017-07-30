@@ -5,6 +5,19 @@ class CountriesController < ApplicationController
   # GET /countries.json
   def index
     @countries = Country.all
+
+    @filterrific = initialize_filterrific(
+        Country,
+        params[:filterrific]
+    ) or return
+    @countries = @filterrific.find.page(params[:page]).per(params[:cantd])
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @countries.to_csv }
+      format.xls
+    end
+
   end
 
   # GET /countries/1

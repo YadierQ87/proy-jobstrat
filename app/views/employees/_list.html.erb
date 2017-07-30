@@ -4,32 +4,35 @@
   </div>
 
   <table class="table table-bordered table-header table-stripered">
+    <thead>
     <tr>
-      <th>title</th>
-      <th>country</th>
-      <th>company</th>
-      <th>publicate_at</th>
-      <th>active</th>
-      <th>description</th>
-      <th>picture</th>
-      <th>Status</th>
+      <th>Fullname</th>
+      <th>Picture</th>
+      <th>Contact</th>
+      <th>Email</th>
+      <th>Sex</th>
+      <th>Curriculum</th>
+      <th>Username</th>
       <th>Actions</th>
     </tr>
-    <% jobs.each do |job| %>
+    </thead>
+
+    <tbody>
+    <% @employees.each do |employee| %>
         <tr>
-          <td><%= job.title %></td>
-          <td><%= job.country %></td>
-          <td><%= job.company_id %></td>
-          <td><%= job.publicate_at %></td>
-          <td><%= job.active %></td>
-          <td><%= job.description %></td>
-          <td><%= job.picture %></td>
-          <td><%= job.job_stat %></td>
-          <td><%= link_to 'Show', job %>  <%= link_to 'Edit', edit_job_path(job) %>
-            <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
+          <td><%= employee.fullname %></td>
+          <td><%= employee.picture %></td>
+          <td><%= employee.contact %></td>
+          <td><%= employee.email %></td>
+          <td><%= employee.sex %></td>
+          <td><%= employee.curriculum %></td>
+          <td><%= employee.username %></td>
+          <td><%= link_to icon('eye'), employee %>
+            <%= link_to icon('pencil-square-o'), edit_employee_path(employee) %>
+            <%= link_to icon('trash-o'), employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
     <% end %>
+    </tbody>
   </table>
 </div>
 <%  @total = (page_entries_info jobs).split('<b>')

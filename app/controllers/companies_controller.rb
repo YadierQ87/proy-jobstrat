@@ -6,11 +6,19 @@ class CompaniesController < ApplicationController
   def index
     @title = "CRUD Company"
     @companies = Company.all.order("company")
+
+    @filterrific = initialize_filterrific(
+        Company,
+        params[:filterrific]
+    ) or return
+    @companies = @filterrific.find.page(params[:page]).per(params[:cantd])
+
     respond_to do |format|
       format.html
       format.csv { send_data @companies.to_csv }
       format.xls
     end
+
   end
 
   # GET /companies/1

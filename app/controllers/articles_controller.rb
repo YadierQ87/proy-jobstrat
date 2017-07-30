@@ -2,7 +2,20 @@ class ArticlesController < ApplicationController
 
   def index
     @title = 'CRUD Articles'
-    @articles = Article.all
+    #@articles = Article.all
+    @filterrific = initialize_filterrific(
+        Article,
+        params[:filterrific]
+    ) or return
+    @articles = @filterrific.find.page(params[:page]).per(params[:cantd])
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @articles.to_csv }
+      format.xls
+    end
+
+
   end
 
   def new

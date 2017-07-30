@@ -5,12 +5,21 @@ class EmployeesController < ApplicationController
   # GET /employees.json
   def index
     @title = 'CRUD Employees'
-    @employees = Employee.all.order("category")
+    #@employees = Employee.all
+    @filterrific = initialize_filterrific(
+        Employee,
+        params[:filterrific]
+    ) or return
+    @employees = @filterrific.find.page(params[:page]).per(params[:cantd])
+
     respond_to do |format|
+
       format.html
       format.csv { send_data @employees.to_csv }
       format.xls
     end
+
+
   end
 
   # GET /employees/1

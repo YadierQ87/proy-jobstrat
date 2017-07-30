@@ -5,9 +5,15 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @title = 'CRUD Categories'
-    #@categories = Category.all.order("category").page(params[:page]).per(5)
-    @categories = Category.all.order("category")
+    #@categories = Category.all.order("category")
+    @filterrific = initialize_filterrific(
+        Category,
+        params[:filterrific]
+    ) or return
+    @categories = @filterrific.find.page(params[:page]).per(params[:cantd])
+
     respond_to do |format|
+
       format.html
       format.csv { send_data @categories.to_csv }
       format.xls
