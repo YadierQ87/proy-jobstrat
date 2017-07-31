@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+  layout = "admin_layout";
 
   # GET /jobs
   # GET /jobs.json

@@ -70,14 +70,11 @@ label{
 }
 /*yadier quesada */
 .navb-new{
-	padding: 2px 10px 10px 20px;
-	color: white !important; font-size: 16px; font-weight: bold;
-	background: #706D76 !important;
-	opacity: 0.7;
+	padding: 2px 10px 10px 20px;	color: white !important; font-size: 16px; font-weight: bold;	background: #706D76 !important;	opacity: 0.7;
 }
 .navbar-default .navbar-nav > li > a {
-	color: white !important;
-	background: #706D76 !important;
+	/*color: white !important;	background: #706D76 !important;*/
+	display: block;	font-size: 15px;	border-radius: 4px;	padding: 5px 7px;	letter-spacing: 0.5px;	overflow: hidden;
 }
 .search-container .content{
 	float: left;
@@ -95,46 +92,63 @@ label{
 	float: left;
 }
 .content{
-	padding-left: 25px; padding-right: 25px;
-	margin-top: -20px;
+	padding-left: 25px; padding-right: 25px;	margin-top: -20px;
 }
 .section-title {
-	font-size: 36px;
-	padding: 0px 0px 30px 0px;
-	border-bottom: solid 1px #2C3E50;
-	font-weight: 900;
+	font-size: 36px;	padding: 0px 0px 30px 0px;	border-bottom: solid 1px #2C3E50;	font-weight: 900;
 }
 .panel-normal {
-	border-radius: 2px;
-	border: 0;
-	box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
-	padding: 15px 10px 15px 10px;
+	border-radius: 2px;	border: 0;	box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);	padding: 15px 10px 15px 10px;
 }
-
-.a-normal , .a-normal:hover{ padding: 4px; border-radius: 4px }
-
+.a-normal , .a-normal:hover{
+	padding: 4px; border-radius: 4px
+}
 .btn-primary,.btn-success,.btn-warning {
-	color: white !important;
-	font-size: 13px !important;
+	/*color: white !important;	font-size: 13px !important;*/
+}
+.my-btn{
+	padding: 4px 10px;  -webkit-transition: all .3s linear;	-moz-transition: all .3s linear;
+	-ms-transition: all .3s linear;	-o-transition: all .3s linear;	transition: all .3s linear;
+	border-radius: 4px;	font-size: 13px !important;
 }
 .btn-normal {
-	padding: 4px 10px;  color: black;
-	-webkit-transition: all .3s linear;
-	-moz-transition: all .3s linear;
-	-ms-transition: all .3s linear;
-	-o-transition: all .3s linear;
-	transition: all .3s linear;
-	border: solid 1px #4C4C4C;  background-color: #E0E0E0;
-	border-radius: 4px;
-	font-size: 13px !important;
+	padding: 4px 10px;  color: black;	-webkit-transition: all .3s linear;	-moz-transition: all .3s linear;
+	-ms-transition: all .3s linear;	-o-transition: all .3s linear;	transition: all .3s linear;
+	border: solid 1px #4C4C4C;  background-color: #E0E0E0;	border-radius: 4px;	font-size: 13px !important;
 }
 .btn-normal:hover {
-	background-color: #D0D0D0 !important;
-	color: black !important;
-	font-size: 13px !important;
+	background-color: #D0D0D0 !important;	color: black !important;	font-size: 13px !important;
+}
+.title-h1 {
+	color: white; font-weight: 900;font-size: 50px;letter-spacing: 1px; line-height: 30px; text-align: left;
+}
+.title-h2 {
+	font-size: 30px; color: #ff4f57; font-weight: 400; margin-bottom: 30px;letter-spacing: -1px;
+}
+.search-div{
+   padding: 5px 10px 5px 10px;
+}
+.popular-key{
+	color: white; font-weight: bold;
 }
 
+div.right > a {
+	font-weight: bold; font-size: 15px;
+}
 
+th {
+	font-size: 15px;text-transform:uppercase;
+	color: #F15349 !important;
+}
+.panel-heading{
+	text-transform:uppercase; color: white !important; font-weight: bold;
+	padding: 20px !important;
+}
+.black {
+	color: #42373F !important;
+}
+
+/*en yadier.quesada */
 /*-- social-icons --*/
 .w3ls-social-icons i {
 	font-size: 15px;
@@ -202,12 +216,12 @@ label{
 }
 /*-- //nav-effect --*/
 .header {
-	/*padding: 1em 0;*/
+	padding: 1em 0;
+	margin: 15px 20px 15px 20px;
 	/*background: #111;*/
 }
 .logo-new{
-	margin-bottom: 5px;
-	margin-top: -5px;
+	margin-top: -15px;
 }
 .navbar-default {
 	background: none;
@@ -248,6 +262,7 @@ label{
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	background: none;
+	color: white !important;
 	color:#D71210;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {

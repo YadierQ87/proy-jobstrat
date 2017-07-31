@@ -3,7 +3,8 @@
     <%= page_entries_info jobs %>
   </div>
 
-  <table class="table table-bordered table-header table-stripered">
+  <table class="table table-bordered table-header table-stripered table-responsive">
+    <thead>
     <tr>
       <th>title</th>
       <th>country</th>
@@ -15,6 +16,8 @@
       <th>Status</th>
       <th>Actions</th>
     </tr>
+    </thead>
+    <tbody>
     <% jobs.each do |job| %>
         <tr>
           <td><%= job.title %></td>
@@ -30,6 +33,7 @@
           </td>
         </tr>
     <% end %>
+    </tbody>
   </table>
 </div>
 <%  @total = (page_entries_info jobs).split('<b>')
