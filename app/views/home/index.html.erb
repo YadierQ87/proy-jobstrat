@@ -1,13 +1,12 @@
 <!-- Find Job Section Start -->
-<section class="find-job section">
-    <div class="row">
-      <div class="col-lg-8">
-        <h2 class="section-title">Hot Jobs</h2>
+<div class="" id="hotjobs">
+  <div class="container">
+        <h2 class="w3-abo">Hot Jobs</h2>
         <div class="row">
           <div class="col-md-12">
             <div class="job-list">
               <div class="thumb">
-                <a href="job-details.html"><img src="assets/img/jobs/img-1.jpg" alt=""></a>
+                  <%= image_tag("jobs/img-1.jpg", class: "img-responsive img-centered") %>
               </div>
               <div class="job-list-content">
                 <h4><a href="job-details.html">Need a web designer</a><span class="full-time">Full-Time</span></h4>
@@ -31,7 +30,7 @@
             </div>
             <div class="job-list">
               <div class="thumb">
-                <a href="job-details.html"><img src="assets/img/jobs/img-2.jpg" alt=""></a>
+                <%= image_tag("jobs/img-2.jpg", class: "img-responsive img-centered") %>
               </div>
               <div class="job-list-content">
                 <h4><a href="job-details.html">Front-end developer needed</a><span class="full-time">Full-Time</span></h4>
@@ -55,7 +54,7 @@
             </div>
             <div class="job-list">
               <div class="thumb">
-                <a href="job-details.html"><img src="assets/img/jobs/img-3.jpg" alt=""></a>
+                <%= image_tag("jobs/img-3.jpg", class: "img-responsive img-centered") %>
               </div>
               <div class="job-list-content">
                 <h4><a href="job-details.html">Senior Accountant</a><span class="part-time">Part-Time</span></h4>
@@ -79,7 +78,7 @@
             </div>
             <div class="job-list">
               <div class="thumb">
-                <a href="job-details.html"><img src="assets/img/jobs/img-4.jpg" alt=""></a>
+                <%= image_tag("jobs/img-4.jpg", class: "img-responsive img-centered") %>
               </div>
               <div class="job-list-content">
                 <h4><a href="job-details.html">Fullstack web developer needed</a><span class="full-time">Full-Time</span></h4>
@@ -103,169 +102,15 @@
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="col-lg-4">
-          <div class="row">
-             <div class="col-md-12 panel">
-               <h2 class="section-title">LATEST NEWS</h2>
-               <div class="row">
-                 <div class="col-xs-12 blog-item">
-                   <!-- Blog Item Starts -->
-                   <div class="blog-item-wrapper">
-                     <div class="blog-item-img">
-                       <%= image_tag("blog/home-items/img1.jpg") %>
-                     </div>
-                     <div class="blog-item-text">
-                       <div class="meta-tags">
-                         <span class="date"><i class="ti-calendar"></i> Dec 20, 2017</span>
-                         <span class="comments"><a href="#"><i class="ti-comment-alt"></i> 5 Comments</a></span>
-                       </div>
-                       <a href="single-post.html">
-                         <h3>
-                           Tips to write an impressive resume online for beginner
-                         </h3>
-                       </a>
-                       <p>
-                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore praesentium asperiores ad vitae.
-                       </p>
-                       <a href="single-post.html" class="btn btn-common btn-rm">Read More</a>
-                     </div>
-                   </div>
-                   <!-- Blog Item Wrapper Ends-->
-                 </div>
-
-                 <div class="col-xs-12 blog-item">
-                   <!-- Blog Item Starts -->
-                   <div class="blog-item-wrapper">
-                     <div class="blog-item-img">
-                       <%= image_tag("blog/home-items/img2.jpg") %>
-                     </div>
-                     <div class="blog-item-text">
-                       <div class="meta-tags">
-                         <span class="date"><i class="ti-calendar"></i> Jan 20, 2018</span>
-                         <span class="comments"><a href="#"><i class="ti-comment-alt"></i> 5 Comments</a></span>
-                       </div>
-                       <a href="single-post.html">
-                         <h3>
-                           Let's explore 5 cool new features in JobBoard theme
-                         </h3>
-                       </a>
-                       <p>
-                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore praesentium asperiores ad vitae.
-                       </p>
-                       <a href="single-post.html" class="btn btn-common btn-rm">Read More</a>
-                     </div>
-                   </div>
-                   <!-- Blog Item Wrapper Ends-->
-                 </div>
-
-                 <div class="col-xs-12 blog-item">
-                   <!-- Blog Item Starts -->
-                   <div class="blog-item-wrapper">
-                     <div class="blog-item-img">
-                       <%= image_tag("blog/home-items/img3.jpg") %>
-                     </div>
-                     <div class="blog-item-text">
-                       <div class="meta-tags">
-                         <span class="date"><i class="ti-calendar"></i> Mar 20, 2018</span>
-                         <span class="comments"><a href="#"><i class="ti-comment-alt"></i> 5 Comments</a></span>
-                       </div>
-                       <a href="single-post.html">
-                         <h3>
-                           How to convince recruiters and get your dream job
-                         </h3>
-                       </a>
-                       <p>
-                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore praesentium asperiores ad vitae.
-                       </p>
-                       <a href="single-post.html" class="btn btn-common btn-rm">Read More</a>
-                     </div>
-                   </div>
-                   <!-- Blog Item Wrapper Ends-->
-                 </div>
-               </div>
-             </div>
-             <div class="col-md-12 panel">
-               <h2 class="section-title">MAIN COMPANIES</h2>
-               <div class="col-xs-12">
-                 <div class="featured-item">
-                   <div class="featured-wrap">
-                     <div class="featured-inner">
-                       <figure class="item-thumb">
-                         <%= image_tag("features/img-1.jpg") %>
-                       </figure>
-                       <div class="item-body">
-                         <h3 class="job-title"><a href="job-page.html">Graphic Designer</a></h3>
-                         <div class="adderess"><i class="ti-location-pin"></i> Dallas, United States</div>
-                       </div>
-                     </div>
-                   </div>
-                   <div class="item-foot">
-                     <span><i class="ti-calendar"></i> 4 months ago</span>
-                     <span><i class="ti-time"></i> Full Time</span>
-                     <div class="view-iocn">
-                       <a href="job-page.html"><i class="ti-arrow-right"></i></a>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-
-               <div class="col-xs-12">
-                 <div class="featured-item">
-                   <div class="featured-wrap">
-                     <div class="featured-inner">
-                       <figure class="item-thumb">
-                         <%= image_tag("features/img-2.jpg") %>
-                       </figure>
-                       <div class="item-body">
-                         <h3 class="job-title"><a href="job-page.html">Graphic Designer</a></h3>
-                         <div class="adderess"><i class="ti-location-pin"></i> Dallas, United States</div>
-                       </div>
-                     </div>
-                   </div>
-                   <div class="item-foot">
-                     <span><i class="ti-calendar"></i> 4 months ago</span>
-                     <span><i class="ti-time"></i> Full Time</span>
-                     <div class="view-iocn">
-                       <a href="job-page.html"><i class="ti-arrow-right"></i></a>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-
-               <div class="col-xs-12">
-                 <div class="featured-item">
-                   <div class="featured-wrap">
-                     <div class="featured-inner">
-                       <figure class="item-thumb">
-                         <%= image_tag("features/img-3.jpg") %>
-                       </figure>
-                       <div class="item-body">
-                         <h3 class="job-title"><a href="job-page.html">Graphic Designer</a></h3>
-                         <div class="adderess"><i class="ti-location-pin"></i> Dallas, United States</div>
-                       </div>
-                     </div>
-                   </div>
-                   <div class="item-foot">
-                     <span><i class="ti-calendar"></i> 4 months ago</span>
-                     <span><i class="ti-time"></i> Full Time</span>
-                     <div class="view-iocn">
-                       <a href="job-page.html"><i class="ti-arrow-right"></i></a>
-                     </div>
-                   </div>
-                 </div>
-               </div>
-
-             </div>
-          </div>
-      </div>
-    </div>
+  </div>
+</div>
 
 
-
-</section>
 <!-- Find Job Section End -->
+
+<%= render 'bloques/about' %>
+
+<%= render 'bloques/latestblog' %>
 
 
 

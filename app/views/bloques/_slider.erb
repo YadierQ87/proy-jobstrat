@@ -1,0 +1,91 @@
+<!-- Slider -->
+<div class="slider">
+  <div class="callbacks_container">
+    <ul class="rslides" id="slider">
+      <li>
+        <div class="slider-img">
+          <%= image_tag("features/bg2.jpg", class: "img-responsive img-centered") %>
+        </div>
+        <div class="slider-info">
+          <h1 style="color: white; font-weight: 900;
+              font-size: 50px;
+              letter-spacing: 1px;
+              line-height: 30px; text-align: left;
+          ">Find the job in Catalog </h1><br>
+          <h2 style="font-size: 30px;
+              color: #ff4f57;
+              font-weight: 400;
+              margin-bottom: 30px;
+              letter-spacing: -1px;
+          ">More than <strong>12,000</strong> jobs are waiting to Kickstart your career!</h2>
+
+          <form method="" action="#">
+            <div class="row">
+              <div class="col-md-4 col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" type="text" placeholder="job title / keywords / company name">
+                  <i class="ti-time"></i>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" type="email" placeholder="city / province / zip code">
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="search-category-container">
+                  <label class="styled-select">
+                    <select class="dropdown-product selectpicker">
+                      <option>All Categories</option>
+                      <option>Finance</option>
+                      <option>IT & Engineering</option>
+                      <option>Education/Training</option>
+                      <option>Art/Design</option>
+                      <option>Sale/Markting</option>
+                      <option>Healthcare</option>
+                      <option>Science</option>
+                      <option>Food Services</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-1 col-sm-6">
+                <button type="button" class="btn btn-search-icon"><%= icon ("search") %></button>
+              </div>
+            </div>
+          </form>
+
+          <div class="popular-jobs">
+            <b>Popular Keywords: </b>
+            <a href="#">Web Design</a>
+            <a href="#">Manager</a>
+            <a href="#">Programming</a>
+            <a href="#" data-toggle="modal" data-target="#myModal5">View More</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="clearfix"></div>
+</div>
+
+<!-- Modal5 -->
+<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" >
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4>Blog Post</h4>
+        <h5>Lorem ipsum dolor sit amet</h5>
+        <%= image_tag("features/bg4.jpg", class: "blog-image") %>
+        <span>Lorem ipsum dolor sit amet, Sed ut perspiciatis unde omnis iste natus error sit voluptatem , eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.accusantium doloremque laudantium, totam rem aperiamconsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- //Modal5 -->
+
+<!-- //Slider -->

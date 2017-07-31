@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Proyecto Job Search by IRSTRAT</title>
+  <title> Job Search by IRSTRAT</title>
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
-
 </head>
-
-  <body>
+<body>
+<div class="Main-agile">
   <%= render 'bloques/head' %>
-  <div class="alert hidden">
-    <% flash.each do |key, value| %>
-        <p> <%= value %> </p>
-    <% end %>
-  </div>
+  <%= render 'bloques/slider' %>
+  <!-- //header -->
+</div>
+<div class="clearfix"></div>
   <div class="container-fluid">
     <%= yield %>
   </div>
-
-  <%= render 'bloques/footer' %>
-
-  </body>
-
+<%= render 'bloques/footer' %>
+</body>
 </html>

@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
- *= require dataTables/jquery.dataTables
  */
 
 @import "_font-awesome.scss";
