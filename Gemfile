@@ -24,6 +24,9 @@ gem 'font-awesome-sass', '~> 4.7.0'
 
 gem "rails-jquery-autocomplete" , '~> 1'
 
+#para autenticacion
+gem 'devise'
+
 #para paginado
 gem "kaminari"
 
