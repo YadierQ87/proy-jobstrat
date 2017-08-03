@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
   def index
     @title = 'CRUD Articles'
     #@articles = Article.all
+    cantd = 5
     @filterrific = initialize_filterrific(
         Article,
         params[:filterrific]
@@ -59,6 +60,10 @@ class ArticlesController < ApplicationController
   private
   def article_params
     params.require(:article).permit(:title, :text)
+  end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
   end
 
 end

@@ -86,4 +86,9 @@ class LeadsController < ApplicationController
     def lead_params
       params.require(:lead).permit(:name, :email)
     end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
+
 end

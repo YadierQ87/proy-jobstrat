@@ -86,4 +86,9 @@ class CompaniesController < ApplicationController
     def company_params
       params.require(:company).permit(:company, :fullname, :picture, :description, :country, :contact, :email, :username, :password)
     end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
+
 end

@@ -87,4 +87,9 @@ class EmployeesController < ApplicationController
     def employee_params
       params.require(:employee).permit(:fullname, :picture, :description, :contact, :email, :sex, :birth, :curriculum, :username, :password, :country)
     end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
+
 end

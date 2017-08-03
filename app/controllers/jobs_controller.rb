@@ -89,4 +89,9 @@ class JobsController < ApplicationController
     def job_params
       params.require(:job).permit(:title, :country, :company_id, :publish_date, :active, :description, :picture, :state, :category_id)
     end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
+
 end

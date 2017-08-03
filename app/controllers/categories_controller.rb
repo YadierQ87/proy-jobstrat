@@ -85,4 +85,9 @@ class CategoriesController < ApplicationController
     def category_params
       params.require(:category).permit(:category)
     end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
+
 end

@@ -40,9 +40,7 @@ class Article < ApplicationRecord
     where(
         terms.map {
           or_clauses = [
-              "LOWER(jobs.title) LIKE ?",
-              "LOWER(jobs.country) LIKE ?",
-              "LOWER(jobs.job_stat) LIKE ?"
+              "LOWER(articles.title) LIKE ?",
           ].join(' OR ')
           "(#{ or_clauses })"
         }.join(' AND '),
@@ -55,36 +53,24 @@ class Article < ApplicationRecord
     direction = (sort_option =~ /desc$/) ? 'desc' : 'asc'
     case sort_option.to_s
       when /^created_at_/
-        order("jobs.created_at #{ direction }")
+        order("articles.created_at #{ direction }")
       when /^name_/
-        order("LOWER(jobs.title) #{ direction }, LOWER(jobs.title) #{ direction }")
+        order("LOWER(articles.title) #{ direction }")
       else
         raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")
     end
   }
-  scope :with_category_id, lambda { |category_ids|
-    where(:category_id => [*category_ids])
-  }
-  scope :with_company_id, lambda { |company_ids|
-    where(:company_id => [*company_ids])
-  }
-  scope :with_created_at_gte, lambda { |ref_date|
-    where('jobs.created_at >= ?', ref_date)
-  }
 
-  delegate :name, :to => :country, :prefix => true
+  scope :with_created_at_gte, lambda { |ref_date|
+    where('articles.created_at >= ?', ref_date)
+  }
 
   def self.options_for_sorted_by
     [
-        ['Name (a-z)', 'name_asc'],
+        ['Title (a-z)', 'name_asc'],
         ['Registration date (newest first)', 'created_at_desc'],
         ['Registration date (oldest first)', 'created_at_asc'],
-        ['Country (a-z)', 'country_name_asc']
     ]
-  end
-
-  def full_name
-    [last_name, first_name].compact.join(', ')
   end
 
   def decorated_created_at
