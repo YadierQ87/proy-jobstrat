@@ -26,6 +26,8 @@ gem "rails-jquery-autocomplete" , '~> 1'
 
 #para autenticacion
 gem 'devise'
+#roles para devise
+gem 'cancan'
 
 #para paginado
 gem "kaminari"
