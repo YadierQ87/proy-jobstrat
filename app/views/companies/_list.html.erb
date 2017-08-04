@@ -1,42 +1,46 @@
-<div id="filterrific_results">
+<div id="filterrific_companies">
   <div>
-    <%= page_entries_info jobs %>
+    <%= page_entries_info companies %>
   </div>
-
   <table class="table table-bordered table-header table-stripered">
+    <thead>
     <tr>
-      <th>title</th>
-      <th>country</th>
-      <th>company</th>
-      <th>publicate_at</th>
-      <th>active</th>
-      <th>description</th>
-      <th>picture</th>
-      <th>Status</th>
-      <th>Actions</th>
+      <th><%= filterrific_sorting_link(@filterrific, :company) %></th>
+      <th><%= filterrific_sorting_link(@filterrific, :fullname) %></th>
+      <th><%= filterrific_sorting_link(@filterrific, :country) %></th>
+      <th>Picture</th>
+      <th>Description</th>
+      <th>Contact</th>
+      <th>Email</th>
+      <th>Username</th>
+      <th> Actions </th>
     </tr>
-    <% jobs.each do |job| %>
+    </thead>
+    <tbody>
+    <% @companies.each do |company| %>
         <tr>
-          <td><%= job.title %></td>
-          <td><%= job.country %></td>
-          <td><%= job.company_id %></td>
-          <td><%= job.publicate_at %></td>
-          <td><%= job.active %></td>
-          <td><%= job.description %></td>
-          <td><%= job.picture %></td>
-          <td><%= job.job_stat %></td>
-          <td><%= link_to 'Show', job %>  <%= link_to 'Edit', edit_job_path(job) %>
-            <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <td><%= company.company %></td>
+          <td><%= company.fullname %></td>
+          <td><%= company.country %></td>
+          <td><%= company.picture %></td>
+          <td><%= company.description %></td>
+          <td><%= company.contact %></td>
+          <td><%= company.email %></td>
+          <td><%= company.username %></td>
+          <td><%= link_to icon('eye'), company %>
+            <%= link_to icon('pencil-square-o'), edit_company_path(company) %>
+            <%= link_to icon('trash-o'), company, method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
         </tr>
     <% end %>
+    </tbody>
   </table>
 </div>
-<%  @total = (page_entries_info jobs).split('<b>')
+<%  @total = (page_entries_info companies).split('<b>')
     if @total.size == 3
       @total = @total[2].split('</b>')
     end
 %>
 <% if @total[0].to_i >= 10 %>
-<%= paginate jobs %>
+    <%= paginate companies %>
 <% end  %>

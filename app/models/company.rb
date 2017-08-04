@@ -9,6 +9,7 @@ class Company < ApplicationRecord
     end
   end
 
+
   #self.page = 5
   #gema filterrific para paginado y filtrado
   filterrific(
@@ -37,9 +38,9 @@ class Company < ApplicationRecord
     where(
         terms.map {
           or_clauses = [
-              "LOWER(jobs.title) LIKE ?",
-              "LOWER(jobs.country) LIKE ?",
-              "LOWER(jobs.job_stat) LIKE ?"
+              "LOWER(companies.company) LIKE ?",
+              "LOWER(companies.country) LIKE ?",
+              "LOWER(companies.email) LIKE ?"
           ].join(' OR ')
           "(#{ or_clauses })"
         }.join(' AND '),
@@ -52,9 +53,9 @@ class Company < ApplicationRecord
     direction = (sort_option =~ /desc$/) ? 'desc' : 'asc'
     case sort_option.to_s
       when /^created_at_/
-        order("jobs.created_at #{ direction }")
+        order("companies.created_at #{ direction }")
       when /^name_/
-        order("LOWER(jobs.title) #{ direction }, LOWER(jobs.title) #{ direction }")
+        order("LOWER(companies.company) #{ direction }, LOWER(companies.email) #{ direction }")
       else
         raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")
     end

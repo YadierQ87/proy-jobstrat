@@ -1,42 +1,40 @@
 <p id="notice"><%= notice %></p>
 <%= render "bloques/admin_section" %>
 <br>
-<div class="panel">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      Lista de Post
-    </div>
-    <div class="panel-body">
-      <p>
-        <%= link_to icon('plus-circle','new'), new_article_path %>
-        Download:
-        <%= link_to icon('file-code-o','CSV'), categories_path(format: "csv") %> |
-        <%= link_to icon('file-excel-o','Excel'), categories_path(format: "xls") %>
-      </p>
-<table class="table table-bordered table-header table-stripered">
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th>Actions</th>
-  </tr>
-
-  <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.text %></td>
-        <td>
-          <%= link_to icon('eye'), article_path(article) %>
-          <%= link_to icon('pencil-square-o'), edit_article_path(article) %>
-          <%= link_to icon('trash-o'), article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-      </tr>
-  <% end %>
-</table>
-
-    </div>
-    <div class="panel-footer">
-      <i class="right">articles</i>
+<div class="">
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Admin Articles
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-lg-6">
+            <%= form_for_filterrific @filterrific do |f| %>
+                Records to show
+                <%= select_tag :cantd, options_for_select([10,20,40].to_a, nil)  %>
+                Search
+                <%= f.text_field(   :search_query, class: 'filterrific-periodically-observed' ) %>
+                <%# add an automated spinner to your form when the list is refreshed %>
+                <%= render_filterrific_spinner %>
+            <% end %>
+            <%#= link_to( 'Reset filters', reset_filterrific_url, class: "btn-normal btn-sm") %>
+          </div>
+          <div class="col-lg-6">
+            <div class="right">
+              Download:
+              <%= link_to icon('file-code-o','CSV'), articles_path(format: "csv") %> |
+              <%= link_to icon('file-excel-o','Excel'), articles_path(format: "xls") %>
+              <%= link_to icon('plus-circle','Add Article'), new_article_path , class: "btn-primary btn-sm" %>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <%= render( partial: 'articles/list',locals: { articles: @articles } ) %>
+      </div>
+      <div class="panel-footer">
+        &nbsp;<i class="right">articles</i>
+      </div>
     </div>
   </div>
 </div>
-

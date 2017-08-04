@@ -19,8 +19,6 @@ class Article < ApplicationRecord
       available_filters: [
           :sorted_by,
           :search_query,
-          :with_country_id,
-          :with_created_at_gte
       ]
   )
 
@@ -36,7 +34,7 @@ class Article < ApplicationRecord
     # configure number of OR conditions for provision
     # of interpolation arguments. Adjust this if you
     # change the number of OR conditions.
-    num_or_conditions = 3
+    num_or_conditions = 1
     where(
         terms.map {
           or_clauses = [
@@ -55,19 +53,15 @@ class Article < ApplicationRecord
       when /^created_at_/
         order("articles.created_at #{ direction }")
       when /^name_/
-        order("LOWER(articles.title) #{ direction }")
+        order("LOWER(articles.title) #{ direction },")
       else
         raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")
     end
   }
 
-  scope :with_created_at_gte, lambda { |ref_date|
-    where('articles.created_at >= ?', ref_date)
-  }
-
   def self.options_for_sorted_by
     [
-        ['Title (a-z)', 'name_asc'],
+        ['Name (a-z)', 'name__asc'],
         ['Registration date (newest first)', 'created_at_desc'],
         ['Registration date (oldest first)', 'created_at_asc'],
     ]

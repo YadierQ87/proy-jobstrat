@@ -35,13 +35,11 @@ class Category < ApplicationRecord
     # configure number of OR conditions for provision
     # of interpolation arguments. Adjust this if you
     # change the number of OR conditions.
-    num_or_conditions = 3
+    num_or_conditions = 1
     where(
         terms.map {
           or_clauses = [
-              "LOWER(jobs.title) LIKE ?",
-              "LOWER(jobs.country) LIKE ?",
-              "LOWER(jobs.job_stat) LIKE ?"
+              "LOWER(categories.category) LIKE ?",
           ].join(' OR ')
           "(#{ or_clauses })"
         }.join(' AND '),
@@ -54,9 +52,9 @@ class Category < ApplicationRecord
     direction = (sort_option =~ /desc$/) ? 'desc' : 'asc'
     case sort_option.to_s
       when /^created_at_/
-        order("jobs.created_at #{ direction }")
+        order("categories.created_at #{ direction }")
       when /^name_/
-        order("LOWER(jobs.title) #{ direction }, LOWER(jobs.title) #{ direction }")
+        order("LOWER(categories.category) #{ direction }, LOWER(categories.category) #{ direction }")
       else
         raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")
     end

@@ -4,7 +4,6 @@ class ArticlesController < ApplicationController
   def index
     @title = 'CRUD Articles'
     #@articles = Article.all
-    cantd = 5
     @filterrific = initialize_filterrific(
         Article,
         params[:filterrific]

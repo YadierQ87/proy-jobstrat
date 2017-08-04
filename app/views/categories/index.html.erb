@@ -1,44 +1,48 @@
 <p id="notice"><%= notice %></p>
 <%= render "bloques/admin_section" %>
 <br>
-<div class="panel">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      Admin Category
-    </div>
-    <div class="panel-body">
-      <p>
-        <%= link_to icon('plus-circle','new'), new_category_path , class: "" %> |
-        Download:
-        <%= link_to "CSV", categories_path(format: "csv") %> |
-        <%= link_to "Excel", categories_path(format: "xls") %>
-      </p>
-      <table class="display" id="tbcategories" data-source="<%= categories_url(format: "json") %>">
-        <thead>
-        <tr>
-          <th>Category</th>
-          <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        <% @categories.each do |category| %>
-            <tr>
-              <td><%= category.category %> </td>
-              <td> <%= link_to icon('eye'), category %> |
-                <%= link_to icon('pencil-square-o'), edit_category_path(category) %> |
-                <%= link_to icon('trash-o'), category, method: :delete, data: { confirm: 'Are you sure?' } %>
-              </td>
-            </tr>
-        <% end %>
-        </tbody>
-      </table>
-      <%#= # paginate @categories %>
-    </div>
-    <div class="panel-footer">
-      <i class="right">category</i>
+<div class="">
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Admin Category
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-lg-6">
+            <%= form_for_filterrific @filterrific do |f| %>
+                Records to show
+                <%= select_tag :cantd, options_for_select([10,20,40].to_a, nil)  %>
+                Search
+                <%= f.text_field(   :search_query, class: 'filterrific-periodically-observed' ) %>
+                <%# add an automated spinner to your form when the list is refreshed %>
+                <%= render_filterrific_spinner %>
+            <% end %>
+            <%#= link_to( 'Reset filters', reset_filterrific_url, class: "btn-normal btn-sm") %>
+          </div>
+          <div class="col-lg-6">
+            <div class="right">
+              Download:
+              <%= link_to icon('file-code-o','CSV'), categories_path(format: "csv") %> |
+              <%= link_to icon('file-excel-o','Excel'), categories_path(format: "xls") %>
+              <%= link_to icon('plus-circle','Add Category'), new_category_path , class: "btn-primary btn-sm" %>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <%= render(partial: 'categories/list',locals: { categories: @categories}    ) %>
+      </div>
+      <div class="panel-footer">
+        &nbsp;<i class="right">jobs</i>
+      </div>
     </div>
   </div>
 </div>
+
+
+
+
+
 
 
 

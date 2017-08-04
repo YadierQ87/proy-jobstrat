@@ -6,11 +6,9 @@ class CompaniesController < ApplicationController
   # GET /companies.json
   def index
     @title = "CRUD Company"
-    @companies = Company.all.order("company")
-
+    #@companies = Company.all.order("company")
     @filterrific = initialize_filterrific(
-        Company,
-        params[:filterrific]
+        Company,  params[:filterrific]
     ) or return
     @companies = @filterrific.find.page(params[:page]).per(params[:cantd])
 
@@ -20,6 +18,15 @@ class CompaniesController < ApplicationController
       format.xls
     end
 
+  end
+
+
+
+  def reset_filterrific
+    # Clear session persistence
+    session[:filterrific_restaurants] = nil
+    # Redirect back to the index action for default filter settings.
+    redirect_to action: :index
   end
 
   # GET /companies/1
