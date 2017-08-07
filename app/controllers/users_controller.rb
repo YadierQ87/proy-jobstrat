@@ -13,8 +13,8 @@ class UsersController < ApplicationController
     @users = @filterrific.find.page(params[:page]).per(params[:cantd])
 
     respond_to do |format|
-      @users = User.all
       format.html
+      format.js
       format.csv { send_data @users.to_csv }
       format.xls
     end

@@ -38,9 +38,7 @@ class Country < ApplicationRecord
     where(
         terms.map {
           or_clauses = [
-              "LOWER(jobs.title) LIKE ?",
-              "LOWER(jobs.country) LIKE ?",
-              "LOWER(jobs.job_stat) LIKE ?"
+              "LOWER(countries.country) LIKE ?",
           ].join(' OR ')
           "(#{ or_clauses })"
         }.join(' AND '),
@@ -53,9 +51,9 @@ class Country < ApplicationRecord
     direction = (sort_option =~ /desc$/) ? 'desc' : 'asc'
     case sort_option.to_s
       when /^created_at_/
-        order("jobs.created_at #{ direction }")
+        order("countries.created_at #{ direction }")
       when /^name_/
-        order("LOWER(jobs.title) #{ direction }, LOWER(jobs.title) #{ direction }")
+        order("LOWER(countries.country) #{ direction }")
       else
         raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")
     end
@@ -67,7 +65,7 @@ class Country < ApplicationRecord
     where(:company_id => [*company_ids])
   }
   scope :with_created_at_gte, lambda { |ref_date|
-    where('jobs.created_at >= ?', ref_date)
+    where('country.created_at >= ?', ref_date)
   }
 
   delegate :name, :to => :country, :prefix => true

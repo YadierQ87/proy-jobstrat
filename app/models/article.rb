@@ -19,6 +19,8 @@ class Article < ApplicationRecord
       available_filters: [
           :sorted_by,
           :search_query,
+          :with_country_id,
+          :with_created_at_gte
       ]
   )
 
@@ -58,13 +60,29 @@ class Article < ApplicationRecord
         raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")
     end
   }
+  scope :with_category_id, lambda { |category_ids|
+    where(:category_id => [*category_ids])
+  }
+  scope :with_company_id, lambda { |company_ids|
+    where(:company_id => [*company_ids])
+  }
+  scope :with_created_at_gte, lambda { |ref_date|
+    where('jobs.created_at >= ?', ref_date)
+  }
+
+  delegate :name, :to => :country, :prefix => true
 
   def self.options_for_sorted_by
     [
-        ['Name (a-z)', 'name__asc'],
+        ['Name (a-z)', 'name_asc'],
         ['Registration date (newest first)', 'created_at_desc'],
         ['Registration date (oldest first)', 'created_at_asc'],
+        ['Country (a-z)', 'country_name_asc']
     ]
+  end
+
+  def full_name
+    [last_name, first_name].compact.join(', ')
   end
 
   def decorated_created_at

@@ -1,30 +1,18 @@
 <div id="filterrific_results">
   <div>
-    <%= page_entries_info jobs %>
+    <%= page_entries_info countries %>
   </div>
 
   <table class="table table-bordered table-header table-stripered">
     <tr>
-      <th>title</th>
+      <th>id</th>
       <th>country</th>
-      <th>company</th>
-      <th>publicate_at</th>
-      <th>active</th>
-      <th>description</th>
-      <th>picture</th>
-      <th>Status</th>
       <th>Actions</th>
     </tr>
-    <% jobs.each do |job| %>
+    <% countries.each do |country| %>
         <tr>
-          <td><%= job.title %></td>
-          <td><%= job.country %></td>
-          <td><%= job.company_id %></td>
-          <td><%= job.publicate_at %></td>
-          <td><%= job.active %></td>
-          <td><%= job.description %></td>
-          <td><%= job.picture %></td>
-          <td><%= job.job_stat %></td>
+          <td><%= country.id %></td>
+          <td><%= country.country %></td>
           <td><%= link_to 'Show', job %>  <%= link_to 'Edit', edit_job_path(job) %>
             <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
@@ -32,11 +20,11 @@
     <% end %>
   </table>
 </div>
-<%  @total = (page_entries_info jobs).split('<b>')
+<%  @total = (page_entries_info countries).split('<b>')
     if @total.size == 3
       @total = @total[2].split('</b>')
     end
 %>
 <% if @total[0].to_i >= 10 %>
-<%= paginate jobs %>
+<%= paginate countries %>
 <% end  %>

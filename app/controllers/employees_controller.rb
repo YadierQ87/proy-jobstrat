@@ -14,8 +14,8 @@ class EmployeesController < ApplicationController
     @employees = @filterrific.find.page(params[:page]).per(params[:cantd])
 
     respond_to do |format|
-
       format.html
+      format.js
       format.csv { send_data @employees.to_csv }
       format.xls
     end

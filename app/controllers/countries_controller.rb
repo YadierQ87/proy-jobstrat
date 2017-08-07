@@ -15,6 +15,7 @@ class CountriesController < ApplicationController
 
     respond_to do |format|
       format.html
+      format.js
       format.csv { send_data @countries.to_csv }
       format.xls
     end

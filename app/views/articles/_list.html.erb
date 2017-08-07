@@ -10,7 +10,7 @@
       <th>Actions</th>
     </tr>
 
-    <% @articles.each do |article| %>
+    <% articles.dup.each do |article| %>
         <tr>
           <td><%= article.title %></td>
           <td><%= article.text %></td>
@@ -29,5 +29,6 @@
     end
 %>
 <% if @total[0].to_i >= 10 %>
-<%= paginate articles %>
+    <%= paginate articles %>
 <% end  %>
+

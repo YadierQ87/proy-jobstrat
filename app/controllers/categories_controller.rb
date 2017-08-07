@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
     @categories = @filterrific.find.page(params[:page]).per(params[:cantd])
 
     respond_to do |format|
-
+      format.js
       format.html
       format.csv { send_data @categories.to_csv }
       format.xls
