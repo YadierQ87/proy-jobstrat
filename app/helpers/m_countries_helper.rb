@@ -1,0 +1,2 @@
+module MCountriesHelper
+end

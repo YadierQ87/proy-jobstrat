@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :m_countries
   devise_for :users
   get 'home', to: 'home#index'
        root :to => "home#index"

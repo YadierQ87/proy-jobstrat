@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+  before_action :new, only: :create
   load_and_authorize_resource
   before_action :set_company, only: [:show, :edit, :update, :destroy]
 

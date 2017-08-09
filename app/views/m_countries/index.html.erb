@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>M Countries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ncountry</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @m_countries.each do |m_country| %>
+      <tr>
+        <td><%= m_country.ncountry %></td>
+        <td><%= link_to 'Show', m_country %></td>
+        <td><%= link_to 'Edit', edit_m_country_path(m_country) %></td>
+        <td><%= link_to 'Destroy', m_country, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New M Country', new_m_country_path %>

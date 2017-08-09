@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 <%= render "bloques/admin_section" %>
 <br>
 <div class="">
@@ -24,7 +23,7 @@
               Download:
               <%= link_to icon('file-code-o','CSV'), companies_path(format: "csv") %> |
               <%= link_to icon('file-excel-o','Excel'), companies_path(format: "xls") %>
-              <%= link_to icon('plus-circle','Add Job'), new_company_path , class: "btn-primary btn-sm" %>
+              <%= link_to icon('plus-circle','Add Company'), new_company_path , class: "btn-primary btn-sm" %>
             </div>
           </div>
         </div>
