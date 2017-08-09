@@ -1,6 +1,6 @@
 <div id="filterrific_results">
   <div>
-    <%= page_entries_info jobs %>
+    <%= page_entries_info employees %>
   </div>
 
   <table class="table table-bordered table-header table-stripered">
@@ -35,11 +35,11 @@
     </tbody>
   </table>
 </div>
-<%  @total = (page_entries_info jobs).split('<b>')
+<%  @total = (page_entries_info employees).split('<b>')
     if @total.size == 3
       @total = @total[2].split('</b>')
     end
 %>
 <% if @total[0].to_i >= 10 %>
-<%= paginate jobs %>
+<%= paginate employees %>
 <% end  %>

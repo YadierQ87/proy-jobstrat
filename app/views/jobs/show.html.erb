@@ -1,49 +1,60 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Editing Employee
+    </div>
+    <div class="panel-body">
+      <div class="row">
+<div class="col-lg-6">
   <strong>Title:</strong>
   <%= @job.title %>
-</p>
+</div>
 
-<p>
+<div class="col-lg-6">
   <strong>Country:</strong>
   <%= @job.country %>
-</p>
+</div>
 
-<p>
+<div class="col-lg-6">
   <strong>Company:</strong>
   <%= @job.company_id %>
-</p>
+</div>
 
-<p>
+<div class="col-lg-6">
   <strong>Publish date:</strong>
   <%= @job.publicate_at %>
-</p>
+</div>
 
-<p>
+<div class="col-lg-6">
   <strong>Active:</strong>
   <%= @job.active %>
-</p>
+</div>
 
-<p>
+<div class="col-lg-6">
   <strong>Description:</strong>
   <%= @job.description %>
-</p>
+</div>
 
-<p>
+<div class="col-lg-6">
   <strong>Picture:</strong>
   <%= @job.picture %>
-</p>
+</div>
 
-<p>
+<div class="col-lg-6">
   <strong>State:</strong>
   <%= @job.job_stat %>
-</p>
+</div>
 
-<p>
+<div class="col-lg-6">
   <strong>Category:</strong>
   <%= @job.category_id %>
-</p>
+</div>
 
 <%= link_to 'Edit', edit_job_path(@job) %> |
 <%= link_to 'Back', jobs_path %>
+      </div>
+    </div>
+  </div>
+</div>

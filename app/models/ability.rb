@@ -3,7 +3,9 @@ class Ability
     def initialize(user)
       user ||= User.new
       if user.role == "admin"
+        alias_action :create, :read, :update, :to => :cru
         can :manage, :all
+        can :cru , :all
       elsif user.role == "guess"
         can :read, Job
         can :read, Article

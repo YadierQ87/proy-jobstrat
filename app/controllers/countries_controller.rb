@@ -29,7 +29,7 @@ class CountriesController < ApplicationController
 
   # GET /countries/new
   def new
-    @country = Country.new
+    @country = Country.new(country_params)
   end
 
   # GET /countries/1/edit

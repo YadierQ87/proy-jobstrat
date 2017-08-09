@@ -1,49 +1,54 @@
 <p id="notice"><%= notice %></p>
-
-<p>
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+       Company
+    </div>
+    <div class="panel-body">
+      <div class="row">
+<div class="col-lg-6">
   <strong>Company:</strong>
   <%= @company.company %>
-</p>
+</div>
 
-<p>
+<div class="col-lg-6">
   <strong>Fullname:</strong>
   <%= @company.fullname %>
-</p>
+</div>
 
-<p>
+<div class="col-lg-6">
   <strong>Picture:</strong>
   <%= @company.picture %>
-</p>
+</div>
 
-<p>
+<div class="col-lg-6">
   <strong>Description:</strong>
   <%= @company.description %>
-</p>
+</div>
 
-<p>
+<div class="col-lg-6">
   <strong>Country:</strong>
   <%= @company.country %>
-</p>
+</div>
 
-<p>
+<div class="col-lg-6">
   <strong>Contact:</strong>
   <%= @company.contact %>
-</p>
+</div>
 
-<p>
+<div class="col-lg-6">
   <strong>Email:</strong>
   <%= @company.email %>
-</p>
+</div>
 
-<p>
+<div class="col-lg-6">
   <strong>Username:</strong>
   <%= @company.username %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @company.password %>
-</p>
+</div>
 
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>
+      </div>
+    </div>
+  </div>
+</div>

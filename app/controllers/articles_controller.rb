@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
+  before_action :new, only: :create
   load_and_authorize_resource
+  #load_and_authorize_resource except: [:create]
 
   def index
     @title = 'CRUD Articles'
@@ -65,5 +67,7 @@ class ArticlesController < ApplicationController
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.message
   end
+
+
 
 end

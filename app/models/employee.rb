@@ -39,11 +39,11 @@ class Employee < ApplicationRecord
     where(
         terms.map {
           or_clauses = [
-              "LOWER(employee.fullname) LIKE ?",
-              "LOWER(employee.contact) LIKE ?",
-              "LOWER(employee.email) LIKE ?",
-              "LOWER(employee.username) LIKE ?",
-              "LOWER(employee.country) LIKE ?",
+              "LOWER(employees.fullname) LIKE ?",
+              "LOWER(employees.contact) LIKE ?",
+              "LOWER(employees.email) LIKE ?",
+              "LOWER(employees.username) LIKE ?",
+              "LOWER(employees.country) LIKE ?",
           ].join(' OR ')
           "(#{ or_clauses })"
         }.join(' AND '),
@@ -56,9 +56,9 @@ class Employee < ApplicationRecord
     direction = (sort_option =~ /desc$/) ? 'desc' : 'asc'
     case sort_option.to_s
       when /^created_at_/
-        order("jobs.created_at #{ direction }")
+        order("employees.created_at #{ direction }")
       when /^name_/
-        order("LOWER(employee.fullname) #{ direction }, LOWER(employee.contact) #{ direction }, LOWER(employee.email) #{ direction }, LOWER(employee.username) #{ direction }, LOWER(employee.country) #{ direction }")
+        order("LOWER(employees.fullname) #{ direction }, LOWER(employees.contact) #{ direction }, LOWER(employees.email) #{ direction }, LOWER(employees.username) #{ direction }, LOWER(employees.country) #{ direction }")
       else
         raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")
     end
