@@ -1,7 +1,7 @@
 module CompaniesHelper
 
-  def paises_for_select
-    MCountry.pluck(:ncountry, :ncountry)
+  def companies_for_select
+    Company.pluck(:company, :id)
   end
 
 

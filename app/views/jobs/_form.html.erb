@@ -19,12 +19,12 @@
 
       <div class="field col-lg-6">
         <%= f.label :country %>
-        <%= f.text_field :country  , class: "my-form-st" %>
+        <%= f.select(:country, paises_id_for_select, { include_blank: 'Select Country' }) %>
       </div>
 
       <div class="field col-lg-6">
         <%= f.label :company_id %>
-        <%=  collection_select(:company_id, 0, Company.all, :id, :company  , class: "my-form-st") %>
+        <%= f.select(:company_id, companies_for_select, { include_blank: 'Select Company' }) %>
       </div>
 
       <div class="field col-lg-6">
@@ -54,7 +54,7 @@
 
       <div class="field col-lg-6">
         <%= f.label :category_id %>
-        <%=  collection_select(:category_id, 0, Category.all, :id, :category, class: "my-form-st") %>
+        <%= f.select(:category_id, categories_id_for_select, { include_blank: 'Select Category' }) %>
       </div>
 
       <div class="actions col-lg-6">
