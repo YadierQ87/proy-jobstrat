@@ -13,5 +13,6 @@ class CreateJobs < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+    add_attachment :jobs, :image
   end
 end

@@ -13,6 +13,7 @@ class CreateCompanies < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+    add_attachment :companies, :image
   end
 
   def down

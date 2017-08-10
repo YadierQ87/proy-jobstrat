@@ -1,5 +1,14 @@
-<h1>New Employee</h1>
-
+<br>
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      New Employee
+    </div>
+    <div class="panel-body">
+      <div class="row">
 <%= render 'form', employee: @employee %>
-
-<%= link_to 'Back', employees_path %>
+<%= link_to icon('chevron-left', 'Back') , employees_path , class: 'btn btn-sm btn-default'  %>
+      </div>
+    </div>
+  </div>
+</div>

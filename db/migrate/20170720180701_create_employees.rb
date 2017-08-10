@@ -12,8 +12,8 @@ class CreateEmployees < ActiveRecord::Migration[5.0]
       t.string :username
       t.string :password
       t.string :country
-
       t.timestamps
     end
+    add_attachment :employees, :image
   end
 end

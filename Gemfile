@@ -35,6 +35,9 @@ gem "kaminari"
 #gema para filtrado y paginado + sorting
 gem 'filterrific'
 
+#gema pARA subir archivos al server
+gem 'paperclip', '~> 5.1'
+
 group :assets do
   gem 'sass-rails',   '~> 5.0'
   gem 'coffee-rails', '~> 4.2'

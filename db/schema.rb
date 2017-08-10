@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170809031934) do
+ActiveRecord::Schema.define(version: 20170809202257) do
 
   create_table "aplicationjobs", force: :cascade do |t|
     t.integer  "job_id"
@@ -25,8 +25,12 @@ ActiveRecord::Schema.define(version: 20170809031934) do
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -45,8 +49,12 @@ ActiveRecord::Schema.define(version: 20170809031934) do
     t.string   "email"
     t.string   "username"
     t.string   "password"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "countries", force: :cascade do |t|
@@ -62,26 +70,34 @@ ActiveRecord::Schema.define(version: 20170809031934) do
     t.string   "contact"
     t.string   "email"
     t.string   "sex"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.text     "curriculum"
     t.string   "username"
     t.string   "password"
     t.string   "country"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
     t.string   "country"
     t.integer  "company_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.boolean  "active"
     t.text     "description"
     t.string   "picture"
     t.date     "publicate_at"
     t.string   "job_stat"
     t.integer  "category_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["category_id"], name: "index_jobs_on_category_id"
     t.index ["company_id"], name: "index_jobs_on_company_id"
   end

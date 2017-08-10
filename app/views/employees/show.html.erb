@@ -1,52 +1,50 @@
-<p>
-  <strong>Fullname:</strong>
-  <%= @employee.fullname %>
-</p>
+<br>
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+       Employee
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-lg-3">&nbsp;</div>
+        <div class="col-lg-6 post-box">
+          <h4>Datos Personales</h4>
+          <table class="table">
+            <tr>
+              <td rowspan="3" scope="row"><%= image_tag @employee.image.url(), :width=> 90, :height => 90 %></td>
+              <td scope="row">Candidato: <%= @employee.fullname %></td>
+            </tr>
+            <tr>
+              <td scope="row"><strong>Contact:</strong>      <%= @employee.contact %></td>
+            </tr>
+            <tr>
+              <td scope="row"><%= icon("user")%> <strong>Username:</strong>      <%= @employee.username %></td>
+            </tr>
+            <tr>
+              <td scope="row"><%= icon("male")%>  <strong>Sex:</strong>          <%= @employee.sex %></td>
+              <td><%= icon("globe")%> <%= @employee.country %></td>
+            </tr>
+            <tr>
+              <td scope="row"><label class="label label-primary label-lg">Laborales</label></td>
+            </tr>
+            <tr>
+              <td scope="row" colspan="2"><%= icon("envelope-o")%> <%= @employee.email %></td>
+            </tr>
+            <tr>
+              <td scope="row" colspan="2"><strong>Description:</strong>          <%= @employee.description %></td>
+            </tr>
+            <tr>
+              <td scope="row" colspan="2"><%= icon("book")%> <strong>Curriculum:</strong>  <%= @employee.curriculum %></td>
+            </tr>
 
-<p>
-  <strong>Picture:</strong>
-  <%= @employee.picture %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @employee.description %>
-</p>
-
-<p>
-  <strong>Contact:</strong>
-  <%= @employee.contact %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @employee.email %>
-</p>
-
-<p>
-  <strong>Sex:</strong>
-  <%= @employee.sex %>
-</p>
-
-<p>
-  <strong>Curriculum:</strong>
-  <%= @employee.curriculum %>
-</p>
-
-<p>
-  <strong>Username:</strong>
-  <%= @employee.username %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @employee.password %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @employee.country %>
-</p>
-
-<%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>
+            <tr>
+              <th scope="row" colspan="2"><%= link_to 'Edit', edit_employee_path(@employee), class:'btn btn-sm btn-primary' %>
+                <%= link_to 'Back', employees_path ,class:'btn btn-sm btn-primary' %></th>
+            </tr>
+          </table>
+        </div>
+        <div class="col-lg-3">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+</div>

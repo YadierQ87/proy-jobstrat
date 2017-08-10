@@ -21,7 +21,7 @@
     <% @employees.each do |employee| %>
         <tr>
           <td><%= employee.fullname %></td>
-          <td><%= employee.picture %></td>
+          <td><%= image_tag employee.image.url(), :width=> 90, :height => 90 %></td>
           <td><%= employee.contact %></td>
           <td><%= employee.email %></td>
           <td><%= employee.sex %></td>

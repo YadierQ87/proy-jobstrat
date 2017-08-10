@@ -37,7 +37,7 @@
 
 <div class="col-lg-6">
   <strong>Picture:</strong>
-  <%= @job.picture %>
+  <%= image_tag @job.image.url(), :width=> 90, :height => 90 %>
 </div>
 
 <div class="col-lg-6">

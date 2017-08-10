@@ -1,4 +1,4 @@
-<%= form_for(employee) do |f| %>
+<%= form_for(employee,method: :post,:multipart => true) do |f| %>
   <% if employee.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
@@ -17,49 +17,55 @@
   </div>
 
   <div class="field col-lg-6">
-    <%= f.label :picture %>
-    <%= f.text_field :picture %>
+      <%= f.label :image %>
+      <%= f.file_field :image %>
   </div>
 
-  <div class="field col-lg-6">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+
+
+    <div class="field col-lg-6">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
 
   <div class="field col-lg-6">
     <%= f.label :contact %>
     <%= f.text_field :contact %>
   </div>
 
-  <div class="field col-lg-6">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
+    <div class="field col-lg-6">
+      <%= f.label :country %>
+      <%= f.select(:country, paises_for_select, { include_blank: 'Seleccionar Pais' }) %>
+    </div>
 
   <div class="field col-lg-6">
     <%= f.label :sex %>
-    <%= f.text_field :sex %>
+    <%= f.select(:sex, ['MALE','FEMALE'],) %>
   </div>
+
+    <div class="field col-lg-6">
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </div>
+
+    <div class="field col-lg-6">
+      <%= f.label :password %>
+      <%= f.text_field :password %>
+    </div>
 
   <div class="field col-lg-6">
     <%= f.label :curriculum %>
     <%= f.text_area :curriculum %>
   </div>
 
-  <div class="field col-lg-6">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>
+    <div class="field col-lg-6">
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
 
-  <div class="field col-lg-6">
-    <%= f.label :password %>
-    <%= f.text_field :password %>
-  </div>
 
-  <div class="field col-lg-6">
-    <%= f.label :country %>
-    <%= f.select(:country, paises_for_select, { include_blank: 'Seleccionar Pais' }) %>
-  </div>
+
+
 
   <div class="actions">
     <%= f.submit %>

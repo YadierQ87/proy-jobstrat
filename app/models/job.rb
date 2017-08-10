@@ -1,7 +1,11 @@
 class Job < ApplicationRecord
   belongs_to :company ,optional: true ,required: false
   belongs_to :category ,optional: true ,required: false
-  #accepts_nested_attributes_for :category, allow_destroy: true
+  has_attached_file :image,  default_url: "/iamges"
+  validates_attachment_content_type :image, :content_type => %w(image/jpeg image/jpg image/png)
+  validates_attachment_presence :image
+
+
   default_scope -> {
     order(created_at: :desc)
   }

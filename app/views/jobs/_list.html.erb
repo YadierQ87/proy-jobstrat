@@ -7,13 +7,13 @@
     <thead>
     <tr>
       <th>title</th>
+      <th>picture</th>
+      <th>Status</th>
       <th>country</th>
       <th>company</th>
       <th>publicate_at</th>
       <th>active</th>
       <th>description</th>
-      <th>picture</th>
-      <th>Status</th>
       <th>Actions</th>
     </tr>
     </thead>
@@ -21,13 +21,13 @@
     <% jobs.each do |job| %>
         <tr>
           <td><%= job.title %></td>
+          <td><%= image_tag job.image.url(), :width=> 90, :height => 90 %></td>
+          <td><%= job.job_stat %></td>
           <td><%= job.country %></td>
           <td><%= job.company_id %></td>
           <td><%= job.publicate_at %></td>
           <td><%= job.active %></td>
           <td><%= job.description %></td>
-          <td><%= job.picture %></td>
-          <td><%= job.job_stat %></td>
           <td><%= link_to icon('eye'), job %>  <%= link_to icon('pencil-square-o'), edit_job_path(job) %>
             <%= link_to icon('trash-o'), job, method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
