@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :m_countries
   #devise_for :users
-  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+  #devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   #match '/auth/:provider/callback', :to => 'sessions#create', via: :get
   get 'home', to: 'home#index'
        root :to => "home#index"
@@ -27,7 +27,9 @@ Rails.application.routes.draw do
   resources :users
   resources :administration
 
-
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  get 'signout', to: 'sessions#destroy', as: 'signout'
 
 end
 
