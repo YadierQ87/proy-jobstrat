@@ -12,12 +12,12 @@
 
 <div class="col-lg-6">
   <strong>Country:</strong>
-  <%= @job.country %>
+  <%= @job.country.country %>
 </div>
 
 <div class="col-lg-6">
   <strong>Company:</strong>
-  <%= @job.company_id %>
+  <%= @job.company.company %>
 </div>
 
 <div class="col-lg-6">
@@ -47,7 +47,7 @@
 
 <div class="col-lg-6">
   <strong>Category:</strong>
-  <%= @job.category_id %>
+  <%= @job.category.category %>
 </div>
 
 <%= link_to 'Edit', edit_job_path(@job) %> |
