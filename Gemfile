@@ -26,8 +26,14 @@ gem "rails-jquery-autocomplete" , '~> 1'
 
 #para autenticacion
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 #roles para devise
 gem 'cancan'
+
+#gem para enviroment
+#gem 'dotenv-rails', :require => 'dotenv/rails-now'
 
 #para paginado
 gem "kaminari"
