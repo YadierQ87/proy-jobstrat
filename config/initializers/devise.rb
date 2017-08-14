@@ -252,7 +252,8 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   #config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET']
-  config.omniauth :facebook, "112983799366721", "feabf2919718545d6ea49a2ea6cb26cd", callback_url: "http://localhost:3000/users/auth/facebook/callback"
+  config.omniauth :facebook, "112983799366721", "feabf2919718545d6ea49a2ea6cb26cd",scope: 'email', info_fields: 'email,name',
+         :client_options => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

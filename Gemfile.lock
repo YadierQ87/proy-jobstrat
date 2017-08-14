@@ -116,6 +116,7 @@ GEM
     multi_json (1.12.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
+    net_http_ssl_fix (0.0.8)
     nio4r (1.2.1)
     nokogiri (1.7.0-x86-mingw32)
       mini_portile2 (~> 2.1.0)
@@ -228,7 +229,7 @@ DEPENDENCIES
   jquery-rails (~> 4)
   jquery-ui-rails (~> 6)
   kaminari
-  omniauth
+  net_http_ssl_fix
   omniauth-facebook
   paperclip (~> 5.1)
   puma (~> 3.0)
