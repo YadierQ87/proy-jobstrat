@@ -22,12 +22,19 @@
     <% end %>
 
 
+    <!--div id="user_nav">
+      <#% if current_user %>
+          Signed in as <strong><#%= current_user.name %></strong>!
+          <#%= link_to "Sign out", signout_path, id: "sign_out" %>
+      <#% else %>
+          <#%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+      <#% end %>
+    </div!-->
     <div id="user_nav">
-      <% if current_user %>
-          Signed in as <strong><%= current_user.name %></strong>!
-          <%= link_to "Sign out", signout_path, id: "sign_out" %>
+      <% unless current_user %>
+          <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, id: "sign_in" %>
       <% else %>
-          <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete ,id: "sign_out"  %>
       <% end %>
     </div>
 
