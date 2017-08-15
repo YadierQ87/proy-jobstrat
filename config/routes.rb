@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   get 'sessions/create'
 
+  get 'sessions/destroy'
+
+  get 'sessions/create'
+
   resources :m_countries
   #devise_for :users
   #match '/auth/:provider/callback', :to => 'sessions#create', via: :get
@@ -26,12 +30,12 @@ Rails.application.routes.draw do
   resources :users
   resources :administration
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  devise_scope :user do
-    get 'auth/:provider/callback', to: 'sessions#create'
-    get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
-    get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
-  end
+  #devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  get 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  get 'auth/failure', to: redirect('/'), via: [:get, :post]
+  get 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
 
 end

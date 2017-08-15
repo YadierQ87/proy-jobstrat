@@ -1,30 +1,66 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable,
+         :omniauthable, omniauth_providers: [:twitter, :facebook]
 
-  #devise :database_authenticatable, :registerable,
-         #:recoverable, :rememberable, :trackable, :validatable
-
-  devise :omniauthable, :omniauth_providers => [:facebook]
-
-
-  def self.new_with_session(params, session)
-    super.tap do |user|
-      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-        user.email = data["email"] if user.email.blank?
-      end
+  def self.from_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.name = auth.info.name
+      user.oauth_token = auth.credentials.token
+      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.save!
     end
   end
 
-  def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
-      user.name = auth.info.name   # assuming the user model has a name
-      user.image = auth.info.image # assuming the user model has an image
-      # If you are using confirmable and the provider(s) you use validate emails,
-      # uncomment the line below to skip the confirmation emails.
-      # user.skip_confirmation!
+  def self.find_for_oauth(auth, signed_in_resource = nil)
+    identity = Identity.find_for_oauth(auth)
+    user = signed_in_resource ? signed_in_resource : identity.user
+
+    if user.nil?
+      email = auth.info.email
+      user = User.find_by(email: email) if email
+
+      # Create the user if it's a new registration
+      if user.nil?
+        password = Devise.friendly_token[0,20]
+        if auth.provider == 'facebook'
+          user = User.new(
+              email: email ? email : "#{auth.uid}@change-me.com",
+              password: password,
+              password_confirmation: password
+          )
+        elsif auth.provider == 'twitter'
+          user = User.new(
+              email: "#{auth.uid}@change-me.com",
+              password: password,
+              password_confirmation: password
+          )
+        end
+      end
+      user.save!
+    end
+
+    if identity.user != user
+      identity.user = user
+      identity.save!
+    end
+
+    user
+  end
+
+  def email_verified?
+    if self.email
+      if self.email.split('@')[1] == 'change-me.com'
+        return false
+      else
+        return true
+      end
+    else
+      return false
     end
   end
 

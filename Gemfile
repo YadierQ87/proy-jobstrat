@@ -26,10 +26,16 @@ gem "rails-jquery-autocomplete" , '~> 1'
 
 #para autenticacion
 gem 'devise'
-#gem 'omniauth'
+
+gem 'omniauth'
+
+gem 'omniauth-twitter'
+
 gem 'omniauth-facebook'
 
+#openssl error
 gem 'net_http_ssl_fix'
+gem 'certified'
 
 #roles para devise
 gem 'cancan'

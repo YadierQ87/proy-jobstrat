@@ -84,7 +84,23 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :email)
+      accessible = [ :name, :email ] # extend with your own params
+      accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?
+      params.require(:user).permit(accessible)
     end
+
+  def finish_signup
+    if request.patch? && params[:user] # Revisa si el request es de tipo patch, es decir, llenaron el formulario y lo ingresaron
+      @user = User.find(params[:id])
+
+      if @user.update(user_params)
+        sign_in(@user, :bypass => true)
+        redirect_to root_path, notice: 'Hemos guardado tu email correctamente.'
+      else
+        @show_errors = true
+      end
+    end
+  end
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.message
