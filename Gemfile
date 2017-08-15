@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -26,12 +26,11 @@ gem "rails-jquery-autocomplete" , '~> 1'
 
 #para autenticacion
 gem 'devise'
-
 gem 'omniauth'
-
 gem 'omniauth-twitter'
+gem 'omniauth-facebook' # Facebook authentication
+gem "koala", "~> 1.10" # Facebook API
 
-gem 'omniauth-facebook'
 
 #openssl error
 gem 'net_http_ssl_fix'

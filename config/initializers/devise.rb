@@ -252,10 +252,8 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   #config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET']
-  Devise.setup do |config|
-      config.omniauth :facebook, "112983799366721", "feabf2919718545d6ea49a2ea6cb26cd"
-      config.omniauth :twitter, "KEY", "SECRET"
-  end
+  require "omniauth-facebook"
+  config.omniauth :facebook, '112983799366721','feabf2919718545d6ea49a2ea6cb26cd', :scope => "offline_access, email"
 
 
 

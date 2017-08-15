@@ -1,9 +1,28 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, omniauth_providers: [:twitter, :facebook]
+  has_many :authorizations
+  validates :email, presence: true
+
+  devise :omniauthable, :omniauth_providers => [:facebook]
+  attr_accessor :provider, :uid
+
+  def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    unless user
+      user = User.create(name:auth.extra.raw_info.name,
+                         provider:auth.provider,
+                         uid:auth.uid,
+                         email:auth.info.email,
+                         password:Devise.friendly_token[0,20]
+      )
+    end
+    user
+  end
+
+  def self.create_from_hash!(hash)
+    create(email: hash.info.email)
+  end
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
@@ -63,5 +82,13 @@ class User < ApplicationRecord
       return false
     end
   end
+
+
+  def self.koala(auth)
+    access_token = auth['token']
+    facebook = Koala::Facebook::API.new()
+    facebook.get_object("me?fields=name,picture")
+  end
+
 
 end
