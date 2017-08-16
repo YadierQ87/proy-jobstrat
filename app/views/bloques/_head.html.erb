@@ -1,4 +1,31 @@
 <!-- header -->
+<div class="header">
+  <div class="container">
+    <div class="w3l_header_left">
+      <ul>
+        <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <a href="mailto:info@example.com">info@example.com</a></li>
+        <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> +141 587 426 825</li>
+      </ul>
+    </div>
+    <div class="w3l_header_right">
+      <div class="w3ls-social-icons">
+        Sign in with
+        <%= link_to icon("facebook","Facebook") , "/auth/facebook", id: "sign_in" %>
+        <%= link_to icon("linkedin","Linkedin") , "/auth/linkedin", id: "sign_in" %>
+
+        <% if user_signed_in? %>
+           <span> Logged in as <strong><%= current_user.email %></strong>
+             <%= link_to icon("sign-out"), destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+           </span>
+        <% else %>
+            <%#= link_to icon("lock",'Login'), new_user_path, :class => 'navbar-link'  %>
+        <% end %>
+      </div>
+    </div>
+    <div class="clearfix"> </div>
+  </div>
+</div>
+
 <div class="header-bottom">
   <div class="container">
     <nav class="navbar navbar-default">
@@ -11,7 +38,7 @@
           <span class="icon-bar"></span>
         </button>
         <div class="logo">
-          <h1><%= link_to image_tag("logo-copia.png", class: "img-responsive img-centered"), "home" , class: "navbar-brand logo-new" %></h1>
+            <h1><a class="navbar-brand" href="#"><span>Job</span>Search</a></h1>
         </div>
       </div>
 
@@ -19,36 +46,28 @@
       <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
         <nav class="cl-effect-1" id="cl-effect-1">
           <ul class="nav navbar-nav">
-            <li><%= link_to 'Home', "/" , class: "active" %></li>
-            <li><%= link_to '(News)', "/information/index"  %></li>
+            <li><%= link_to 'Home', "/"  %></li>
+            <li><%= link_to 'News', "/information/index"  %></li>
             <li><%= link_to 'Jobs', "/information/jobs" %></li>
             <li><%= link_to 'Candidates', "/information/employees" %></li>
             <li><%= link_to 'Companies', "/information/companies" %></li>
-            <li><%= link_to 'Admin',  '/administration' %></li>
-            <li><a href="post-job.html"><%= icon ("pencil-square-o") %> Post A Job</a></li>
-            <li>
-              <div id="user-widget">
-                <% if current_user %>
-                    Welcome <strong><%= current_user.name %></strong>!
-                    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-                <% else %>
-                    <%= link_to icon("facebook","Sign in with Facebook") , "/auth/facebook", id: "sign_in" %>
-                <% end %>
-              </div>
-            </li>
-            <% if user_signed_in? %>
-             <li class="dropdown">
-               <a class="dropdown-toggle" data-toggle="dropdown" href="#">                     <%= icon ("user") %>  <%= icon ("caret-down") %>              </a>
-              <ul class="dropdown-menu dropdown-user">
-                <li> Logged in as <strong><%= current_user.email %></strong> </li>
-                <li><%= link_to icon("user",'Edit profile'), edit_user_registration_path, :class => 'navbar-link' %> </li>
-                <li><%= link_to icon("sign-out",'Logout'), destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+              </a>
+              <ul class="dropdown-menu lock">
+                <li> <%= link_to icon('pencil-square-o', 'Articles') , controller: 'articles'  %> </li>
+                <li> <%= link_to icon('briefcase', 'Jobs'),  controller: 'jobs'  %></li>
+                <li>  <%= link_to icon('users', 'Employees'), controller: 'employees'  %></li>
+                <li> <%= link_to icon('building', 'Companies'), controller: 'companies' %> </li>
+                <li> <%= link_to icon('check-circle-o', 'Categories'), controller: 'categories'   %></li>
+                <li> <%= link_to icon('globe', 'Countries'), controller: 'm_countries'   %> </li>
+                <li> <%= link_to icon('envelope-o', 'Messages'), controller: 'messageemployees'   %> </li>
+                <li> <%= link_to icon('file-text-o', 'Aplications'), controller: 'aplicationjobs'   %> </li>
+                <li> <%= link_to icon('user-secret', 'Users'), controller: 'users'   %></li>
               </ul>
               <!-- /.dropdown-user -->
-             </li>
-            <% else %>
-                  <li><%= link_to icon("lock",'Login'), new_user_session_path, :class => 'navbar-link'  %></li>
-            <% end %>
+            </li>
           </ul>
         </nav>
       </div>

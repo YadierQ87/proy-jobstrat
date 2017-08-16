@@ -217,8 +217,8 @@ th {
 /*-- //nav-effect --*/
 .header {
     padding: 1em 0;
-    margin: 15px 20px 15px 20px;
-    /*background: #111;*/
+    /*margin: 15px 20px 15px 20px;*/
+    background: #111;
 }
 .logo-new{
     margin-top: -15px;
@@ -263,10 +263,10 @@ th {
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     background: none;
     color: white !important;
-    color:#D71210;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color:#D71210;
+    color:#D71210 !important;
+    background: none !important;
 }
 .navbar-nav > li > a {
     font-size: 14px;
@@ -1128,7 +1128,7 @@ a.view:hover {
 .resp-tab-active, .resp-tab-item:hover {
     text-shadow: none;
     color: #FFFFFF;
-    background: #D71210;
+   /* background: #D71210;*/
 }
 .resp-tabs-container {
     padding: 0px;
@@ -1670,10 +1670,10 @@ h2.resp-accordion {
         margin: 1em 0 0;
     }
     .cl-effect-1 a::before {
-        margin-right: 10px;
+        margin-right: 2px;
     }
     .cl-effect-1 a::after {
-        margin-left: 10px;
+        margin-left: 2px;
     }
 }
 @media(max-width: 736px){
