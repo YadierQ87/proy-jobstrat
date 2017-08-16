@@ -26,6 +26,16 @@
             <li><%= link_to 'Companies', "/information/companies" %></li>
             <li><%= link_to 'Admin',  '/administration' %></li>
             <li><a href="post-job.html"><%= icon ("pencil-square-o") %> Post A Job</a></li>
+            <li>
+              <div id="user-widget">
+                <% if current_user %>
+                    Welcome <strong><%= current_user.name %></strong>!
+                    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+                <% else %>
+                    <%= link_to icon("facebook","Sign in with Facebook") , "/auth/facebook", id: "sign_in" %>
+                <% end %>
+              </div>
+            </li>
             <% if user_signed_in? %>
              <li class="dropdown">
                <a class="dropdown-toggle" data-toggle="dropdown" href="#">                     <%= icon ("user") %>  <%= icon ("caret-down") %>              </a>
@@ -37,7 +47,7 @@
               <!-- /.dropdown-user -->
              </li>
             <% else %>
-                  <li><%#= link_to icon("lock",'Login'), new_user_session_path, :class => 'navbar-link'  %></li>
+                  <li><%= link_to icon("lock",'Login'), new_user_session_path, :class => 'navbar-link'  %></li>
             <% end %>
           </ul>
         </nav>
