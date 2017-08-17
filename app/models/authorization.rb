@@ -1,4 +1,5 @@
 class Authorization < ApplicationRecord
+
   belongs_to :user
   validates :user_id, :uid, :provider, presence: true
   validates_uniqueness_of :uid, :scope => :provider
@@ -9,7 +10,7 @@ class Authorization < ApplicationRecord
 
   def self.create_from_hash(hash, user = nil)
     user ||= User.create_from_hash!(hash)
-    Authorization.create(:user => user, :uid => hash['uid'], :provider => hash['provider'])
+    Authorization.create(user: user, uid: hash['uid'], provider: hash['provider'])
   end
 
 end

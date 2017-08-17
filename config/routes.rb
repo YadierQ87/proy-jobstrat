@@ -30,14 +30,11 @@ Rails.application.routes.draw do
   resources :users
   resources :administration
 
-  devise_for :users
-  #, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  #match '/auth/:provider/callback' => 'authentications#create'
-
-
-
-
-
+  devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks' }
+  match '/auth/:provider/callback', :to => 'sessions#create', via: :get
+  get 'auth/failure', to: redirect('/')
+  get 'signout', to: 'sessions#destroy', as: 'signout'
+  resources :sessions, only: [:create, :destroy]
 
 end
 
