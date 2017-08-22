@@ -47,27 +47,11 @@
         <nav class="cl-effect-1" id="cl-effect-1">
           <ul class="nav navbar-nav">
             <li><%= link_to 'Home', "/"  %></li>
-            <li><%= link_to 'News', "/information/index"  %></li>
-            <li><%= link_to 'Jobs', "/information/jobs" %></li>
-            <li><%= link_to 'Candidates', "/information/employees" %></li>
-            <li><%= link_to 'Companies', "/information/companies" %></li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-              </a>
-              <ul class="dropdown-menu lock">
-                <li> <%= link_to icon('pencil-square-o', 'Articles') , controller: 'articles'  %> </li>
-                <li> <%= link_to icon('briefcase', 'Jobs'),  controller: 'jobs'  %></li>
-                <li>  <%= link_to icon('users', 'Employees'), controller: 'employees'  %></li>
-                <li> <%= link_to icon('building', 'Companies'), controller: 'companies' %> </li>
-                <li> <%= link_to icon('check-circle-o', 'Categories'), controller: 'categories'   %></li>
-                <li> <%= link_to icon('globe', 'Countries'), controller: 'm_countries'   %> </li>
-                <li> <%= link_to icon('envelope-o', 'Messages'), controller: 'messageemployees'   %> </li>
-                <li> <%= link_to icon('file-text-o', 'Aplications'), controller: 'aplicationjobs'   %> </li>
-                <li> <%= link_to icon('user-secret', 'Users'), controller: 'users'   %></li>
-              </ul>
-              <!-- /.dropdown-user -->
-            </li>
+            <li><%= link_to 'Jobs', "#div-jobs" %></li>
+            <li><%= link_to 'Categories', "#div-category" %></li>
+            <li><%= link_to 'News', "#div-news"  %></li>
+            <li><%= link_to 'Companies', "#div-companies" %></li>
+            <li><%= link_to 'Candidates', "#div-candidates" %></li>
           </ul>
         </nav>
       </div>

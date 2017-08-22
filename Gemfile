@@ -28,6 +28,7 @@ gem "rails-jquery-autocomplete" , '~> 1'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'omniauth-github'
 gem 'omniauth-facebook' # Facebook authentication
 gem "koala", "~> 1.10" # Facebook API
 

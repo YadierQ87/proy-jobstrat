@@ -22,15 +22,6 @@
         <% if alert %>
             <p class="alert alert-danger"><%= alert %></p>
         <% end %>
-        <h2 class="w3-abo">  Administration Panel | <span class="black">Section <%= @title %> </span></h2>
-        <div class="navbar">
-        <% if current_user %>
-            Signed in as <strong><%= current_user.name %></strong>!
-            <%= link_to "Sign out", signout_path, id: "sign_out" %>
-        <% else %>
-            <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-        <% end %>
-        </div>
         <%= yield %>
       </div>
     </div>
