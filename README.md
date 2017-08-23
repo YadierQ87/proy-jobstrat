@@ -31,4 +31,13 @@ Things you may want to cover:
 
 * Deployment instructions
 
+Run seed.rb for database examples then replace or edit the info for 
+better results with upload images for jobs, categories,employees and 
+companies.
+
+Only the administrator have the proper rights to manage the CRUD for 
+entities of database
+
+Use devise for autentication and omniauth for facebook github or gplus
+for the commons users that can be access to the site.
 * ...
