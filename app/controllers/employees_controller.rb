@@ -21,7 +21,6 @@ class EmployeesController < ApplicationController
       format.xls
     end
 
-
   end
 
   # GET /employees/1
