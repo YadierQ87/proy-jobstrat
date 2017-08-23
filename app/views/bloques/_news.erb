@@ -12,7 +12,7 @@
               </div>
               <div class="blog-item-text">
                 <div class="meta-tags">
-                  <span class="date"><%= icon("calendar")%> Dec 20, 2017</span>
+                  <span class="date"><%= icon("calendar")%> <%= article.created_at %></span>
                   <span class="comments"><%= icon("edit")%></span>
                 </div>
                 <%= link_to (article.title), article_path(article) %>

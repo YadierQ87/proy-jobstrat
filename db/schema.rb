@@ -118,7 +118,6 @@ ActiveRecord::Schema.define(version: 20170823210549) do
     t.datetime "updated_at",         null: false
     t.boolean  "active"
     t.text     "description"
-    t.string   "picture"
     t.date     "publicate_at"
     t.string   "job_stat"
     t.integer  "category_id"
@@ -127,6 +126,7 @@ ActiveRecord::Schema.define(version: 20170823210549) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "m_country_id"
+    t.string   "picture"
     t.index ["category_id"], name: "index_jobs_on_category_id"
     t.index ["company_id"], name: "index_jobs_on_company_id"
     t.index ["m_country_id"], name: "index_jobs_on_m_country_id"
