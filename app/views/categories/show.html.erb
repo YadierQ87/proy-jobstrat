@@ -2,7 +2,9 @@
 
 <p>
   <strong>Category:</strong>
+  <%= image_tag @category.image.url(), :width=> 90, :height => 90 %>
   <%= @category.category %>
+  <%= @category.description %>
 </p>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |

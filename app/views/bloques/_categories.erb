@@ -16,12 +16,12 @@
                   </figure>
                   <div class="item-body">
                     <h3 class="job-title ser-w4"><%= category.category %></h3>
-                    <div class="adderess"><i class="ti-location-pin"></i> <%= category.category %></div>
+                    <div class="adderess"><%= image_tag category.image.url(), :width=> 90, :height => 90 %></div>
                   </div>
                 </div>
               </div>
               <div class="item-foot">
-                <span># Jobs Publish</span>
+                <span><%= category.description %></span>
                 <div class="view-iocn">
                   <a href="#"><%= icon ("suitcase") %></a>
                 </div>
