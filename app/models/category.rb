@@ -1,6 +1,9 @@
 class Category < ApplicationRecord
+  has_attached_file :image,  default_url: ""
+  validates_attachment_content_type :image, :content_type => %w(image/jpeg image/jpg image/png)
+  validates_attachment_presence :image
+  attr_accessor :category ,:image ,:description
 
-  #attr_accessor :category
   def self.to_csv
     CSV.generate do |csv|
       csv << column_names
@@ -9,7 +12,6 @@ class Category < ApplicationRecord
       end
     end
   end
-
 
   #self.page = 5
   #gema filterrific para paginado y filtrado

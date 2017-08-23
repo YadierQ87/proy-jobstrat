@@ -2,10 +2,12 @@
   <div>
     <%= page_entries_info categories %>
   </div>
-  <table class="display" id="tbcategories" data-source="<%= categories_url(format: "json") %>">
+  <table class="table display" id="tbcategories" data-source="<%= categories_url(format: "json") %>">
     <thead>
     <tr>
       <th>Category</th>
+      <th>Image</th>
+      <th>Description</th>
       <th>Actions</th>
     </tr>
     </thead>
@@ -13,6 +15,8 @@
     <% @categories.each do |category| %>
         <tr>
           <td><%= category.category %> </td>
+          <td><%= image_tag category.image.url(), :width=> 90, :height => 90 %></td>
+          <td><%= category.description %> </td>
           <td> <%= link_to icon('eye'), category %> |
             <%= link_to icon('pencil-square-o'), edit_category_path(category) %> |
             <%= link_to icon('trash-o'), category, method: :delete, data: { confirm: 'Are you sure?' } %>

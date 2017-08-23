@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
-  #before_action :new, only: :create
+  before_action :new, only: :create
   #load_and_authorize_resource
-  #before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   # GET /categories
   # GET /categories.json
@@ -84,7 +84,7 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:category)
+      params.require(:category).permit(:category,:image)
     end
 
   rescue_from CanCan::AccessDenied do |exception|
