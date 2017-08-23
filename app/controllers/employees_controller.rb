@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  #before_action :new, only: :create
+  before_action :new, only: :create
   #load_and_authorize_resource
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
 
@@ -27,6 +27,7 @@ class EmployeesController < ApplicationController
   # GET /employees/1
   # GET /employees/1.json
   def show
+    @employee = Employee.find(params[:id])
   end
 
   # GET /employees/new
@@ -36,6 +37,7 @@ class EmployeesController < ApplicationController
 
   # GET /employees/1/edit
   def edit
+    @employee = Employee.find(params[:id])
   end
 
   # POST /employees

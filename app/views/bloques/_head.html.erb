@@ -13,13 +13,13 @@
         <%= link_to icon("facebook","Facebook") , "/auth/facebook", id: "sign_in" %>
         <%= link_to icon("linkedin","Linkedin") , "/auth/linkedin", id: "sign_in" %>
 
-        <% if user_signed_in? %>
-           <span> Logged in as <strong><%= current_user.email %></strong>
-             <%= link_to icon("sign-out"), destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+        <% #if user_signed_in? %>
+           <span> Logged in as <strong><%#= current_user.email %></strong>
+             <%#= link_to icon("sign-out"), destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
            </span>
-        <% else %>
+        <% #else %>
             <%#= link_to icon("lock",'Login'), new_user_path, :class => 'navbar-link'  %>
-        <% end %>
+        <% #end %>
       </div>
     </div>
     <div class="clearfix"> </div>

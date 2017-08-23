@@ -1,13 +1,18 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<div class="welcome-grids">
+  <div class="col-md-5 wel-grid1">
+      <div class="image-box">
+        <%= image_tag @article.image.url(), :width=> 250, :height => 230 %>
+      </div>
+  </div>
+  <div class="col-md-7 wel-grid">
+    <%= link_to icon("mail-reply","Back"), articles_path %>
+    <h4><%= @article.title %></h4>
+    <label><%= @article.created_at %></label>
+    <p><%= @article.text %></p>
+  </div>
+  <div class="clearfix"></div>
+</div>
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
-
-
-<%= link_to 'Back', articles_path %>
-<%= link_to 'Edit', edit_article_path(@article) %>
+<%#= link_to 'Edit', edit_article_path(@article) %>
+<div class="clearfix"></div>
+<hr>

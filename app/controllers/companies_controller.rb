@@ -93,7 +93,7 @@ class CompaniesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
-      params.require(:company).permit(:company, :fullname, :picture, :description, :country, :contact, :email, :username, :password)
+      params.require(:company).permit(:company, :fullname, :picture, :description, :country, :contact, :email, :username, :password,:image)
     end
 
   rescue_from CanCan::AccessDenied do |exception|

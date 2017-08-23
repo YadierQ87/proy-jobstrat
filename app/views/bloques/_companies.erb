@@ -9,11 +9,11 @@
           <div class="col-md-4">
             <div class="port-7 effect-2 ">
               <div class="image-box">
-                <%= image_tag "", :width=> 290, :height => 230 %>
+                <%= image_tag company.image.url(), :width=> 290, :height => 230 %>
               </div>
               <div class="text-desc">
                 <h4><%= company.company %></h4>
-                <p><%= company.description %></p>
+                <p><%= company.description[0...45] %></p>
               </div>
               <contacts> <%= company.fullname %></contacts>
               <contacts><%= icon("phone") %> <%= company.contact %></contacts>

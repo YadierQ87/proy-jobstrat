@@ -21,8 +21,8 @@
         <tr>
           <td><%= company.company %></td>
           <td><%= company.fullname %></td>
-          <td><%= company.country %></td>
-          <td><%= image_tag "", :width=> 90, :height => 90 %></td>
+          <td><%= company.m_country.ncountry %></td>
+          <td><%= image_tag company.image.url(), :width=> 90, :height => 90 %></td>
           <td><%= company.description %></td>
           <td><%= company.contact %></td>
           <td><%= company.email %></td>

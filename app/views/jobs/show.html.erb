@@ -1,58 +1,22 @@
 <div class="container">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      Editing Employee
-    </div>
-    <div class="panel-body">
-      <div class="row">
-<div class="col-lg-6">
-  <strong>Title:</strong>
-  <%= @job.title %>
-</div>
-
-<div class="col-lg-6">
-  <strong>Country:</strong>
-  <%= @job.country.country %>
-</div>
-
-<div class="col-lg-6">
-  <strong>Company:</strong>
-  <%= @job.company.company %>
-</div>
-
-<div class="col-lg-6">
-  <strong>Publish date:</strong>
-  <%= @job.publicate_at %>
-</div>
-
-<div class="col-lg-6">
-  <strong>Active:</strong>
-  <%= @job.active %>
-</div>
-
-<div class="col-lg-6">
-  <strong>Description:</strong>
-  <%= @job.description %>
-</div>
-
-<div class="col-lg-6">
-  <strong>Picture:</strong>
-  <%= image_tag @job.image.url(), :width=> 90, :height => 90 %>
-</div>
-
-<div class="col-lg-6">
-  <strong>State:</strong>
-  <%= @job.job_stat %>
-</div>
-
-<div class="col-lg-6">
-  <strong>Category:</strong>
-  <%= @job.category.category %>
-</div>
-
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+  <div class="col-md-4 popular-grid">
+    <div class="popular-text">
+      <h5><%= @job.title %></h5>
+      <div>
+        <strong>Country:</strong>  <%= @job.m_country.ncountry %>
+        <strong>Company:</strong>  <%= @job.company.company %>
+        <strong>Publish date:</strong>  <%= @job.publicate_at %>
+        <strong>Active:</strong>    <%= @job.active %>
+        <strong>Category:</strong>  <%= @job.category.category %>
+        <strong>State:</strong>     <%= @job.job_stat %>
+      </div>
+      <div class="detail-bottom">
+        <p><%= @job.description %></p>
       </div>
     </div>
+    <%= image_tag @job.image.url(), :width=> 290, :height => 290 %>
   </div>
+  <%= link_to 'Edit', edit_job_path(@job) %> | <%= link_to 'Back', jobs_path %>
 </div>
+<hr>
+

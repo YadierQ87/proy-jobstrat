@@ -6,6 +6,7 @@
   <table class="table table-bordered table-header table-stripered">
     <tr>
       <th>Title</th>
+      <th>Picture</th>
       <th>Text</th>
       <th>Actions</th>
     </tr>
@@ -13,6 +14,7 @@
     <% articles.dup.each do |article| %>
         <tr>
           <td><%= article.title %></td>
+          <td><%= image_tag article.image.url(), :width=> 90, :height => 90 %></td>
           <td><%= article.text %></td>
           <td>
             <%= link_to icon('eye'), article_path(article) %>

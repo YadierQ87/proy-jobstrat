@@ -1,14 +1,10 @@
 class Job < ApplicationRecord
   belongs_to :company ,optional: true ,required: false
+  belongs_to :m_country ,optional: true ,required: false
   belongs_to :category ,optional: true ,required: false
   has_attached_file :image,  default_url: ""
   validates_attachment_content_type :image, :content_type => %w(image/jpeg image/jpg image/png)
   validates_attachment_presence :image
-
-
-  default_scope -> {
-    order(created_at: :desc)
-  }
 
   #para descargar formato csv
   def self.to_csv
@@ -89,10 +85,6 @@ class Job < ApplicationRecord
         ['Registration date (oldest first)', 'created_at_asc'],
         ['Country (a-z)', 'country_name_asc']
     ]
-  end
-
-  def full_name
-    [last_name, first_name].compact.join(', ')
   end
 
   def decorated_created_at

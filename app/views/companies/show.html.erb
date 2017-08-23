@@ -18,7 +18,7 @@
 
 <div class="col-lg-6">
   <strong>Picture:</strong>
-  <%= @company.picture %>
+  <%= image_tag @company.image.url(), :width=> 90, :height => 90 %>
 </div>
 
 <div class="col-lg-6">

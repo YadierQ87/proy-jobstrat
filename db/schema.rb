@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170823014027) do
+ActiveRecord::Schema.define(version: 20170823210549) do
 
   create_table "aplicationjobs", force: :cascade do |t|
     t.integer  "job_id"
@@ -70,6 +70,8 @@ ActiveRecord::Schema.define(version: 20170823014027) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "m_country_id"
+    t.index ["m_country_id"], name: "index_companies_on_m_country_id"
   end
 
   create_table "countries", force: :cascade do |t|
@@ -95,6 +97,8 @@ ActiveRecord::Schema.define(version: 20170823014027) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "m_country_id"
+    t.index ["m_country_id"], name: "index_employees_on_m_country_id"
   end
 
   create_table "identities", force: :cascade do |t|
@@ -122,8 +126,10 @@ ActiveRecord::Schema.define(version: 20170823014027) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "m_country_id"
     t.index ["category_id"], name: "index_jobs_on_category_id"
     t.index ["company_id"], name: "index_jobs_on_company_id"
+    t.index ["m_country_id"], name: "index_jobs_on_m_country_id"
   end
 
   create_table "leads", force: :cascade do |t|

@@ -2,6 +2,7 @@ class JobsController < ApplicationController
   before_action :new, only: :create
   #load_and_authorize_resource
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+
   # GET /jobs
   # GET /jobs.json
   def index
@@ -25,6 +26,7 @@ class JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+    @job = Job.find(params[:id])
   end
 
   # GET /jobs/new
@@ -34,6 +36,7 @@ class JobsController < ApplicationController
 
   # GET /jobs/1/edit
   def edit
+    @job = Job.find(params[:id])
   end
 
   # POST /jobs
@@ -87,7 +90,7 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:title, :country, :company_id, :publish_date, :active, :description, :image, :state, :category_id)
+      params.require(:job).permit(:title, :m_country_id, :company_id, :publish_date, :active, :description, :image, :state, :category_id)
     end
 
   rescue_from CanCan::AccessDenied do |exception|

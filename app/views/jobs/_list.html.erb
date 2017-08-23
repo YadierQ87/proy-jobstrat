@@ -11,6 +11,7 @@
       <th>Status</th>
       <th>country</th>
       <th>company</th>
+      <th>categorie</th>
       <th>publicate_at</th>
       <th>active</th>
       <th>description</th>
@@ -23,8 +24,9 @@
           <td><%= job.title %></td>
           <td><%= image_tag job.image.url(), :width=> 90, :height => 90 %></td>
           <td><%= job.job_stat %></td>
-          <td><%= job.country %></td>
-          <td><%= job.company_id %></td>
+          <td><%= job.m_country.ncountry %></td>
+          <td><%= job.company.company %></td>
+          <td><%= job.category.category %></td>
           <td><%= job.publicate_at %></td>
           <td><%= job.active %></td>
           <td><%= job.description %></td>
