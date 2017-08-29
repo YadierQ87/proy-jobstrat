@@ -2,9 +2,9 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
       # GET /users/:id.:format
-      def show
+  def show
         # authorize! :read, @user
-      end
+  end
 
       # GET /users/:id/edit
   def edit
