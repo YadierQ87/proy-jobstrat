@@ -11,12 +11,18 @@
               <div class="featured-wrap">
                 <div class="featured-inner">
                   <figure class="item-thumb">
-                    <a class="hover-effect" href="job-page.html">
+                    <a class="hover-effect" href="#">
                     </a>
                   </figure>
                   <div class="item-body">
                     <h3 class="job-title ser-w4"><%= category.category %></h3>
-                    <div class="adderess"><%= image_tag category.image.url(), :width=> 90, :height => 90 %></div>
+                    <div class="adderess">
+                      <% if category.image.file? %>
+                          <%= image_tag category.image.url(), :width=> 90, :height => 90 %>
+                      <% else %>
+                          <%= image_tag("category/category-default.png", :width=> 90, :height => 90) %>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -9,7 +9,12 @@
               <div class="featured-wrap">
                 <div class="featured-inner">
                   <figure class="item-thumb">
-                      <%= image_tag employee.image.url(), :width=> 85, :height => 85 %>
+                    <% if employee.image.file? %>
+                        <%= image_tag employee.image.url(), :width=> 85, :height => 85 %>
+                    <% else %>
+                        <%= image_tag("blog/user2.png", :width=> 290, :height => 230) %>
+                    <% end %>
+
                   </figure>
                   <div class="item-body">
                     <h3 class="job-title"><a href="#"><%= employee.fullname %></a></h3>

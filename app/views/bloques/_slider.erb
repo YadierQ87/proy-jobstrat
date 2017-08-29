@@ -25,18 +25,7 @@
               </div>
               <div class="col-md-3 col-sm-6">
                 <div class="search-category-container">
-                  <%= select_tag :cantd, options_for_select(Category.all,:id, :company, "Todas Categorias") ,:onchange => "alert('loko')",class: "form-control" %>
-                    <select class="form-control">
-                      <option>Todas Categorias</option>
-                      <option>Finance</option>
-                      <option>IT & Engineering</option>
-                      <option>Education/Training</option>
-                      <option>Art/Design</option>
-                      <option>Sale/Markting</option>
-                      <option>Healthcare</option>
-                      <option>Science</option>
-                      <option>Food Services</option>
-                    </select>
+                      <%= collection_select(:company_id, "Todas Categorias", Category.all, "id", "category"  , class: "form-control",:onchange => "alert('loko')" ) %>
                 </div>
               </div>
               <div class="col-md-1 col-sm-6">

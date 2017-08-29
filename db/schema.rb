@@ -133,6 +133,16 @@ ActiveRecord::Schema.define(version: 20170829170637) do
     t.index ["employee_id"], name: "index_messageemployees_on_employee_id", using: :btree
   end
 
+  create_table "userfacebooks", id: :integer, force: :cascade do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",      null: false
     t.string   "encrypted_password",     default: "",      null: false
