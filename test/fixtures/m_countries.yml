@@ -1,7 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  ncountry: MyString
+  ncountry: CUBA
 
 two:
-  ncountry: MyString
+  ncountry: MEXICO
+
+three:
+  ncountry: USA

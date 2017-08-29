@@ -1,7 +1,7 @@
 <!-- Find Job Section Start -->
 <div class="" id="hotjobs">
   <div class="container">
-    <h2 class="w3-abo">Hot Jobs</h2>
+    <h2 class="w3-abo">Trabajos con m&aacute;s Demanda</h2>
     <div class="row">
       <div class="col-md-12">
         <!-- Listado de trabajos -->
@@ -9,7 +9,11 @@
            @jobs.each do |job| %>
             <div class="job-list">
               <div class="thumb">
-                <%= image_tag job.image.url(), :width=> 100, :height => 100 %>
+                <% if job.image.file? %>
+                    <%= image_tag job.image.url(), :width=> 100, :height => 100 %>
+                <% else %>
+                    <%= image_tag("jobs/job-default.png", :width=> 100, :height => 100) %>
+                <% end %>
               </div>
               <div class="job-list-content">
                 <h4><a href="#"><%= job.title %></a></h4><br>

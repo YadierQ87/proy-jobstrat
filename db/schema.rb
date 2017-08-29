@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 20170829170637) do
     t.datetime "image_updated_at"
   end
 
+  create_table "authorizations", id: :integer, force: :cascade do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string   "category"
     t.string   "description"

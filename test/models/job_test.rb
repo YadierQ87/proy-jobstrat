@@ -2,26 +2,16 @@ require 'test_helper'
 
 class JobTest < ActiveSupport::TestCase
 
-  require "rails_helper"
-  RSpec.describe PostsController, :type => :controller do
-    describe "GET #index" do
-      it "responds successfully with an HTTP 200 status code" do
-        get :index
-        expect(response).to be_success
-        expect(response).to have_http_status(200)
-      end
+  test "guardar_job_sin_description" do
+    job1 = Job.new({  title: Faker::Job.title,                       m_country_id: Random.rand(1...3),                       active: Faker::Boolean,
+                       category_id:Random.rand(1...8),                  company_id: Random.rand(1...20) })
+    assert job1.save
+  end
 
-      it "renders the index template" do
-        get :index
-        expect(response).to render_template("index")
-      end
-
-      it "loads all of the posts into @posts" do
-        post1, post2 = Post.create!, Post.create!
-        get :index
-
-        expect(assigns(:posts)).to match_array([post1, post2])
-      end
+  test "should_report_error" do
+    # some_undefined_variable is not defined elsewhere in the test case
+    assert_raises(NameError) do
+      some_undefined_variable
     end
   end
 

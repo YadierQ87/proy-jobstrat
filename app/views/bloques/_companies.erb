@@ -1,7 +1,7 @@
 <!-- Blogs -->
 <div class="special" id="blogs">
   <div class="container">
-    <h3 class="blo-w3">Latest Companies</h3>
+    <h3 class="blo-w3">Ultimas Empresas</h3>
     <div class="special-grids">
       <!-- listando las compannias -->
       <% @companies = Company.all
@@ -9,7 +9,11 @@
           <div class="col-md-4">
             <div class="port-7 effect-2 ">
               <div class="image-box">
-                <%= image_tag company.image.url(), :width=> 290, :height => 230 %>
+                <% if company.image.file? %>
+                    <%= image_tag company.image.url(), :width=> 290, :height => 230 %>
+                <% else %>
+                    <%= image_tag("category/category-default.png", :width=> 290, :height => 230) %>
+                <% end %>
               </div>
               <div class="text-desc">
                 <h4><%= company.company %></h4>

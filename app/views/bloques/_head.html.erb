@@ -9,17 +9,7 @@
     </div>
     <div class="w3l_header_right">
       <div class="w3ls-social-icons">
-        Sign in with
-        <%= link_to icon("facebook","Facebook") , "/auth/facebook", id: "sign_in" %>
-        <%= link_to icon("linkedin","Linkedin") , "/auth/linkedin", id: "sign_in" %>
-
-        <% #if user_signed_in? %>
-           <span> Logged in as <strong><%#= current_user.email %></strong>
-             <%#= link_to icon("sign-out"), destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-           </span>
-        <% #else %>
-            <%#= link_to icon("lock",'Login'), new_user_path, :class => 'navbar-link'  %>
-        <% #end %>
+        <%= link_to icon("lock",'Acceder'), "login_path", :class => 'navbar-link'  %>  <%= link_to icon("check-square-o",'Registrarse'), "login_path", :class => 'navbar-link'  %>
       </div>
     </div>
     <div class="clearfix"> </div>
@@ -46,12 +36,12 @@
       <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
         <nav class="cl-effect-1" id="cl-effect-1">
           <ul class="nav navbar-nav">
-            <li><%= link_to 'Home', "/"  %></li>
-            <li><%= link_to 'Jobs', "#div-jobs" %></li>
-            <li><%= link_to 'Categories', "#div-category" %></li>
-            <li><%= link_to 'News', "#div-news"  %></li>
-            <li><%= link_to 'Companies', "#div-companies" %></li>
-            <li><%= link_to 'Candidates', "#div-candidates" %></li>
+            <li><%= link_to 'Inicio', "/"  %></li>
+            <li><%= link_to 'Trabajos', "#div-jobs" %></li>
+            <li><%= link_to 'Categorias', "#div-category" %></li>
+            <li><%= link_to 'Noticias', "#div-news"  %></li>
+            <li><%= link_to 'Empresas', "#div-companies" %></li>
+            <li><%= link_to 'Candidatos', "#div-candidates" %></li>
           </ul>
         </nav>
       </div>

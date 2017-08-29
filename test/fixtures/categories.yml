@@ -1,7 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  category: MyString
-
-two:
-  category: MyString
+a:
+  category: Finances/Economics
+b:
+  category: Sale/Markting
+c:
+  category: Education/Training
+d:
+  category: Technologies
+e:
+  category: Art/Design
+f:
+  category: Healthcare
+g:
+  category: Science
+h:
+  category: Food Services
