@@ -37,20 +37,12 @@
         <%= f.select(:company_id, companies_for_select, { include_blank: 'Select Company' }) %>
       </div>
 
-      <div class="field col-lg-6">
-        <%= f.label :publicate_at %>
-        <%= f.datetime_select :publicate_at  , class: "my-form-st" %>
-      </div>
 
       <div class="field col-lg-6">
         <%= f.label :active %>
         <%= f.check_box :active  , class: "my-form-st" %>
       </div>
 
-      <div class="field col-lg-6">
-        <%= f.label :job_stat %>
-        <%= f.select(:job_stat, ['Publish','Taken','Close'],) %>
-      </div>
 
       <div class="field col-lg-12">
         <%= f.label :description %>

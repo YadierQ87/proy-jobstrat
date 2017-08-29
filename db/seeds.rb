@@ -76,9 +76,9 @@ MCountry.create!(
 
 #creando las categorias
 #Category.destroy_all
-Category.create(category:"Finances/Economics",image: File.new("image/to/path.jpg"))
-Category.create(category:"Sale/Markting",image: File.new("image/to/path.jpg"))
-Category.create(category:"Education/Training",image: File.new("image/to/path.jpg"))
+Category.create(category:"Finances/Economics",image: File.new("images/category/icon-7.png"))
+Category.create(category:"Sale/Markting",image: File.new("images/category/icon-7.png"))
+Category.create(category:"Education/Training",image: File.new("icon-7.png"))
 Category.create(category:"Technologies",image: File.new("image/to/path.jpg"))
 Category.create(category:"Art/Design",image: File.new("image/to/path.jpg"))
 Category.create(category:"Healthcare",image: File.new("image/to/path.jpg"))
