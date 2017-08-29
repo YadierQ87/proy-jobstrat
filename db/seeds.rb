@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #semilla de paises
+MCountry.destroy_all
 MCountry.create!(
     [{ncountry:"Afghanistan"},     {ncountry:"Albania"},     {ncountry:"Algeria"},
      {ncountry:"Andorra"},     {ncountry:"Angola"},     {ncountry:"Antigua and Barbuda"},
@@ -75,15 +76,15 @@ MCountry.create!(
      {ncountry:"Zimbabwe"}])
 
 #creando las categorias
-#Category.destroy_all
-Category.create(category:"Finances/Economics",image: File.new("images/category/icon-7.png"))
-Category.create(category:"Sale/Markting",image: File.new("images/category/icon-7.png"))
-Category.create(category:"Education/Training",image: File.new("icon-7.png"))
-Category.create(category:"Technologies",image: File.new("image/to/path.jpg"))
-Category.create(category:"Art/Design",image: File.new("image/to/path.jpg"))
-Category.create(category:"Healthcare",image: File.new("image/to/path.jpg"))
-Category.create(category:"Science",image: File.new("image/to/path.jpg"))
-Category.create(category:"Food Services",image: File.new("image/to/path.jpg"))
+Category.destroy_all
+Category.create(category:"Finances/Economics")
+Category.create(category:"Sale/Markting")
+Category.create(category:"Education/Training")
+Category.create(category:"Technologies")
+Category.create(category:"Art/Design")
+Category.create(category:"Healthcare")
+Category.create(category:"Science")
+Category.create(category:"Food Services")
 p "Created #{Category.count} Category"
 
 #creando articles
@@ -101,7 +102,7 @@ p "Created #{Article.count} Article"
       company: Faker::Company.name,
       fullname: Faker::Company.bs,
       description: Faker::Lorem.paragraph,
-      country_id: Random.rand(1...100),
+      m_country_id: Random.rand(1...100),
       contact: Faker::PhoneNumber.phone_number,
       email: Faker::Internet.email ,
       username: Faker::Internet.user_name,
@@ -118,12 +119,10 @@ p "Created #{Company.count} Company"
   timer.strftime("%d/%m/%Y %H:%M:%S")
   Job.create!(
       title: Faker::Job.title,
-      country_id: Random.rand(1...100),
+      m_country_id: Random.rand(1...100),
       active: Faker::Boolean,
       description: Faker::Lorem.paragraph,
-      picture: Faker::Job.field,
-      job_stat: Faker::Job.key_skill,
-      publicate_at: timer,
+      #job_stat: Faker::Job.key_skill,
       category_id:Random.rand(1...8),
       company_id: Random.rand(1...20),
   )
@@ -142,7 +141,7 @@ p "Created #{Job.count} Jobs"
       contact: Faker::PhoneNumber.phone_number,
       email: Faker::Internet.email,
       sex: "Male",
-      country_id: Random.rand(1...100),
+      m_country_id: Random.rand(1...100),
       username: Faker::Internet.user_name,
       password: Faker::Internet.password(min_length = 8, max_length = 16, mix_case = true, special_chars = false),
       curriculum: Faker::Lorem.paragraph

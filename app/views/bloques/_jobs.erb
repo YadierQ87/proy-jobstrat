@@ -12,8 +12,7 @@
                 <%= image_tag job.image.url(), :width=> 100, :height => 100 %>
               </div>
               <div class="job-list-content">
-                <h4><a href="#"><%= job.title %></a><span class="full-time"><%= job.job_stat %></span></h4><br>
-                <span><%= job.publicate_at %></span><br>
+                <h4><a href="#"><%= job.title %></a></h4><br>
                 <h3><%= job.company.company %> </h3><br>
                 <p><%= job.description[0...200] %></p>
                 <div class="job-tag">

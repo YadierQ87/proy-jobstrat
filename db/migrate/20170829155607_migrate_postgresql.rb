@@ -45,6 +45,7 @@ class MigratePostgresql < ActiveRecord::Migration[5.0]
         t.boolean :active
         t.text :description
         t.string :state
+        t.string :job_stat
         t.references :category, foreign_key: true
         t.timestamps
       end

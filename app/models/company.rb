@@ -2,7 +2,7 @@ class Company < ApplicationRecord
   belongs_to :m_country ,optional: true ,required: false
   has_attached_file :image,  default_url: ""
   validates_attachment_content_type :image, :content_type => %w(image/jpeg image/jpg image/png)
-  validates_attachment_presence :image
+  #validates_attachment_presence :image
 
   #para descargar formato csv
   def self.to_csv
