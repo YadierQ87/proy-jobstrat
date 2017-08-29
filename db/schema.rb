@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170823210549) do
+ActiveRecord::Schema.define(version: 20170829161848) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "aplicationjobs", force: :cascade do |t|
     t.integer  "job_id"
@@ -18,8 +21,8 @@ ActiveRecord::Schema.define(version: 20170823210549) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["employee_id"], name: "index_aplicationjobs_on_employee_id"
-    t.index ["job_id"], name: "index_aplicationjobs_on_job_id"
+    t.index ["employee_id"], name: "index_aplicationjobs_on_employee_id", using: :btree
+    t.index ["job_id"], name: "index_aplicationjobs_on_job_id", using: :btree
   end
 
   create_table "articles", force: :cascade do |t|
@@ -33,21 +36,11 @@ ActiveRecord::Schema.define(version: 20170823210549) do
     t.datetime "image_updated_at"
   end
 
-  create_table "authorizations", force: :cascade do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_authorizations_on_user_id"
-  end
-
   create_table "categories", force: :cascade do |t|
     t.string   "category"
+    t.string   "description"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.string   "description"
-    t.         "image"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -70,14 +63,6 @@ ActiveRecord::Schema.define(version: 20170823210549) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.integer  "m_country_id"
-    t.index ["m_country_id"], name: "index_companies_on_m_country_id"
-  end
-
-  create_table "countries", force: :cascade do |t|
-    t.string   "country"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "employees", force: :cascade do |t|
@@ -92,51 +77,31 @@ ActiveRecord::Schema.define(version: 20170823210549) do
     t.text     "curriculum"
     t.string   "username"
     t.string   "password"
-    t.string   "country"
+    t.integer  "m_country_id"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.integer  "m_country_id"
-    t.index ["m_country_id"], name: "index_employees_on_m_country_id"
-  end
-
-  create_table "identities", force: :cascade do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_identities_on_user_id"
+    t.index ["m_country_id"], name: "index_employees_on_m_country_id", using: :btree
   end
 
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
-    t.string   "country"
+    t.integer  "m_country_id"
     t.integer  "company_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.boolean  "active"
     t.text     "description"
-    t.date     "publicate_at"
-    t.string   "job_stat"
+    t.string   "state"
     t.integer  "category_id"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.integer  "m_country_id"
-    t.string   "picture"
-    t.index ["category_id"], name: "index_jobs_on_category_id"
-    t.index ["company_id"], name: "index_jobs_on_company_id"
-    t.index ["m_country_id"], name: "index_jobs_on_m_country_id"
-  end
-
-  create_table "leads", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_jobs_on_category_id", using: :btree
+    t.index ["company_id"], name: "index_jobs_on_company_id", using: :btree
+    t.index ["m_country_id"], name: "index_jobs_on_m_country_id", using: :btree
   end
 
   create_table "m_countries", force: :cascade do |t|
@@ -151,18 +116,8 @@ ActiveRecord::Schema.define(version: 20170823210549) do
     t.text     "mail"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["company_id"], name: "index_messageemployees_on_company_id"
-    t.index ["employee_id"], name: "index_messageemployees_on_employee_id"
-  end
-
-  create_table "userfacebooks", force: :cascade do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.index ["company_id"], name: "index_messageemployees_on_company_id", using: :btree
+    t.index ["employee_id"], name: "index_messageemployees_on_employee_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -179,13 +134,16 @@ ActiveRecord::Schema.define(version: 20170823210549) do
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
     t.string   "role",                   default: "guess"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["provider"], name: "index_users_on_provider"
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["uid"], name: "index_users_on_uid"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "aplicationjobs", "employees"
+  add_foreign_key "aplicationjobs", "jobs"
+  add_foreign_key "employees", "m_countries"
+  add_foreign_key "jobs", "categories"
+  add_foreign_key "jobs", "companies"
+  add_foreign_key "jobs", "m_countries"
+  add_foreign_key "messageemployees", "companies"
+  add_foreign_key "messageemployees", "employees"
 end
