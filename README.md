@@ -18,12 +18,18 @@ Things you may want to cover:
 * Rails version:    Rails 5.0.1
 
 * System dependencies
+run $bundle install
 
-* Configuration
+* Configuration    
 
 * Database creation
+run  $rake db:create
 
 * Database initialization
+run $rake db:migrate
+
+* Database Population
+run $rake db:seed
 
 * How to run the test suite
 
