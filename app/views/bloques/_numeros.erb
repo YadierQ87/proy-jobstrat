@@ -1,0 +1,50 @@
+<section id="counter">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="counting">
+          <div class="icon">
+            <i class="ti-briefcase"></i>
+          </div>
+          <div class="desc">
+            <h2>Trabajos Publicados</h2>
+            <h1 class="counter"><%= Job.count %></h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="counting">
+          <div class="icon">
+            <i class="ti-user"></i>
+          </div>
+          <div class="desc">
+            <h2>Candidatos</h2>
+            <h1 class="counter"><%= Employee.count %></h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="counting">
+          <div class="icon">
+            <i class="ti-write"></i>
+          </div>
+          <div class="desc">
+            <h2>Articulos</h2>
+            <h1 class="counter"><%= Article.count %></h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="counting">
+          <div class="icon">
+            <i class="ti-heart"></i>
+          </div>
+          <div class="desc">
+            <h2>Empresas</h2>
+            <h1 class="counter"><%= Company.count %></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
