@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'c4c637771f1c7816c33f954778bd9e716c360de2aa1cc541b90869fed3153515764bfa003546992c3e8fa3951c462ee39f1e0a55840f5869a112e98b77511d0e'
+  # config.secret_key = 'a838a85463abc1b92134a18e70333debf40fcd5952d873a28e29366e554e2651a60281fb9432b52183c46bf54d13878a0463be0b493ffcff2aca2a32720f1d60'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -108,7 +108,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '7343e3a7ec7f466a923359bb87f28fb16f6f56a05445b75ae8aab940fe2e623c97f0d17bb51cd1f28ff3508c9c0eed63ad5c4ba25d2c7907a8da49de8b4804fd'
+  # config.pepper = 'e489d57795a41f68ec170590c7ba77dec43a62d61af7e85dad356679e294bb155182b02ba791ad5f8f1864b71eef372f5ec650620551002fa7f7c3feb9855236'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -251,22 +251,6 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  #config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET']
-
-  #config.omniauth :facebook, '112983799366721','feabf2919718545d6ea49a2ea6cb26cd'
-  #config.omniauth :github,  "0a6e8e2cbf888a5caa07", "af69ef508ee1665a05a0a62dd3c2165176074451"
-  #config.omniauth :twitter, "KEY", "SECRET"
-  #config.omniauth :linked_in, "KEY", "SECRET"
-
-
-
-  #config.omniauth :facebook, "112983799366721", "feabf2919718545d6ea49a2ea6cb26cd",
-    #              scope: 'email,user_birthday,public_profile',
-      #            info_fields: 'first_name,last_name,gender,birthday',
-      #            :client_options => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'},
-         #         callback_url:"http://localhost:3000/auth/facebook/callback"
-
-
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
@@ -290,7 +274,4 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
-
-
-
 end
