@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  devise_for :users
   resources :employees
   resources :m_countries
   resources :messageemployees
@@ -10,7 +9,6 @@ Rails.application.routes.draw do
   resources :companies
   resources :jobs
   resources :articles
-  resources :users
 
   #devise_for :users
   #match '/auth/:provider/callback', :to => 'sessions#create', via: :get
