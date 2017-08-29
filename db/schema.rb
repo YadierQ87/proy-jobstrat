@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 20170829170637) do
     t.boolean  "active"
     t.text     "description"
     t.string   "state"
+    t.string   "job_stat"
     t.integer  "category_id"
     t.string   "image_file_name"
     t.string   "image_content_type"

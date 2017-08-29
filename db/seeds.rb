@@ -74,6 +74,7 @@ MCountry.create!(
      {ncountry:"Vanuatu"},     {ncountry:"Vatican City"},     {ncountry:"Venezuela"},
      {ncountry:"Vietnam"},     {ncountry:"Yemen"},     {ncountry:"Zambia"},
      {ncountry:"Zimbabwe"}])
+p "Created #{MCountry.count} Countries"
 
 #creando las categorias
 Category.destroy_all
@@ -147,4 +148,5 @@ p "Created #{Job.count} Jobs"
       curriculum: Faker::Lorem.paragraph
   )
 end
+p "Created #{Employee.count} Employees"
 
