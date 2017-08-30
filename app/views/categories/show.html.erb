@@ -7,7 +7,7 @@
   <% end %>
   <span class="panel"> <%= @category.category %> </span>
   <span class="panel"> <%= @category.description %> </span>
-  <%= link_to 'Listado Categorias', categories_path ,:class=>"btn btn-default btn-xs" %>
+  <%= link_to icon("list-alt",'Categorias'), categories_path ,:class=>"btn btn-default btn-xs" %>
   <% if can? :edit, @category %>
       <%= link_to icon("pencil-square-o",'Edit'), edit_category_path(@category),:class=>"btn btn-default btn-xs" %>
   <% end %>

@@ -12,16 +12,17 @@
         </div>
       </div>
 
-      <div class="text-box col-md-8">
-        <h5>
-          <%= @job.title %>
+      <div class="col-md-8">
+        <h4>
+          <strong><%= @job.title %></strong>
+          <%= link_to icon("list-alt",'Trabajos'), jobs_path ,:class=>"btn btn-default btn-xs" %>
           <% if can? :edit, @job %>
-              <%= link_to icon("pencil-square-o",'Edit'), edit_job_path(@job),:class=>"btn btn-default btn-xs" %>
+              <%= link_to icon("pencil-square-o",'Editar'), edit_job_path(@job),:class=>"btn btn-default btn-xs" %>
           <% end %>
           <% if can? :delete, @job %>
               <%= link_to icon('trash-o','Eliminar'), @job, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-default btn-xs" %>
           <% end %>
-        </h5>
+        </h4>
         <hr>
         <div class="popular-jobs" style="background: #A8A7A7">
           <a href="#"><%= icon ("map-marker") %> <%= @job.m_country.ncountry %></a>

@@ -15,7 +15,9 @@
                     </a>
                   </figure>
                   <div class="item-body">
-                    <h3 class="job-title ser-w4"><%= category.category %></h3>
+                    <h3 class="job-title ser-w4">
+                      <%= link_to category.category, category  %>
+                    </h3>
                     <div class="adderess">
                       <% if category.image.file? %>
                           <%= image_tag category.image.url(), :width=> 90, :height => 90 %>
@@ -29,7 +31,7 @@
               <div class="item-foot">
                 <span><%= category.description %></span>
                 <div class="view-iocn">
-                  <a href="#"><%= icon ("suitcase") %></a>
+                  <%= link_to icon("suitcase"), category  %>
                 </div>
               </div>
             </div>
