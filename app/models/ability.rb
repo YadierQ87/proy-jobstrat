@@ -1,30 +1,35 @@
 class Ability
-    include CanCan::Ability
-    def initialize(user)
-      user ||= User.new
-      if user.role == "admin"
-        alias_action :create, :read, :update, :to => :cru
-        can :manage, :all
-        can :cru , :all
-      elsif user.role == "guess"
-        can :read, Job
-        can :read, Article
-        can :read, Lead
-        can :read, Company
-      elsif user.role == "candidate"
-        alias_action :create, :read, :update, :to => :cru
-        can :cru, Job
-        can :cru, Article
-        can :cru, Lead
-      elsif user.role == "company"
-         alias_action :create, :read, :update, :to => :cru
-         can :cru, Job
-         can :cru, Article
-         can :cru, Lead
-         can :cru, Messageemployee
-         can :cru, Company
-      end
+  include CanCan::Ability
+
+  def initialize(user)
+    user ||= User.new
+    if user.role == "admin"
+      can :manage, :all
     end
+    if user.role == "seller"
+      alias_action :create, :read, :update, :to => :cru
+      can :cru, Sale
+      can :cru, SaleDetail
+      can :cru, Client
+    end
+    if user.role? :guess,:candidato,:compannia
+      can :read, Category
+      can :read, Job
+      can :read, Article
+      can :read, Company
+      can :read, Employee
+    end
+    if user.role? :candidato
+      can :edit, Employee
+      can :create, Job
+      can :edit, Job
+    end
+    if user.role? :compannia
+      can :edit, Company
+      can :create, Job
+      can :edit, Job
+    end
+
+  end
+
 end
-
-
