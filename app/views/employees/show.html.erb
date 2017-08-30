@@ -4,45 +4,44 @@
       Candidato: <%= @employee.fullname %>
     </div>
     <div class="panel-body">
-      <div class="row box">
-
+      <div class="row">
         <div class="col-lg-12 post-box">
           <h4>Datos Personales</h4>
-          <table class="table">
-            <tr>
-              <td rowspan="3" scope="row"><%= image_tag @employee.image.url(), :width=> 90, :height => 90 %></td>
-              <td scope="row"></td>
-            </tr>
-            <tr>
-              <td scope="row"><strong>Contact:</strong>      <%= @employee.contact %></td>
-            </tr>
-            <tr>
-              <td scope="row"><%= icon("user")%> <strong>Username:</strong>      <%= @employee.username %></td>
-            </tr>
-            <tr>
-              <td scope="row"><%= icon("male")%>  <strong>Sex:</strong>          <%= @employee.sex %></td>
-              <td><%= icon("globe")%> <%= @employee.m_country_id %></td>
-            </tr>
-            <tr>
-              <td scope="row"><label class="label label-primary label-lg">Laborales</label></td>
-            </tr>
-            <tr>
-              <td scope="row" colspan="2"><%= icon("envelope-o")%> <%= @employee.email %></td>
-            </tr>
-            <tr>
-              <td scope="row" colspan="2"><strong>Description:</strong>          <%= @employee.description %></td>
-            </tr>
-            <tr>
-              <td scope="row" colspan="2"><%= icon("book")%> <strong>Curriculum:</strong>  <%= @employee.curriculum %></td>
-            </tr>
+          <% if can? :edit, @employee %>
+              <%= link_to icon("pencil-square-o",'Edit'), edit_employee_path(@employee),:class=>"btn btn-default btn-xs" %>
+          <% end %>
+          <% if can? :delete, @employee %>
+              <%= link_to icon('trash-o','Eliminar'), @employee, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-default btn-xs" %>
+          <% end %>
+          <hr>
+          <div class="col-lg-12">
+            <div class="img-member col-md-3">
+              <% if @employee.image.file? %>
+                  <%= image_tag @employee.image.url(), :width=> 150, :height => 150 %>
+              <% else %>
+                  <%= image_tag("blog/user2.png", :width=> 150, :height => 150) %>
+              <% end %>
+            </div>
+            <div class="col-md-3">
+              <div class="col-md-12 panel"><%= icon("phone")%> <strong>Contact:</strong><%= @employee.contact %></div>
+              <div class="col-md-12 panel"><%= icon("user")%> <strong>Username:</strong><%= @employee.username %></div>
+              <div class="col-md-12 panel"><%= icon("male")%>  <strong>Sexo:</strong><%= @employee.sex %></div>
+              <div class="col-md-12 panel"><%= icon("globe")%> <strong>Pais:</strong> <%= @employee.m_country_id %></div>
+              <div class="col-md-12 panel"><%= icon("envelope-o")%> <strong>Correo:</strong> <%= @employee.email %></div>
+            </div>
+            <div class="col-md-6">
+              <h4 class="section-title"> Description</h4>
+              <%= @employee.description %>
+            </div>
 
-            <tr>
-              <th scope="row" colspan="2"><%= link_to 'Edit', edit_employee_path(@employee), class:'btn btn-sm btn-primary' %>
-                <%= link_to 'Back', employees_path ,class:'btn btn-sm btn-primary' %></th>
-            </tr>
-          </table>
+          </div>
+          <hr>
+          <div class="col-lg-12">
+            <h2 class="section-title"> Curriculum Vitae </h2>
+             <p>  <%= @employee.curriculum %></p>
+          </div>
+
         </div>
-
       </div>
     </div>
   </div>

@@ -1,11 +1,20 @@
-<p id="notice"><%= notice %></p>
-
-<p>
+<div class="container">
   <strong>Category:</strong>
-  <%= image_tag @category.image.url(), :width=> 90, :height => 90 %>
-  <%= @category.category %>
-  <%= @category.description %>
-</p>
+  <% if @category.image.file? %>
+      <%= image_tag @category.image.url(), :width=> 150, :height => 150 %>
+  <% else %>
+      <%= image_tag("blog/user2.png", :width=> 150, :height => 150) %>
+  <% end %>
+  <span class="panel"> <%= @category.category %> </span>
+  <span class="panel"> <%= @category.description %> </span>
+  <%= link_to 'Listado Categorias', categories_path ,:class=>"btn btn-default btn-xs" %>
+  <% if can? :edit, @category %>
+      <%= link_to icon("pencil-square-o",'Edit'), edit_category_path(@category),:class=>"btn btn-default btn-xs" %>
+  <% end %>
+  <% if can? :delete, @employee %>
+      <%= link_to icon('trash-o','Eliminar'), @category, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-default btn-xs" %>
+  <% end %>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+</div>
+
+
