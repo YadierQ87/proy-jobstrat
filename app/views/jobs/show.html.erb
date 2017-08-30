@@ -1,26 +1,66 @@
 <div class="container">
-  <div class="col-md-12 popular-grid">
-    <div class="row detail-bottom">
+  <div class="col-md-12 box">
+    <!-- box for information job -->
+    <div class="col-md-12" style="margin-bottom: 20px;">
       <div class="col-md-4">
-        <%= image_tag @job.image.url(), :width=> 290, :height => 290 %>
+        <div class="agileits_service_grid_btm_left1">
+          <% if @job.image.file? %>
+              <%= image_tag @job.image.url(), :width=> 300, :height => 300 %>
+          <% else %>
+              <%= image_tag("jobs/job-default.png", :width=> 290, :height => 290) %>
+          <% end %>
+        </div>
       </div>
-      <div class="col-md-6">
-        <div class="popular-text">
-          <h5><%= @job.title %></h5>
-          <%= link_to 'Edit', edit_job_path(@job) %> | <%= link_to 'Back', jobs_path %>
-          <div class="post-box">
+
+      <div class="text-box col-md-8">
+        <h5>
+          <%= @job.title %>
+          <% if can? :edit, @job %>
+              <%= link_to icon("pencil-square-o",'Edit'), edit_job_path(@job),:class=>"btn btn-default btn-xs" %>
+          <% end %>
+          <% if can? :delete, @job %>
+              <%= link_to icon('trash-o','Eliminar'), @job, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-default btn-xs" %>
+          <% end %>
+        </h5>
+        <hr>
+        <div class="popular-jobs" style="background: #A8A7A7">
+          <a href="#"><%= icon ("map-marker") %> <%= @job.m_country.ncountry %></a>
+          <a href="#"><%= icon ("calendar") %> <%= @job.created_at %></a>
+          <a href="#"><%= icon ("money") %> <%= @job.money %> $</a>
+          <a href="#"><%= icon ("briefcase") %> <%= @job.category.category %></a>
+        </div>
+        <br>
+        <p><%= @job.description %></p>
+        <a href="#" class="btn btn-common btn-md">Apply for this Job</a>
+    </div>
+    </div>
+
+        <hr class="">
+    <hr class="">
+
+        <div class="box col-md-12">
+          <h4> Empresa responsable: <%= @job.company.company %></h4>
+          <br>
+          <div class="box col-md-3">
+            <% if @job.company.image.file? %>
+                <%= image_tag @job.company.image.url(), :width=> 90, :height => 90 %>
+            <% else %>
+                <%= image_tag("jobs/job-default.png", :width=> 90, :height => 90) %>
+            <% end %>
+          </div>
+          <div class="col-md-9">
+            <p><%= @job.company.fullname %></p>
             <ul>
-              <li><strong>Country:</strong>  <%= @job.m_country.ncountry %> </li>
-              <li><strong>Company:</strong>  <%= @job.company.company %> </li>
-              <li><strong>Active:</strong>    <%= @job.active %> </li>
-              <li> <strong>Category:</strong>  <%= @job.category.category %> </li>
+              <li><%#= @job.company.m_country.ncountry %></li>
+              <li><%= icon("phone") %><%= @job.company.contact %></li>
+              <li><%= icon("envelope") %><%= @job.company.email %></li>
             </ul>
+              <p><%= @job.company.description[0...100] %></p>
           </div>
         </div>
-        <p align="right"><%= @job.description %></p>
+
       </div>
-    </div>
+    <!-- en box -->
   </div>
-</div>
 <hr>
 

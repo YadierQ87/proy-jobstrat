@@ -1,18 +1,30 @@
-<div class="welcome-grids">
-  <div class="col-md-5 wel-grid1">
-      <div class="image-box">
-        <%= image_tag @article.image.url(), :width=> 250, :height => 230 %>
+<div class="container">
+  <div class="col-md-12 box">
+
+    <div class="col-md-5 wel-grid1">
+      <div class="image-box agileits_service_grid_btm_left1">
+        <% if @article.image.file? %>
+            <%= image_tag @article.image.url(), :width=> 250, :height => 250 %>
+        <% else %>
+            <%= image_tag("jobs/job-default.png", :width=> 250, :height => 250) %>
+        <% end %>
       </div>
+    </div>
+
+    <div class="col-md-7 wel-grid">
+      <h4><%= @article.title %></h4>
+      <label><%= @article.created_at %></label>
+      <% if can? :edit, @article %>
+          <%= link_to icon("pencil-square-o",'Edit'), edit_article_path(@article),:class=>"btn btn-default btn-xs" %>
+      <% end %>
+      <% if can? :delete, @article %>
+          <%= link_to icon('trash-o','Eliminar'), @article, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-default btn-xs" %>
+      <% end %>
+      <hr>
+      <%#= link_to icon("mail-reply","Back"), articles_path %>
+      <p><%= @article.text %></p>
+    </div>
+
   </div>
-  <div class="col-md-7 wel-grid">
-    <%= link_to icon("mail-reply","Back"), articles_path %>
-    <h4><%= @article.title %></h4>
-    <label><%= @article.created_at %></label>
-    <p><%= @article.text %></p>
-  </div>
-  <div class="clearfix"></div>
 </div>
 
-<%#= link_to 'Edit', edit_article_path(@article) %>
-<div class="clearfix"></div>
-<hr>

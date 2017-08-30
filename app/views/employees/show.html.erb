@@ -1,18 +1,17 @@
-<br>
 <div class="container">
   <div class="panel panel-default">
     <div class="panel-heading">
-       Employee
+      Candidato: <%= @employee.fullname %>
     </div>
     <div class="panel-body">
-      <div class="row">
-        <div class="col-lg-3">&nbsp;</div>
-        <div class="col-lg-6 post-box">
+      <div class="row box">
+
+        <div class="col-lg-12 post-box">
           <h4>Datos Personales</h4>
           <table class="table">
             <tr>
               <td rowspan="3" scope="row"><%= image_tag @employee.image.url(), :width=> 90, :height => 90 %></td>
-              <td scope="row">Candidato: <%= @employee.fullname %></td>
+              <td scope="row"></td>
             </tr>
             <tr>
               <td scope="row"><strong>Contact:</strong>      <%= @employee.contact %></td>
@@ -43,7 +42,7 @@
             </tr>
           </table>
         </div>
-        <div class="col-lg-3">&nbsp;</div>
+
       </div>
     </div>
   </div>
