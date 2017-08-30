@@ -83,6 +83,14 @@ alert-alert {
 a.text-danger:hover , a.text-success:hover , a.text-primary:hover{
     background: none;
 }
+
+a.link_sin_background:hover  {
+    background: none;
+}
+a.link_sin_background {
+  color: white;
+}
+
 a.text-danger ,a.text-success,a.text-primary {
     /*font-weight: bold; font-size: 15px;*/
     text-decoration: underline;

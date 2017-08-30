@@ -3,15 +3,15 @@
     <div class="container">
       <h3 class="ser-w3">        Latest News      </h3>
       <div class="row">
-      <% @articles = Article.all
+      <% @articles = Article.all.limit(6)
          @articles.each do |article| %>
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 blog-item">
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 blog-item">
             <div class="blog-item-wrapper">
               <div class="blog-item-img">
                 <% if article.image.file? %>
-                    <%= link_to (image_tag article.image.url(), :width=> 360, :height => 214), article_path(article) %>
+                    <%= link_to (image_tag article.image.url(), :width=> 300, :height => 190), article_path(article) %>
                 <% else %>
-                    <%= link_to (image_tag "resume/Job_Search-512.png", :width=> 360, :height => 214), article_path(article) %>
+                    <%= link_to (image_tag "resume/Job_Search-512.png", :width=> 300, :height => 190), article_path(article) %>
                 <% end %>
               </div>
               <div class="blog-item-text">

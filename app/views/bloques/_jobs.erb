@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-md-12">
         <!-- Listado de trabajos -->
-        <% @jobs = Job.all.limit(6)
+        <% @jobs = Job.all.limit(5)
            @jobs.each do |job| %>
             <div class="job-list">
               <div class="thumb">

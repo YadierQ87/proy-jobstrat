@@ -4,7 +4,7 @@
     <h3 class="blo-w3">Ultimas Empresas</h3>
     <div class="special-grids">
       <!-- listando las compannias -->
-      <% @companies = Company.all
+      <% @companies = Company.all.limit(5)
          @companies.each do |company| %>
           <div class="col-md-4">
             <div class="port-7 effect-2 ">
@@ -16,7 +16,7 @@
                 <% end %>
               </div>
               <div class="text-desc">
-                <h4><%= company.company %></h4>
+                <h4> <%= link_to icon("link",company.company), company ,:class=>"link_sin_background" %> </h4>
                 <p><%= company.description[0...45] %></p>
               </div>
               <contacts> <%= company.fullname %></contacts>
