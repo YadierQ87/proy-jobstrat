@@ -1,21 +1,19 @@
 class AdministrationController < ApplicationController
-  #layout :admin_layout
-  def index
-    @title = 'Administration'
-    if request.get?
-      session[:user_id] = nil
-      @user = User.new
-    else
-      @user = User.new(params[:user])
-      logged_in_user = @user.try_to_login
 
-      if logged_in_user
-        session[:user_id] = logged_in_user.id
-        redirect_to(:action => "index")
-      else
-        flash[:notice] = "Invalid user/password combination"
-      end
+  #load_and_authorize_resource
+  before_action only: [:index, :login,]
+
+  def index
+    if user_signed_in?
+      @title = 'Administration'
     end
+    else
+      redirect_to new_user_session_path, :alert => 'Debe autenticarse como administrador'
+  end
+
+  def login
+    @title = 'Autentication'
+
   end
 
   def jobs
@@ -33,4 +31,10 @@ class AdministrationController < ApplicationController
   def categories
     @title = 'CRUD Categories'
   end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
+
+
 end
