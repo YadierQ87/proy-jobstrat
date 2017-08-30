@@ -38,7 +38,7 @@
             <li><%= link_to icon("lock",'Acceder'), new_user_session_path, :class => 'navbar-link'  %></li>
             <li><%= link_to icon("check-square-o",'Registrarse'), new_user_registration_path, :class => 'navbar-link'  %></li>
         <% end %>
-
+        <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
         <%= yield %>
       </div>
     </div>

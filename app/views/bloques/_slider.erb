@@ -25,7 +25,13 @@
               </div>
               <div class="col-md-3 col-sm-6">
                 <div class="search-category-container">
-                      <%= collection_select(:company_id, "Todas Categorias", Category.all, "id", "category"  , class: "form-control",:onchange => "alert('loko')" ) %>
+                      <select id="categorias_sel" class="form-control" onchange="buscar_categorias();">
+                        <option>Todas las Categorias</option>
+                          <% @cat = Category.all
+                             @cat.each do |category| %>
+                            <option><%= category.category %> </option>
+                        <% end %>
+                      </select>
                 </div>
               </div>
               <div class="col-md-1 col-sm-6">
