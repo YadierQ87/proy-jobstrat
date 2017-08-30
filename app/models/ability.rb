@@ -12,19 +12,19 @@ class Ability
       can :cru, SaleDetail
       can :cru, Client
     end
-    if user.role? :guess,:candidato,:compannia
+    if user.role? and (user.role == "guess" || user.role == "candidato" || user.role == "compannia")
       can :read, Category
       can :read, Job
       can :read, Article
       can :read, Company
       can :read, Employee
     end
-    if user.role? :candidato
+    if user.role == "candidato"
       can :edit, Employee
       can :create, Job
       can :edit, Job
     end
-    if user.role? :compannia
+    if user.role == "compannia"
       can :edit, Company
       can :create, Job
       can :edit, Job

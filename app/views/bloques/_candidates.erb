@@ -1,6 +1,7 @@
 <section class="featured-jobs section">
   <div class="container">
-    <h2 class="ser-w3"> Ultimos  Candidatos  Publicados  </h2>
+    <h2 class="blo-w3"> Ultimos  Candidatos  Publicados  </h2>
+    <br>
     <div class="row">
       <% @employees = Employee.all
          @employees.each do |employee| %>
@@ -12,12 +13,11 @@
                     <% if employee.image.file? %>
                         <%= image_tag employee.image.url(), :width=> 85, :height => 85 %>
                     <% else %>
-                        <%= image_tag("blog/user2.png", :width=> 290, :height => 230) %>
+                        <%= image_tag("blog/user2.png", :width=> 85, :height => 85) %>
                     <% end %>
-
                   </figure>
                   <div class="item-body">
-                    <h3 class="job-title"><a href="#"><%= employee.fullname %></a></h3>
+                    <h3 class="job-title"><%= link_to icon('eye',employee.fullname), employee %></h3>
                     <div class="adderess"><%= employee.curriculum[0...25]%></div>
                   </div>
                 </div>

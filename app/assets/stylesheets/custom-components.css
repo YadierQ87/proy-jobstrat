@@ -448,6 +448,11 @@ label {
   -o-transition: all 0.15s ease;
   transition: all 0.15s ease;
 }
+
+.item-thumb > img {
+  float: left;
+}
+
 .featured-jobs .item-thumb a {
   display: block;
 }
