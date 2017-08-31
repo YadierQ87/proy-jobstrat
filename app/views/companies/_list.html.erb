@@ -1,38 +1,42 @@
 <div id="filterrific_results">
-  <div>
+  <div class="acciones_filtros_search">
     <%= page_entries_info companies %>
   </div>
-  <table class="table table-bordered table-header table-stripered">
-    <thead>
-    <tr>
-      <th><%= filterrific_sorting_link(@filterrific, :company) %></th>
-      <th><%= filterrific_sorting_link(@filterrific, :fullname) %></th>
-      <th>Picture</th>
-      <th><%= filterrific_sorting_link(@filterrific, :description) %></th>
-      <th><%= filterrific_sorting_link(@filterrific, :contact) %></th>
-      <th><%= filterrific_sorting_link(@filterrific, :email) %></th>
-      <th><%= filterrific_sorting_link(@filterrific, :username) %></th>
-      <th> Actions </th>
-    </tr>
-    </thead>
-    <tbody>
+    <%@num = 1; %>
     <% companies.each do |company| %>
-        <tr>
-          <td><%= company.company %></td>
-          <td><%= company.fullname %></td>
-          <td><%= image_tag company.image.url(), :width=> 90, :height => 90 %></td>
-          <td><%= company.description %></td>
-          <td><%= company.contact %></td>
-          <td><%= company.email %></td>
-          <td><%= company.username %></td>
-          <td><%= link_to icon('eye'), company %>
-            <%= link_to icon('pencil-square-o'), edit_company_path(company) %>
-            <%= link_to icon('trash-o'), company, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
-        </tr>
+
+      <div class="author-resume col-lg-6">
+        <div class="thumb col-lg-2">
+          <% if company.image.file? %>
+              <%= image_tag company.image.url(), :width=> 85, :height => 85 %>
+          <% else %>
+              <%= image_tag("blog/thumb1.png", :width=> 85, :height => 85) %>
+          <% end %>
+          <label class="img_counter"><%= @num %></label>
+        </div>
+        <div class="author-info col-lg-10">
+          <h3> <%= link_to company.company, company %> </h3>
+          <p class="sub-title"> #<%= company.fullname %></p>
+          <p>
+            <span class="address"><%= link_to icon("phone",company.contact), "tel:#{company.contact}" %>  </span>
+            <span> <%= link_to icon("envelope",company.email), "mailto:#{company.email}" %> </span>
+          </p>
+        </div>
+        <div class="social-link col-lg-12">
+          <%= icon("file-text-o")%> <%= company.description[0...70] %>
+        </div>
+        <div class="social-link col-lg-12">
+          <% if can? :edit, company %>
+              <%= link_to icon("pencil-square-o",'Editar'), edit_company_path(company) %>
+          <% end %>
+          <% if can? :delete, company %>
+              <%= link_to icon('trash-o','Eliminar'), company, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+      </div>
+      <% @num = @num+1 %>
+
     <% end %>
-    </tbody>
-  </table>
 </div>
 <%  @total = (page_entries_info companies).split('<b>')
     if @total.size == 3

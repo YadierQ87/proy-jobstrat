@@ -1,39 +1,48 @@
 <div id="filterrific_results">
-  <div>
+  <div class="acciones_filtros_search">
     <%= page_entries_info jobs %>
   </div>
 
-  <table class="table table-bordered table-header table-stripered table-responsive">
-    <thead>
-    <tr>
-      <th>title</th>
-      <th>picture</th>
-      <th>Status</th>
-      <th>country</th>
-      <th>company</th>
-      <th>categorie</th>
-      <th>publicate_at</th>
-      <th>active</th>
-      <th>description</th>
-      <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
     <% jobs.each do |job| %>
-        <tr>
-          <td><%= job.title %></td>
-          <td><%= image_tag job.image.url(), :width=> 90, :height => 90 %></td>
-          <td><%= job.job_stat %></td>
-          <td><%= job.m_country.ncountry %></td>
-          <td><%= job.company.company %></td>
-          <td><%= job.category.category %></td>
-          <td><%= job.created_at %></td>
-          <td><%= job.active %></td>
-          <td><%= job.description %></td>
-          <td><%= link_to icon('eye'), job %>  <%= link_to icon('pencil-square-o'), edit_job_path(job) %>
-            <%= link_to icon('trash-o'), job, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
-        </tr>
+
+        <div class="job-list">
+          <div class="thumb">
+            <% if job.image.file? %>
+                <%= image_tag job.image.url(), :width=> 110, :height => 110 %>
+            <% else %>
+                <%= image_tag("jobs/job-default.png", :width=> 110, :height => 110) %>
+            <% end %>
+          </div>
+          <div class="job-list-content">
+            <h4><%= link_to job.title, job %><h6><% if can? :edit, job %>
+                  <%= link_to icon("pencil-square-o",'Editar'), edit_job_path(job) %>
+              <% end %>
+              <% if can? :delete, job %>
+                  <%= link_to icon('trash-o','Eliminar'), job, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %></h6>
+            </h4>
+            <br>
+            <h6>Publicado x <%= job.company.company %> </h6><br>
+            <p><%= job.description[0...200] %></p>
+            <div class="job-tag">
+              <div class="pull-left">
+                <div class="meta-tag">
+                  <span><%= icon("bars") %><%= job.category.category %></span>
+                  <span><%= icon("map-marker") %><%= job.m_country.ncountry %></span>
+                  <span><%= icon("money") %><%= job.money %></span>
+                </div>
+              </div>
+              <div class="pull-right">
+                <div class="icon">
+                  <%= icon("building") %>
+                </div>
+                <!--a class="btn btn-common btn-rm" data-toggle="modal" data-target="<%#= "#myModal3" %>" >Read More</a-->
+                <%= link_to "More Detail", job,:class => "btn btn-common btn-rm" %>
+              </div>
+            </div>
+          </div>
+        </div>
+
     <% end %>
     </tbody>
   </table>
