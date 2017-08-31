@@ -38,7 +38,7 @@ class Employee < ApplicationRecord
     # configure number of OR conditions for provision
     # of interpolation arguments. Adjust this if you
     # change the number of OR conditions.
-    num_or_conditions = 3
+    num_or_conditions = 4
     where(
         terms.map {
           or_clauses = [
@@ -46,7 +46,6 @@ class Employee < ApplicationRecord
               "LOWER(employees.contact) LIKE ?",
               "LOWER(employees.email) LIKE ?",
               "LOWER(employees.username) LIKE ?",
-              "LOWER(employees.country) LIKE ?",
           ].join(' OR ')
           "(#{ or_clauses })"
         }.join(' AND '),
