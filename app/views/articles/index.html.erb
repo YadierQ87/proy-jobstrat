@@ -3,7 +3,7 @@
   <div class="container">
     <div class="panel panel-default">
       <div class="panel-heading">
-        Admin Articles
+        Listado de Noticias
       </div>
       <div class="panel-body">
         <div class="row">
@@ -20,10 +20,9 @@
           </div>
           <div class="col-lg-6">
             <div class="right">
-              Download:
-              <%= link_to icon('file-code-o','CSV'), articles_path(format: "csv") %> |
-              <%= link_to icon('file-excel-o','Excel'), articles_path(format: "xls") %>
-              <%= link_to icon('plus-circle','Add Article'), new_article_path , class: "btn-primary btn-sm" %>
+              <%#= link_to icon('file-code-o','CSV'), articles_path(format: "csv") %>
+              <%#= link_to icon('file-excel-o','Excel'), articles_path(format: "xls") %>
+              <%= link_to icon('plus-circle','Noticia'), new_article_path %>
             </div>
           </div>
         </div>

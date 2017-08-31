@@ -2,7 +2,6 @@
   <% if job.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
-
       <ul>
       <% job.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,51 +11,48 @@
   <% end %>
 
     <div class="row panel">
-      <div class="field col-lg-6">
-        <%= f.label :title %>
-        <%= f.text_field :title  , class: "my-form-st" %>
-      </div>
 
-      <div class="field col-lg-6">
-        <%= f.label :image %>
-        <%= f.file_field :image %>
+      <div class="field col-lg-12">
+        <%= f.label :title %>
+        <%= f.text_field :title  , class: "form-control" %>
       </div>
 
       <div class="field col-lg-6">
         <%= f.label :category_id %>
-        <%= f.select(:category_id, categories_id_for_select, { include_blank: 'Select Category' }) %>
+        <%= f.select(:category_id, categories_id_for_select, { include_blank: 'Select Category' },class:"form-control") %>
       </div>
 
       <div class="field col-lg-6">
+        <%= f.label :image %>
+        <%= f.file_field :image ,class:"form-control file-img" %>
+      </div>
+   <hr>
+      <div class="field col-lg-6">
         <%= f.label :m_country_id %>
-        <%= f.select(:m_country_id, paises_id_for_select, { include_blank: 'Select Country' }) %>
+        <%= f.select(:m_country_id, paises_id_for_select, { include_blank: 'Select Country' },class:"form-control") %>
       </div>
 
       <div class="field col-lg-6">
         <%= f.label :company_id %>
-        <%= f.select(:company_id, companies_for_select, { include_blank: 'Select Company' }) %>
+        <%= f.select(:company_id, companies_for_select, { include_blank: 'Select Company' },class:"form-control") %>
       </div>
 
 
       <div class="field col-lg-6">
-        <%= f.label :active %>
-        <%= f.check_box :active  , class: "my-form-st" %>
-      </div>
-
-      <div class="field col-lg-6">
-        <%= f.label :job_stat %>
-        <%= f.select(:job_stat, ['Publish','Taken','Close'],) %>
+        <%= f.label :money %>
+        <%= f.text_field :money  , class: "form-control" %>
       </div>
 
       <div class="field col-lg-12">
         <%= f.label :description %>
-        <%= f.text_area :description  , class: "my-form-st" %>
+        <%= f.text_area :description  , class: "form-control" %>
       </div>
 
 
       <div class="actions col-lg-6">
-        <%= f.submit %>
+        <%= f.submit  %>
       </div>
+
     </div>
 
 <% end %>

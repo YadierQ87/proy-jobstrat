@@ -1,29 +1,38 @@
 <div id="filterrific_results">
-  <div>
+  <div class="acciones_filtros_search">
     <%= page_entries_info articles %>
   </div>
 
-  <table class="table table-bordered table-header table-stripered">
-    <tr>
-      <th>Title</th>
-      <th>Picture</th>
-      <th>Text</th>
-      <th>Actions</th>
-    </tr>
-
     <% articles.dup.each do |article| %>
-        <tr>
-          <td><%= article.title %></td>
-          <td><%= image_tag article.image.url(), :width=> 90, :height => 90 %></td>
-          <td><%= article.text %></td>
-          <td>
-            <%= link_to icon('eye'), article_path(article) %>
-            <%= link_to icon('pencil-square-o'), edit_article_path(article) %>
-            <%= link_to icon('trash-o'), article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
-        </tr>
+        <div class="col-md-12 box">
+          <div class="col-md-3 wel-grid1">
+            <div class="image-box agileits_service_grid_btm_left1">
+              <% if article.image.file? %>
+                  <%= image_tag article.image.url(), :width=> 230, :height => 230 %>
+              <% else %>
+                  <%= image_tag("jobs/job-default.png", :width=> 230, :height => 230) %>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-md-9 wel-grid">
+            <h4><%= article.title %>
+              <h6><% if can? :edit, article %>
+                  <%= link_to icon("pencil-square-o",'Editar'), edit_article_path(article) %>
+              <% end %>
+              <% if can? :delete, article %>
+                  <%= link_to icon('trash-o','Eliminar'), article, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %></h6>
+            </h4>
+            <hr>
+            <label class="panel">Created at <%= icon("calendar")%> <%= article.created_at %></label>
+            <p><%= article.text[0...250] %></p>
+            <%= link_to "Ver Articulo Completo", article,:class=>"btn btn-common" %>
+          </div>
+        </div>
+
     <% end %>
-  </table>
+
+
 </div>
 <%  @total = (page_entries_info articles).split('<b>')
     if @total.size == 3
