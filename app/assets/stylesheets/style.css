@@ -17,10 +17,15 @@ body a{
     -moz-transition:0.5s all;
     -o-transition:0.5s all;
     -ms-transition:0.5s all;
+    /*color: #EA4335;*/
 }
 a:hover{
-    text-decoration:none;
+    text-decoration:underline;
+    /*text-shadow: 2px 1px #CCCCCC;*/
+    background: none;
+    color: #4C4C4C;
 }
+
 input[type="button"],input[type="submit"],.contact-form input[type="submit"]{
     transition:0.5s all;
     -webkit-transition:0.5s all;
@@ -2274,5 +2279,21 @@ h2.resp-accordion {
     p{
         letter-spacing:0px;
     }
+}
+
+.author-resume {
+    min-height: 120px;
+    border-bottom: 1px solid #DDDDDD;
+    padding-top: 5px;
+    margin-bottom: 5px;
+}
+.acciones_filtros_search {
+    margin-bottom: 20px;
+}
+.img_counter{
+    background: #EA4335; color: white;
+    position: absolute; bottom: 0px;
+    padding-top: 4px; padding-right: 10px; padding-left: 5px;
+    border-radius: 0px 100% 0px 0px;
 }
 /*--//responsive--*/

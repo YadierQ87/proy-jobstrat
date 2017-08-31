@@ -1,63 +1,43 @@
 <div id="filterrific_results">
-  <div>
+  <div class="acciones_filtros_search">
     <%= page_entries_info employees %>
   </div>
-
-  <!--table class="table table-bordered table-header table-stripered">
-    <thead>
-    <tr>
-      <th>Fullname</th>
-      <th>Picture</th>
-      <th>Contact</th>
-      <th>Email</th>
-      <th>Sex</th>
-      <th>Curriculum</th>
-      <th>Username</th>
-      <th>Actions</th>
-    </tr>
-    </thead-->
-
-    <tbody>
-    <% @employees.each do |employee| %>
-
-        <div class="author-resume">
-          <div class="thumb">
-            <% if employee.image.file? %>
-                <%= image_tag employee.image.url(), :width=> 85, :height => 85 %>
-            <% else %>
-                <%= image_tag("resume/img-1.jpg", :width=> 85, :height => 85) %>
-            <% end %>
-          </div>
-          <div class="author-info">
-            <h3><%= employee.fullname %></h3>
-            <p class="sub-title"><%= employee.username %></p>
-            <p><span class="address"><i class="ti-location-pin"></i>Mahattan, NYC, USA</span> <span><i class="ti-phone"></i>(+01) 211-123-5678</span></p>
-            <div class="social-link">
-              <a class="twitter" target="_blank" data-original-title="twitter" href="#" data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter"></i></a>
-              <a class="facebook" target="_blank" data-original-title="facebook" href="#" data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook"></i></a>
-              <a class="google" target="_blank" data-original-title="google-plus" href="#" data-toggle="tooltip" data-placement="top"><i class="fa fa-google"></i></a>
-              <a class="linkedin" target="_blank" data-original-title="linkedin" href="#" data-toggle="tooltip" data-placement="top"><i class="fa fa-linkedin"></i></a>
-            </div>
+<div class="container row">
+  <%@num = 1;
+    @employees.each do |employee| %>
+      <div class="author-resume col-lg-6">
+        <div class="thumb col-lg-2">
+          <% if employee.image.file? %>
+              <%= image_tag employee.image.url(), :width=> 85, :height => 85 %>
+          <% else %>
+              <%= image_tag("resume/img-1.jpg", :width=> 85, :height => 85) %>
+          <% end %>
+          <label class="img_counter"><%= @num %></label>
+        </div>
+        <div class="author-info col-lg-10">
+          <h3> <%= link_to employee.fullname, employee %> </h3>
+          <p class="sub-title"> username @<%= employee.username %></p>
+          <p>
+            <span class="address"><%= link_to icon("phone",employee.contact), "tel:#{employee.contact}" %>  </span>
+            <span> <%= link_to icon("envelope",employee.email), "mailto:#{employee.email}" %> </span>
+            <span> <%= icon("gender")%> <%= employee.sex %> </span>
+          </p>
+          <div class="social-link">
+            <%= icon("file-text-o")%> <%= employee.curriculum[0...60] %>
           </div>
         </div>
-
-
-
-        <tr>
-          <td></td>
-          <td></td>
-          <td><%= employee.contact %></td>
-          <td><%= employee.email %></td>
-          <td><%= employee.sex %></td>
-          <td><%= employee.curriculum %></td>
-          <td></td>
-          <td><%= link_to icon('eye'), employee %>
-            <%= link_to icon('pencil-square-o'), edit_employee_path(employee) %>
-            <%= link_to icon('trash-o'), employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-    <% end %>
-    </tbody>
-  </table>
+        <div class="social-link col-lg-12">
+          <% if can? :edit, employee %>
+              <%= link_to icon("pencil-square-o",'Editar'), edit_employee_path(employee) %>
+          <% end %>
+          <% if can? :delete, employee %>
+              <%= link_to icon('trash-o','Eliminar'), employee, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+      </div>
+      <% @num = @num+1 %>
+  <% end %>
+</div>
 </div>
 <%  @total = (page_entries_info employees).split('<b>')
     if @total.size == 3
