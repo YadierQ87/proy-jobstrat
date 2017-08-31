@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee: one
+  nombre_experiencia: MyString
+  ,: MyString
+  lugar_trabajo: MyString
+  ,: MyString
+  tiempo: 2017-08-31 15:53:54
+
+two:
+  employee: two
+  nombre_experiencia: MyString
+  ,: MyString
+  lugar_trabajo: MyString
+  ,: MyString
+  tiempo: 2017-08-31 15:53:54

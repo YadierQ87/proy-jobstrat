@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830190913) do
+ActiveRecord::Schema.define(version: 20170831195759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,17 @@ ActiveRecord::Schema.define(version: 20170830190913) do
     t.index ["m_country_id"], name: "index_companies_on_m_country_id", using: :btree
   end
 
+  create_table "educationalemployees", force: :cascade do |t|
+    t.integer  "employee_id"
+    t.string   "nombre_escuela"
+    t.string   "grado_logrado"
+    t.datetime "anno_ini"
+    t.datetime "anno_fin"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["employee_id"], name: "index_educationalemployees_on_employee_id", using: :btree
+  end
+
   create_table "employees", force: :cascade do |t|
     t.string   "fullname"
     t.string   "picture"
@@ -92,7 +103,19 @@ ActiveRecord::Schema.define(version: 20170830190913) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "profesion"
     t.index ["m_country_id"], name: "index_employees_on_m_country_id", using: :btree
+  end
+
+  create_table "experienceemployees", force: :cascade do |t|
+    t.integer  "employee_id"
+    t.text     "nombre_experiencia"
+    t.string   "lugar_trabajo"
+    t.string   "cargo_trabajo"
+    t.datetime "tiempo"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["employee_id"], name: "index_experienceemployees_on_employee_id", using: :btree
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -115,6 +138,8 @@ ActiveRecord::Schema.define(version: 20170830190913) do
     t.text     "requirementos"
     t.float    "money"
     t.datetime "valido_hasta"
+    t.text     "requisitos"
+    t.text     "beneficios"
     t.index ["category_id"], name: "index_jobs_on_category_id", using: :btree
     t.index ["companies_id"], name: "index_jobs_on_companies_id", using: :btree
     t.index ["company_id"], name: "index_jobs_on_company_id", using: :btree
@@ -168,7 +193,9 @@ ActiveRecord::Schema.define(version: 20170830190913) do
   add_foreign_key "aplicationjobs", "employees"
   add_foreign_key "aplicationjobs", "jobs"
   add_foreign_key "companies", "m_countries"
+  add_foreign_key "educationalemployees", "employees"
   add_foreign_key "employees", "m_countries"
+  add_foreign_key "experienceemployees", "employees"
   add_foreign_key "jobs", "categories"
   add_foreign_key "jobs", "companies"
   add_foreign_key "jobs", "companies", column: "companies_id"

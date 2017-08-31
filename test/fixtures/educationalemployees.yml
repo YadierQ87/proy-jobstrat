@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee: one
+  nombre_escuela: MyString
+  grado_logrado: MyString
+  anno_ini: 2017-08-31 15:53:37
+  anno_fin: 2017-08-31 15:53:37
+
+two:
+  employee: two
+  nombre_escuela: MyString
+  grado_logrado: MyString
+  anno_ini: 2017-08-31 15:53:37
+  anno_fin: 2017-08-31 15:53:37
