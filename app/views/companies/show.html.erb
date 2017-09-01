@@ -9,7 +9,7 @@
         <h4><strong>Empresa</strong> <%= @company.company %>
           <%= link_to icon("list-alt",'Empresas'), companies_path ,:class=>"btn btn-default btn-xs" %>
           <% if can? :edit, @company %>
-              <%= link_to icon("pencil-square-o",'Edit'), edit_company_path(@category),:class=>"btn btn-default btn-xs" %>
+              <%= link_to icon("pencil-square-o",'Edit'), edit_company_path(@company),:class=>"btn btn-default btn-xs" %>
           <% end %>
           <% if can? :delete, @company %>
               <%= link_to icon('trash-o','Eliminar'), @company, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-default btn-xs" %>

@@ -1,8 +1,6 @@
 class JobsController < ApplicationController
 
-  load_and_authorize_resource :job
-  #load_and_authorize_resource :company
-  #load_and_authorize_resource :through => :company
+  load_and_authorize_resource
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
 
@@ -93,7 +91,7 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:title, :category_id, :m_country_id, :company_id, :money, :valido_hasta, :tipo_work, :description, :image)
+      params.require(:job).permit(:title, :category_id, :m_country_id, :company_id, :money, :valido_hasta, :tipo_work, :description, :image,:requisitos ,:beneficios,:active,:state)
     end
 
   rescue_from CanCan::AccessDenied do |exception|
