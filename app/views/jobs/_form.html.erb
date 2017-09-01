@@ -37,15 +37,34 @@
         <%= f.select(:company_id, companies_for_select, { include_blank: 'Select Company' },class:"form-control") %>
       </div>
 
-
       <div class="field col-lg-6">
         <%= f.label :money %>
         <%= f.text_field :money  , class: "form-control" %>
       </div>
 
+      <div class="field col-lg-6">
+        <%= f.label :valido_hasta %>
+        <%= f.text_field :valido_hasta  , class: "form-control" %>
+      </div>
+
+      <div class="field col-lg-6">
+        <%= f.label :tipo_work %>
+        <%= f.select(:tipo_work,["Parcial","Tiempo-Completo","Por Proyecto Culminado","Conveniado","Otros"],class:"form-control") %>
+      </div>
+
       <div class="field col-lg-12">
         <%= f.label :description %>
         <%= f.text_area :description  , class: "form-control" %>
+      </div>
+
+      <div class="field col-lg-12">
+        <%= f.label :requisitos %>
+        <%= f.text_area :requisitos  , class: "form-control" %>
+      </div>
+
+      <div class="field col-lg-12">
+        <%= f.label :beneficios %>
+        <%= f.text_area :beneficios  , class: "form-control" %>
       </div>
 
 

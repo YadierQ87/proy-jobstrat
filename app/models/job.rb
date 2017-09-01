@@ -1,10 +1,20 @@
 class Job < ApplicationRecord
+  #attr_accessor :title, :category_id, :m_country_id, :company_id, :money, :valido_hasta, :tipo_work, :requisitos, :beneficios
   belongs_to :company ,optional: true ,required: false
   belongs_to :m_country ,optional: true ,required: false
   belongs_to :category ,optional: true ,required: false
   has_attached_file :image,  default_url: ""
+  validates :title, :presence => true, :length => {:in => 8..50}
   validates_attachment_content_type :image, :content_type => %w(image/jpeg image/jpg image/png)
- # validates_attachment_presence :image
+  #validates_attachment_presence :image
+  #title, :category_id, :m_country_id, :company_id, :money, :valido_hasta, :tipo_work, :description, :requisitos, :beneficios
+  #VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  #validates :email, presence: true, :uniqueness => true, format: { with: VALID_EMAIL_REGEX }
+  #validates :password, :confirmation => true
+  #validates_length_of :password, :in => 6..20, :on => :create
+
+
+
 
   #para descargar formato csv
   def self.to_csv

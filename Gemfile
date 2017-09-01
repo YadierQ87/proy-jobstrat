@@ -24,6 +24,9 @@ gem 'font-awesome-sass', '~> 4.7.0'
 
 gem "rails-jquery-autocomplete" , '~> 1'
 
+#para datetime
+#gem 'bootstrap-datepicker-rails', '~> 1.7', '>= 1.7.1.1'
+
 #para autenticacion
 gem 'devise'
 #gem 'omniauth'

@@ -5,12 +5,7 @@ class Ability
     user ||= User.new
     if user.role == "admin"
       can :manage, :all
-    end
-    if user.role == "seller"
-      alias_action :create, :read, :update, :to => :cru
-      can :cru, Sale
-      can :cru, SaleDetail
-      can :cru, Client
+      can :create, Job
     end
     if user.role? and (user.role == "guess" || user.role == "candidato" || user.role == "compannia")
       can :read, Category
@@ -19,15 +14,15 @@ class Ability
       can :read, Company
       can :read, Employee
     end
-    if user.role == "candidato"
+    if user.role? and user.role == "candidato"
       can :edit, Employee
+    end
+    if user.role? and (user.role == "admin" || user.role == "candidato" || user.role == "compannia")
       can :create, Job
       can :edit, Job
     end
-    if user.role == "compannia"
+    if user.role? and user.role == "compannia"
       can :edit, Company
-      can :create, Job
-      can :edit, Job
     end
 
   end

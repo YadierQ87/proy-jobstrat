@@ -9,7 +9,7 @@
         <div class="col-lg-6">
           <%= form_for_filterrific @filterrific do |f| %>
               Records to show
-              <%= select_tag :cantd, options_for_select([10,20,40].to_a, nil) ,class: "form-control" %>
+              <%= select_tag :cantd, options_for_select([10,20,40].to_a, nil) %>
               Search
               <%= f.text_field(   :search_query, class: 'filterrific-periodically-observed' ) %>
               <%# add an automated spinner to your form when the list is refreshed %>
@@ -19,9 +19,9 @@
         </div>
         <div class="col-lg-6">
           <div class="right">
-            <%#= link_to icon('file-code-o','CSV'), jobs_path(format: "csv") %> |
-            <%#= link_to icon('file-excel-o','Excel'), jobs_path(format: "xls") %>
+            <% if can? :create, Job %>
             <%= link_to icon('plus-circle','Add Job'), new_job_path  %>
+            <% end %>
           </div>
         </div>
       </div>
