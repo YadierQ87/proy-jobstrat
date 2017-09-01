@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :job_id %>
-    <%= f.text_field :job_id %>
+    <%= @job.title %>
+    <%= f.hidden_field :job_id,value: @job.id %>
   </div>
 
   <div class="field">
-    <%= f.label :employee_id %>
-    <%= f.text_field :employee_id %>
+    <%= current_user.employee.fullname %>
+    <%= f.hidden_field :employee_id,value: current_user.employee_id %>
   </div>
 
   <div class="field">

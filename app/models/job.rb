@@ -1,5 +1,5 @@
 class Job < ApplicationRecord
-  #attr_accessor :title, :category_id, :m_country_id, :company_id, :money, :valido_hasta, :tipo_work, :requisitos, :beneficios
+
   belongs_to :company ,optional: true ,required: false
   belongs_to :m_country ,optional: true ,required: false
   belongs_to :category ,optional: true ,required: false

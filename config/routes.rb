@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :jobs
   resources :articles
 
+  get 'aplicationjobs/new/:job_id', to: 'aplicationjobs#new'
+
   #devise_for :users
   #match '/auth/:provider/callback', :to => 'sessions#create', via: :get
   get 'home', to: 'home#index'

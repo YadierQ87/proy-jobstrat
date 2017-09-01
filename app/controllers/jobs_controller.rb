@@ -43,7 +43,7 @@ class JobsController < ApplicationController
   # POST /jobs
   # POST /jobs.json
   def create
-    @job = Job.new(job_params)
+    @job = Job.new(params.require(:job).permit(:title, :category_id, :m_country_id, :company_id, :money, :valido_hasta, :tipo_work, :description, :image,:requisitos ,:beneficios,:active,:state))
     @categories = Category.all.order("category")
     @companies = Company.all.order("company")
 
@@ -82,6 +82,9 @@ class JobsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  #metodo para aplicar a un trabajo
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
