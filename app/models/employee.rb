@@ -1,5 +1,5 @@
 class Employee < ApplicationRecord
-  
+
   has_many :aplicationjob
   has_many :messageemployee
   belongs_to :m_country ,optional: true ,required: false

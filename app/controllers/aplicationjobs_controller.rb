@@ -34,8 +34,8 @@ class AplicationjobsController < ApplicationController
 
     respond_to do |format|
       if @aplicationjob.save
-        format.html { redirect_to @aplicationjob, notice: 'Aplicationjob was successfully created.' }
-        format.json { render :show, status: :created, location: @aplicationjob }
+        format.html { redirect_to administration_jobs_url, notice: 'Aplicationjob was successfully created.' }
+        format.json { render :show, status: :created, location: administration_jobs_url }
       else
         format.html { render :new }
         format.json { render json: @aplicationjob.errors, status: :unprocessable_entity }
@@ -48,8 +48,8 @@ class AplicationjobsController < ApplicationController
   def update
     respond_to do |format|
       if @aplicationjob.update(aplicationjob_params)
-        format.html { redirect_to @aplicationjob, notice: 'Aplicationjob was successfully updated.' }
-        format.json { render :show, status: :ok, location: @aplicationjob }
+        format.html { redirect_to administration_jobs_url, notice: 'Aplicationjob was successfully updated.' }
+        format.json { render :show, status: :ok, location: administration_jobs_url }
       else
         format.html { render :edit }
         format.json { render json: @aplicationjob.errors, status: :unprocessable_entity }

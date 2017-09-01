@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   get 'home', to: 'home#index'
        root :to => "home#index"
 
-  resources :administration
+  #resources :administration
+  get 'administration/jobs', to: 'administration#jobs'
+  get 'administration/companies', to: 'administration#companies'
 
 
 end

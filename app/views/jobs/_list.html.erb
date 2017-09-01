@@ -34,7 +34,7 @@
               </div>
               <div class="pull-right">
                 <div class="icon">
-                  <%= icon("building") %>
+                  <%= link_to icon("pencil-square-o"), "/aplicationjobs/new/#{job.id}" %>
                 </div>
                 <!--a class="btn btn-common btn-rm" data-toggle="modal" data-target="<%#= "#myModal3" %>" >Read More</a-->
                 <%= link_to "More Detail", job,:class => "btn btn-common btn-rm" %>

@@ -1,21 +1,16 @@
 
 <section class="section content">
-  <%= render "bloques/admin_section" %>
-
   <h1>Listado de Trabajos a los que ha Aplicado el User </h1>
 
+  <%  @aplyjobs = Aplicationjob.all.where(:employee_id => current_user.employee.id).order("id DESC")
 
-  <% @jobs.each do |job| %>
-      <tr>
-        <td><%= job.title %></td>
-        <td><%= job.country %></td>
-        <td><%= job.company %></td>
-        <td><%= job.publish_date %></td>
-        <td><%= job.active %></td>
-        <td><%= job.description %></td>
-        <td><%= job.picture %></td>
-        <td><%= link_to 'Show', job %>  <%= link_to 'Edit', edit_job_path(job) %>  <%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
-      </tr>
+      @aplyjobs.each do |aplyjob| %>
+      <div class="panel">
+        <h2>Mi propuesta: <%= aplyjob.description %> </h2>
+        <div><%= aplyjob.job.title %></div>
+        <div><%= aplyjob.job.company %></div>
+        <div><%= aplyjob.job.description %></div>
+      </div>
   <% end %>
 
 
