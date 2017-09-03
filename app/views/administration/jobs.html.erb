@@ -1,5 +1,8 @@
 
 <section class="section content">
+  <div class="box">
+
+  </div>
   <h1>Listado de Trabajos a los que ha Aplicado el User </h1>
 
   <%  @aplyjobs = Aplicationjob.all.where(:employee_id => current_user.employee.id).order("id DESC")
@@ -12,6 +15,4 @@
         <div><%= aplyjob.job.description %></div>
       </div>
   <% end %>
-
-
 </section>
