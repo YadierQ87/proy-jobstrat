@@ -78,6 +78,7 @@ class JobsController < ApplicationController
   def destroy
     @job.destroy
     respond_to do |format|
+      format.js   { render :layout => false }
       format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
       format.json { head :no_content }
     end

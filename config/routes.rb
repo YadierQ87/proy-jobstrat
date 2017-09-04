@@ -16,12 +16,12 @@ Rails.application.routes.draw do
   #devise_for :users
   #match '/auth/:provider/callback', :to => 'sessions#create', via: :get
   get 'home', to: 'home#index'
-       root :to => "home#index"
+       root :to => "home#index" #page index by default
 
   #resources :administration
-  get 'administration/jobs', to: 'administration#jobs'
-  get 'administration/companies', to: 'administration#companies'
-
+  get 'administration/jobs', to: 'administration#jobs'  #donde se guardan los trabajos aplicados para un usuario
+  get 'administration/companies', to: 'administration#companies'  #donde se guardan las aplicaciones de trabajo para esa compannia
+  get 'administration/employees', to: 'administration#employees' #donde se guardan los mensajes de los usuarios empleados
 
 end
 

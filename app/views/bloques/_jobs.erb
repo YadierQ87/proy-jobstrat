@@ -5,8 +5,7 @@
     <div class="row">
       <div class="col-md-12">
         <!-- Listado de trabajos -->
-        <% @jobs = Job.all.limit(5)
-           @jobs.each do |job| %>
+        <%  @jobs.each do |job| %>
             <div class="job-list">
               <div class="thumb">
                 <% if job.image.file? %>
@@ -34,7 +33,7 @@
                       <%= link_to icon("pencil-square-o"), "/aplicationjobs/new/#{job.id}" %>
                     </div>
                     <!--a class="btn btn-common btn-rm" data-toggle="modal" data-target="<%#= "#myModal3" %>" >Read More</a-->
-                    <%= link_to "More Detail", job,:class => "btn btn-common btn-rm" %>
+                    <%= link_to "Ver Detalles", job,:class => "btn btn-common btn-rm",remote: true %>
                   </div>
                 </div>
               </div>

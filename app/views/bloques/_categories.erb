@@ -4,7 +4,7 @@
     <h3 class="ser-w3">Trabajos x Categorias</h3>
     <section class="featured-jobs section">
     <div class="row">
-      <% @categories = Category.all.order("category")
+      <%
          @categories.each do |category| %>
           <div class="col-md-3 col-sm-4 col-xs-6">
             <div class="featured-item">

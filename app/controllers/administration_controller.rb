@@ -16,12 +16,25 @@ class AdministrationController < ApplicationController
 
   end
 
+  # muestra un listado de todas las aplicationes k ha emitido un usaurio (para employees)
   def jobs
     @title = 'CRUD Jobs'
+    @aplyjobs = Aplicationjob.all.where(:employee_id => current_user.employee.id).order("id DESC")
   end
 
+  # muestra un listado de todas las solicitudes de usuarios x trabajos (para companies)
   def employees
     @title = 'CRUD Employees'
+    @jobs = Company.find(current_user.company_id).jobs #todos los trabajos publicados x esa compannia
+
+
+    #@jobs = @company.Job.all.where(:company_id => current_user.company_id)
+   # @jobs_aplications = Job.select("*").joins(:Aplicationjob)
+
+
+        #Company.Job.Aplicationjob.all
+        #Job.all.where(:employee_id => current_user.employee.id).order("id DESC")
+        #Aplicationjob.all.where(:employee_id => current_user.employee.id).order("id DESC")
   end
 
   def companies

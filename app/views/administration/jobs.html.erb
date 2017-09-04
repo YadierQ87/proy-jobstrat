@@ -5,9 +5,7 @@
   </div>
   <h1>Listado de Trabajos a los que ha Aplicado el User </h1>
 
-  <%  @aplyjobs = Aplicationjob.all.where(:employee_id => current_user.employee.id).order("id DESC")
-
-      @aplyjobs.each do |aplyjob| %>
+  <%   @aplyjobs.each do |aplyjob| %>
       <div class="panel">
         <h2>Mi propuesta: <%= aplyjob.description %> </h2>
         <div><%= aplyjob.job.title %></div>

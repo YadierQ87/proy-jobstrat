@@ -4,7 +4,7 @@
     <h3 class="blo-w3">Ultimas Empresas</h3>
     <div class="special-grids">
       <!-- listando las compannias -->
-      <% @companies = Company.all.limit(5)
+      <%
          @companies.each do |company| %>
           <div class="col-md-4">
             <div class="port-7 effect-2 ">

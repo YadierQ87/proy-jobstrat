@@ -18,7 +18,7 @@
                   <%= link_to icon("pencil-square-o",'Editar'), edit_job_path(job) %>
               <% end %>
               <% if can? :delete, job %>
-                  <%= link_to icon('trash-o','Eliminar'), job, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <%= link_to icon('trash-o','Eliminar'), job, method: :delete, data: { confirm: 'Are you sure?' }, remote: true , class: "delete_link" %>
               <% end %></h6>
             </h4>
             <br>
