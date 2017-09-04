@@ -1,0 +1,59 @@
+
+<div id="product-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Candidato: <%= @employee.fullname %></h4>
+      </div>
+      <!-- modal body -->
+      <div class="modal-body container-fluid">
+
+        <div class="col-lg-12 row">
+          <h4>Datos Personales
+            <%= link_to icon("list-alt",'Candidatos'), employees_path ,:class=>"btn btn-default btn-xs" %>
+            <% if can? :edit, @employee %>
+                <%= link_to icon("pencil-square-o",'Editar'), edit_employee_path(@employee),:class=>"btn btn-default btn-xs" %>
+            <% end %>
+            <% if can? :delete, @employee %>
+                <%= link_to icon('trash-o','Eliminar'), @employee, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-default btn-xs" %>
+            <% end %>
+          </h4>
+          <hr>
+          <div class="col-md-12">
+            <div class="img-member col-md-6">
+              <% if @employee.image.file? %>
+                  <%= image_tag @employee.image.url(), :width=> 150, :height => 150 %>
+              <% else %>
+                  <%= image_tag("blog/user2.png", :width=> 150, :height => 150) %>
+              <% end %>
+            </div>
+            <div class="col-md-6">
+              <div class="col-md-12 panel"><%= icon("phone")%> <strong>Contact:</strong><%= @employee.contact %></div>
+              <div class="col-md-12 panel"><%= icon("user")%> <strong>Username:</strong><%= @employee.username %></div>
+              <div class="col-md-12 panel"><%= icon("male")%>  <strong>Sexo:</strong><%= @employee.sex %></div>
+              <div class="col-md-12 panel"><%= icon("globe")%> <strong>Pais:</strong> <%= @employee.m_country_id %></div>
+              <div class="col-md-12 panel"><%= icon("envelope-o")%> <strong>Correo:</strong> <%= @employee.email %></div>
+            </div>
+            <br>
+            <div class="col-md-12">
+              <h2 class=""> Description</h2>
+              <hr>
+              <%= @employee.description %>
+            </div>
+            <hr>
+            <br>
+            <div class="col-md-12">
+              <h2 class=""> Curriculum Vitae </h2>
+              <hr>
+              <p>  <%= @employee.curriculum %></p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- end modal body -->
+    </div>
+  </div>
+</div>

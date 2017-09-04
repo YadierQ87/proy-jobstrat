@@ -4,8 +4,7 @@
     <h3 class="ser-w3">Trabajos x Categorias</h3>
     <section class="featured-jobs section">
     <div class="row">
-      <%
-         @categories.each do |category| %>
+      <%  @categories.each do |category| %>
           <div class="col-md-3 col-sm-4 col-xs-6">
             <div class="featured-item">
               <div class="featured-wrap">
@@ -16,7 +15,7 @@
                   </figure>
                   <div class="item-body">
                     <h3 class="job-title ser-w4">
-                      <%= link_to category.category, category  %>
+                      <%= link_to category.category, category , remote: true  %>
                     </h3>
                     <div class="adderess">
                       <% if category.image.file? %>
@@ -30,8 +29,9 @@
               </div>
               <div class="item-foot">
                 <span><%= category.description %></span>
+                <strong><%= Job.all.where(category_id: category.id).count %> Works related </strong>
                 <div class="view-iocn">
-                  <%= link_to icon("suitcase"), category  %>
+                  <%= link_to icon("suitcase"), category , remote: true %>
                 </div>
               </div>
             </div>

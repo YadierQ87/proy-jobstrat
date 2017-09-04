@@ -1,0 +1,59 @@
+<div id="product-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"><%= title %></h4>
+      </div>
+      <!-- modal body -->
+      <div class="modal-body">
+
+        <div class="box container-fluid">
+          <div class="col-md-4">
+            <div class="agileits_service_grid_btm_left1">
+              <% if @job.image.file? %>
+                  <%= image_tag @job.image.url(), :width=> 150, :height => 150 %>
+              <% else %>
+                  <%= image_tag("jobs/job-default.png", :width=> 150, :height => 150) %>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="text-left">
+              <h3> <strong><%= @job.title %></strong></h3>
+                <%= link_to icon("list-alt",'Trabajos'), jobs_path ,:class=>"btn btn-default btn-xs" %>
+                <% if can? :edit, @job %>
+                    <%= link_to icon("pencil-square-o",'Editar'), edit_job_path(@job),:class=>"btn btn-default btn-xs" %>
+                <% end %>
+                <% if can? :delete, @job %>
+                    <%= link_to icon('trash-o','Eliminar'), @job, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-default btn-xs" %>
+                <% end %>
+              <p>Publicado por:<%= @job.company.company %></p>
+              <div class="meta">
+                <span><%= icon ("briefcase") %> <%= @job.category.category %></span><br>
+                <span> <%= icon ("map-marker") %> <%= @job.m_country.ncountry %></span><br>
+                <span> <%= icon ("calendar") %> <%= @job.created_at %></span><br>
+              </div>
+              <strong class="price"><%= icon ("money") %> <%= @job.money %> $</strong>
+              <a href="#" class="btn btn-border btn-sm">Freelance</a>
+              <a href="#" class="btn btn-common btn-sm">Aplicar</a>
+            </div>
+          </div>
+          <hr>
+          <div class="clearfix col-lg-12">
+            <div class="col-lg-12"></div>
+            <h4>Overview</h4>
+            <p> <%= @job.description %> </p><br>
+            <h4>Requirements</h4>
+            <p> <%= @job.requisitos %> </p><br>
+            <h4>Benefits</h4>
+            <p> <%= @job.beneficios %> </p>
+            <a href="#" class="btn btn-common">Apply for this Job Now</a>
+          </div>
+        </div>
+
+      </div>
+      <!-- end modal body -->
+    </div>
+  </div>
+</div>

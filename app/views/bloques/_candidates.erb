@@ -17,7 +17,7 @@
                     <% end %>
                   </figure>
                   <div class="item-body">
-                    <h3 class="job-title"><%= link_to icon('eye',employee.fullname), employee %></h3>
+                    <h3 class="job-title"><%= link_to icon('eye',employee.fullname), employee , remote: true  %></h3>
                     <div class="adderess"><%= employee.curriculum[0...25]%></div>
                   </div>
                 </div>
@@ -26,7 +26,7 @@
                 <span><%= icon ("phone")%> <%= employee.contact %></span>
                 <span><%= icon ("envelope-o")%> <%= employee.email %> </span>
                 <div class="view-iocn">
-                  <%= link_to icon('eye'), employee %>
+                  <%= link_to icon('eye'), employee, remote: true %>
                 </div>
               </div>
             </div>

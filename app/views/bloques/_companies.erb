@@ -16,7 +16,7 @@
                 <% end %>
               </div>
               <div class="text-desc">
-                <h4> <%= link_to icon("link",company.company), company ,:class=>"link_sin_background" %> </h4>
+                <h4> <%= link_to icon("link",company.company), company ,:class=>"link_sin_background" , remote: true %> </h4>
                 <p><%= company.description[0...45] %></p>
               </div>
               <contacts> <%= company.fullname %></contacts>
