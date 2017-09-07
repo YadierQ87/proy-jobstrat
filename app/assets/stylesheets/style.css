@@ -29,7 +29,9 @@ a:hover{
     border: none;
     padding: 0px 5px;
 }
+.btn {
 
+}
 input[type="button"],input[type="submit"],.contact-form input[type="submit"]{
     transition:0.5s all;
     -webkit-transition:0.5s all;
@@ -152,8 +154,15 @@ a.text-primary {
 .a-normal , .a-normal:hover{
     padding: 4px; border-radius: 4px
 }
-.btn-primary,.btn-success,.btn-warning {
-    /*color: white !important;	font-size: 13px !important;*/
+.btn-primary,.btn-success,.btn-warning ,.btn-danger, .btn-common{
+    color: white !important;	font-size: 13px !important;
+}
+.bold {
+    font-weight: bold;
+}
+.my-link {
+    color: #D91210 !important;
+    text-decoration: underline;
 }
 .my-btn{
     padding: 4px 10px;  -webkit-transition: all .3s linear;	-moz-transition: all .3s linear;

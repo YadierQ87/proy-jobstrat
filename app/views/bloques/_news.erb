@@ -1,10 +1,16 @@
   <!-- Container Starts to list Articles -->
   <section id="blog" class="section">
     <div class="container">
-      <h3 class="ser-w3">        Latest News      </h3>
+      <div class="row">
+        <h2 class="w3-abo col-lg-6">Ultimas Noticias</h2>
+        <div class="col-lg-6">
+          <%#= link_to icon("pencil-square-o","Publicar Trabajo"), new_job_path,:class => "btn btn-primary"%>
+          <%= link_to icon("list-alt","Ver Todos"), articles_path,:class => "btn btn-common btn-rm" %>
+        </div>
+      </div>
       <div class="row">
       <%  @articles.each do |article| %>
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 blog-item">
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 blog-item">
             <div class="blog-item-wrapper">
               <div class="blog-item-img">
                 <% if article.image.file? %>

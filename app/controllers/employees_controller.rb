@@ -26,7 +26,6 @@ class EmployeesController < ApplicationController
   # GET /employees/1
   # GET /employees/1.json
   def show
-    @employee = Employee.find(params[:id])
   end
 
   # GET /employees/new
@@ -36,7 +35,6 @@ class EmployeesController < ApplicationController
 
   # GET /employees/1/edit
   def edit
-    @employee = Employee.find(params[:id])
   end
 
   # POST /employees
@@ -86,7 +84,7 @@ class EmployeesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
-      params.require(:employee).permit(:fullname, :picture, :description, :contact, :email, :sex, :birth, :curriculum, :username, :password, :m_country_id,:image)
+      params.require(:employee).permit(:fullname, :description, :contact, :email, :sex, :curriculum, :username, :password, :m_country_id,:image)
     end
 
   rescue_from CanCan::AccessDenied do |exception|

@@ -1,10 +1,14 @@
 <section class="featured-jobs section">
   <div class="container">
-    <h2 class="blo-w3"> Ultimos  Candidatos  Publicados  </h2>
-    <br>
     <div class="row">
-      <%
-         @employees.each do |employee| %>
+      <h2 class="w3-abo col-lg-6"> Ultimos  Candidatos  </h2>
+      <div class="col-lg-6">
+        <%#= link_to icon("pencil-square-o","Publicar Trabajo"), new_job_path,:class => "btn btn-primary"%>
+        <%= link_to icon("list-alt","Ver Todos"), employees_path,:class => "btn btn-common btn-rm" %>
+      </div>
+    </div>
+    <div class="row">
+      <%  @employees.each do |employee| %>
           <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="featured-item">
               <div class="featured-wrap">
@@ -17,7 +21,7 @@
                     <% end %>
                   </figure>
                   <div class="item-body">
-                    <h3 class="job-title"><%= link_to icon('eye',employee.fullname), employee , remote: true  %></h3>
+                    <h3 class="job-title"><%= link_to employee.fullname, employee , remote: true  %></h3>
                     <div class="adderess"><%= employee.curriculum[0...25]%></div>
                   </div>
                 </div>
@@ -26,7 +30,7 @@
                 <span><%= icon ("phone")%> <%= employee.contact %></span>
                 <span><%= icon ("envelope-o")%> <%= employee.email %> </span>
                 <div class="view-iocn">
-                  <%= link_to icon('eye'), employee, remote: true %>
+                  <%= link_to icon('male'), employee, remote: true %>
                 </div>
               </div>
             </div>

@@ -1,12 +1,19 @@
 <!-- Find Job Section Start -->
 <div class="" id="hotjobs">
   <div class="container">
-    <h2 class="w3-abo">Trabajos con m&aacute;s Demanda</h2>
+    <div class="row">
+      <h2 class="w3-abo col-lg-6">Trabajos con m&aacute;s Demanda</h2>
+      <div class="col-lg-6">
+        <%= link_to icon("pencil-square-o","Publicar Trabajo"), new_job_path,:class => "btn btn-primary"%>
+        <%= link_to icon("list-alt","Ver Todos"), jobs_path,:class => "btn btn-common btn-rm" %>
+      </div>
+    </div>
     <div class="row">
       <div class="col-md-12">
         <!-- Listado de trabajos -->
-        <%  @jobs.each do |job| %>
-            <div class="job-list">
+        <%  @item = 1;
+            @jobs.each do |job| %>
+            <div class="job-list col-md-6">
               <div class="thumb">
                 <% if job.image.file? %>
                     <%= image_tag job.image.url(), :width=> 100, :height => 100 %>
@@ -15,30 +22,30 @@
                 <% end %>
               </div>
               <div class="job-list-content">
-                <h4><%= job.title %></h4><br>
-                <h3>
-                  <%= job.company.company  %>
-                </h3><br>
-                <p> <%=   job.description[0...200]  %> </p>
+                <h4><span class="red"> Trabajo</span> <%= link_to job.title, job,remote: true %></h4>
+                <h5><span class="red bold"> Empresa</span> <%= link_to job.company.company , job.company ,remote: true  %></h5><br>
+                <div id="<%= "collapse#{@item}" %>" >
+                  <strong>Resumen: </strong><%=   job.description[0...150]  %><br>
+                  <%= link_to icon("angle-double-right","Ver Completo"), job,remote: true,class: "my-link" %>
+                </div>
                 <div class="job-tag">
                   <div class="pull-left">
                     <div class="meta-tag">
-                      <span><a href="browse-categories.html"><%= icon("bars") %><%= job.category.category %></a></span>
+                      <span><%= icon("bars") %><%= job.category.category %></span>
                       <span><%= icon("map-marker") %><%= job.m_country.ncountry %></span>
-                      <span><%= icon("clock-o") %>60/Hour</span>
+                      <span><%= icon("clock-o") %><%= job.tipo_work %></span>
                     </div>
                   </div>
                   <div class="pull-right">
                     <div class="icon tooltip-demo" data-toggle="tooltip"  data-placement="top" title="" data-original-title="Tooltip on top">
                       <%= link_to icon("pencil-square-o"), "/aplicationjobs/new/#{job.id}" %>
                     </div>
-                    <!--a class="btn btn-common btn-rm" data-toggle="modal" data-target="<%#= "#myModal3" %>" >Read More</a-->
-                    <%= link_to "Ver Detalles", job,:class => "btn btn-common btn-rm",remote: true %>
+                    <button type="button" class="tooltip-demo" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top">Tooltip on top</button>
                   </div>
                 </div>
               </div>
             </div>
-
+            <% @item+=1;%>
         <% end %>
       </div>
     </div>

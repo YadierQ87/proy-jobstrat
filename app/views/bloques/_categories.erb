@@ -1,6 +1,13 @@
 <!-- Services -->
 <div class="popular-w3" id="services">
   <div class="container">
+    <div class="row">
+      <h2 class="w3-abo col-lg-6">Categorias</h2>
+      <div class="col-lg-6">
+        <%#= link_to icon("pencil-square-o","Publicar Trabajo"), new_job_path,:class => "btn btn-primary"%>
+        <%= link_to icon("list-alt","Ver Todos"), categories_path,:class => "btn btn-common btn-rm" %>
+      </div>
+    </div>
     <h3 class="ser-w3">Trabajos x Categorias</h3>
     <section class="featured-jobs section">
     <div class="row">

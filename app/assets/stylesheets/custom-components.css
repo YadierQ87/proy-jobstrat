@@ -1263,7 +1263,9 @@ footer {
   padding: 15px;
   display: inline-block;
   margin-bottom: 15px;
-  width: 100%;
+  width: 48%;
+  margin-left: 5px;
+  height: auto;
 }
 .job-list .thumb {
   float: left;
