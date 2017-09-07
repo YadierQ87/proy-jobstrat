@@ -17,8 +17,6 @@
 //= require_tree .
 
 
-$('.tooltip-demo').tooltip({
-    selector: "[data-toggle=tooltip]",
-    container: "body"
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
 });
-
