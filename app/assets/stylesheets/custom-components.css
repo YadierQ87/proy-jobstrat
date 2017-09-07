@@ -1265,7 +1265,7 @@ footer {
   margin-bottom: 15px;
   width: 48%;
   margin-left: 5px;
-  height: auto;
+  height: 250px;
 }
 .job-list .thumb {
   float: left;
@@ -1277,6 +1277,7 @@ footer {
   display: block;
   margin-left: 125px;
   position: relative;
+  margin-bottom: 5px;
 }
 .job-list .job-list-content h4 {
   font-size: 24px;
@@ -1287,12 +1288,16 @@ footer {
 }
 .job-list .job-tag {
   border-top: 1px solid #ddd;
-  padding: 15px 0;
+  padding: 0px 0;
   line-height: 35px;
+}
+.job-tag{
+  margin-top: 5px;
+  padding-top: 5px;
 }
 .job-list .job-tag .meta-tag span {
   font-size: 14px;
-  color: #999;
+  /*color: #999;*/
   margin-right: 10px;
 }
 .job-list .job-tag .meta-tag span a {
