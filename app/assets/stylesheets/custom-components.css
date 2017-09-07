@@ -702,7 +702,6 @@ label {
     Counter Style
     ========================================================================== */
 #counter {
-  background: url("../img/bg/counter-bg.jpg") center center no-repeat;
   background-size: cover;
   color: #fff;
   padding: 60px 0;
@@ -1264,6 +1263,7 @@ footer {
   padding: 15px;
   display: inline-block;
   margin-bottom: 15px;
+  width: 100%;
 }
 .job-list .thumb {
   float: left;

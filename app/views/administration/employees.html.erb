@@ -1,17 +1,42 @@
 <section class="section content">
-     <% @jobs.each do |job| %>
-      <div class="box">
-        <h3><%= job.title %> <%= job.id %></h3>
-     <div class="col-md-12 panel">
-       <ul>
-       <%   @appjob = Aplicationjob.all.where(:job_id => job.id).order("updated_at DESC") %>
-       <%   @appjob.each do |appjob|     %>
-             <li>  <%= appjob.created_at %> </li> <br>
-             <li>  <%= appjob.employee.fullname %> </li> <br>
-             <li>  <%= appjob.description %> </li> <br>
-       <%  end  %>
-       </ul>
-         </div>
-      </div>
-     <% end %>
+  <br>
+  <div class="container-fluid">
+    <div class="box">
+      <h3> Mensajes de Candidatos para los Trabajos Publicados <% current_user.company.company %> </h3>
+      <% @item = 1;
+         @jobs.each do |job| %>
+          <% @cont = Aplicationjob.all.where(:job_id => job.id).order("updated_at DESC").count %>
+          <div class="panel job-list">
+            <div class="col-md-12">  <h4 class="red"> <%= icon("briefcase") %> Trabajo: </h4> <%= link_to job.title , job , remote: true %>  <%= icon("envelope-o",@cont) %> mensaje(s)  </div>
+            <hr>
+                <% @sms = 1;
+                   @appjob = Aplicationjob.all.where(:job_id => job.id).order("updated_at DESC")
+                   @appjob.each do |appjob| %>
+                    <div class="col-md-3 box">
+                      <span class="red">#<%= @sms %></span>
+                      <p> <%= icon("calendar") %> <%= appjob.created_at %> </p>
+                      <p><%= icon("user") %>  <%= link_to appjob.employee.fullname , appjob.employee , remote: true %></p>
+                      <p><%= icon("commenting") %>  <%= appjob.description %>  </p>
+                    </div>
+                <% @sms = @sms + 1; %>
+                <%  end  %>
+              <span class="badge right"><%= @item %></span>
+              <% @item = @item + 1; %>
+          </div>
+      <% end %>
+    </div>
+  </div>
 </section>
+
+
+
+
+
+<!--div class="col-md-12">
+
+  <div> <strong> Empresa: </strong> <%#= aplyjob.job.company.company %></div>
+  <div> <strong> Detalle: </strong> <%#= aplyjob.job.description[0...200] %></div>
+  <div> <strong> Estado: </strong> <label class="label label-default"> Esperando...</label></div>
+  <div class="red"> <span class="img-circle"> <%#= icon("envelope-square")%> </span> <strong>  Mi propuesta: </strong> <%#= aplyjob.description[0...200] %> </div>
+  <span class="badge right"><%#= @item %></span>
+</div-->

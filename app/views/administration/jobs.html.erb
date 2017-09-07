@@ -1,16 +1,22 @@
-
 <section class="section content">
-  <div class="box">
-
+  <br>
+  <div class="container-fluid">
+    <div class="box">
+      <h3>Listado de Trabajos a los que ha Aplicado <% current_user.employee.fullname %> </h3>
+      <%   @item = 1;
+        @aplyjobs.each do |aplyjob| %>
+          <div class="panel job-list">
+            <div class="col-md-12">
+              <h4> <%= icon("paper-plane") %> <strong> Trabajo: </strong> <%= link_to  aplyjob.job.title , aplyjob.job , remote: true %></h4>
+              <div> <strong> Empresa: </strong> <%= aplyjob.job.company.company %></div>
+              <div> <strong> Detalle: </strong> <%= aplyjob.job.description[0...200] %></div>
+              <div> <strong> Estado: </strong> <label class="label label-default"> Esperando...</label></div>
+              <div class="red"> <span class="img-circle"> <%= icon("envelope-square")%> </span> <strong>  Mi propuesta: </strong> <%= aplyjob.description[0...200] %> </div>
+              <span class="badge right"><%= @item %></span>
+            </div>
+          </div>
+          <% @item = @item + 1; %>
+      <% end %>
+    </div>
   </div>
-  <h1>Listado de Trabajos a los que ha Aplicado el User </h1>
-
-  <%   @aplyjobs.each do |aplyjob| %>
-      <div class="panel">
-        <h2>Mi propuesta: <%= aplyjob.description %> </h2>
-        <div><%= aplyjob.job.title %></div>
-        <div><%= aplyjob.job.company %></div>
-        <div><%= aplyjob.job.description %></div>
-      </div>
-  <% end %>
 </section>
