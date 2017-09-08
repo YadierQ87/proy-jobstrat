@@ -43,7 +43,7 @@
                     <span><%= icon("map-marker") %><%= job.m_country.ncountry %></span>
                     <span><%= icon("clock-o") %><%= job.tipo_work %></span>
                   </div>
-                  <p> Posted <%= (((job.created_at.to_time - Time.now)/86400).to_i + 1).abs %> days ago! 
+                  <p> Posted <%= (((job.created_at.to_time - Time.now)/86400).to_i + 1).abs %> days ago!
                     <%= job.created_at %>
                   </p>
                 </div>

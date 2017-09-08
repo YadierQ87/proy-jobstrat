@@ -1,23 +1,35 @@
-<section class="section content">
+<section class="section content container">
   <br>
   <div class="container-fluid">
-    <div class="box">
-      <h3> Mensajes de Candidatos para los Trabajos Publicados <% current_user.company.company %> </h3>
+    <div class="box container">
+      <h3 class="w3-abo head-sms"> Mensajes de Candidatos para los Trabajos Publicados <% current_user.company.company %> </h3>
+      <hr>
       <% @item = 1;
          @jobs.each do |job| %>
           <% @cont = Aplicationjob.all.where(:job_id => job.id).order("updated_at DESC").count %>
-          <div class="panel job-list">
-            <div class="col-md-12">  <h4 class="red"> <%= icon("briefcase") %> Trabajo: </h4> <%= link_to job.title , job , remote: true %>  <%= icon("envelope-o",@cont) %> mensaje(s)  </div>
-            <hr>
+          <div class="box container" style="width: 90%">
+            <div class="col-md-12">
+              <h4> <span class="red"><%= icon("briefcase") %> Trabajo/</span> <%= link_to job.title , job , remote: true %> </h4>
+              <%= icon("envelope-o",@cont) %> mensaje(s)
+            </div>
+            <br>
                 <% @sms = 1;
                    @appjob = Aplicationjob.all.where(:job_id => job.id).order("updated_at DESC")
                    @appjob.each do |appjob| %>
-                    <div class="col-md-3 box">
-                      <span class="red">#<%= @sms %></span>
-                      <p> <%= icon("calendar") %> <%= appjob.created_at %> </p>
-                      <p><%= icon("user") %>  <%= link_to appjob.employee.fullname , appjob.employee , remote: true %></p>
-                      <p><%= icon("commenting") %>  <%= appjob.description %>  </p>
-                    </div>
+                <table class="table table-header table-bordered">
+                  <tr>
+                    <td><span class="red">#<%= @sms %></span></td>
+                    <td>Autor <%= icon("user") %>  <%= link_to appjob.employee.fullname , appjob.employee , remote: true %></td>
+                    <td>Fecha <%= icon("calendar") %> <%= appjob.created_at %> </td>
+                    <td>
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                      <%= icon("list-alt") %> Ver Mensaje </a>
+                    </td>
+                  </tr>
+                  <tr id="collapseTwo" class="panel-collapse collapse">
+                    <td colspan="4"><%= appjob.description %></td>
+                  </tr>
+                </table>
                 <% @sms = @sms + 1; %>
                 <%  end  %>
               <span class="badge right"><%= @item %></span>

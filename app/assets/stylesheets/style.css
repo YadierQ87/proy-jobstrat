@@ -175,6 +175,12 @@ a.text-primary {
     -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
     box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
 }
+.head-sms {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    color: #D91210 !important;
+    text-align: center;
+}
 .link-apply a {
     color: #D91210 !important; font-size: 16px; font-weight: bold;
 }
