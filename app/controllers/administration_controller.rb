@@ -26,12 +26,8 @@ class AdministrationController < ApplicationController
   def employees
     @title = 'CRUD Employees'
     @jobs = Company.find(current_user.company_id).jobs #todos los trabajos publicados x esa compannia
-
-
-    #@jobs = @company.Job.all.where(:company_id => current_user.company_id)
-   # @jobs_aplications = Job.select("*").joins(:Aplicationjob)
-
-
+        #@jobs = @company.Job.all.where(:company_id => current_user.company_id)
+        # @jobs_aplications = Job.select("*").joins(:Aplicationjob)
         #Company.Job.Aplicationjob.all
         #Job.all.where(:employee_id => current_user.employee.id).order("id DESC")
         #Aplicationjob.all.where(:employee_id => current_user.employee.id).order("id DESC")

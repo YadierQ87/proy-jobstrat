@@ -28,7 +28,7 @@
               <div class="col-md-12 panel"><%= icon("phone")%> <strong>Contact:</strong><%= @employee.contact %></div>
               <div class="col-md-12 panel"><%= icon("user")%> <strong>Username:</strong><%= @employee.username %></div>
               <div class="col-md-12 panel"><%= icon("male")%>  <strong>Sexo:</strong><%= @employee.sex %></div>
-              <div class="col-md-12 panel"><%= icon("globe")%> <strong>Pais:</strong> <%= @employee.m_country_id %></div>
+              <div class="col-md-12 panel"><%= icon("globe")%> <strong>Pais:</strong> <%= @employee.m_country.ncountry %></div>
               <div class="col-md-12 panel"><%= icon("envelope-o")%> <strong>Correo:</strong> <%= @employee.email %></div>
             </div>
             <div class="col-md-6">
