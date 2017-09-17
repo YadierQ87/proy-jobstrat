@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63e744f8-90e4-44a3-b2e7-af0ffbe0d576" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/style.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/messageemployees_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/messageemployees_controller.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/categories/works_related.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/administration/categories.html.erb" afterPath="$PROJECT_DIR$/app/views/administration/categories.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/administration/employees.html.erb" afterPath="$PROJECT_DIR$/app/views/administration/employees.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/messageemployees/_new.html.erb" afterPath="$PROJECT_DIR$/app/views/messageemployees/_new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/messageemployees/new.js.erb" afterPath="$PROJECT_DIR$/app/views/messageemployees/new.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/administration/jobs.html.erb" afterPath="$PROJECT_DIR$/app/views/administration/jobs.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="proy-jobstrat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,58 +30,8 @@
       <file leaf-file-name="administration_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/administration_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="27" column="48" lean-forward="false" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_new.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/messageemployees/_new.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="33" column="36" lean-forward="false" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jobs.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/administration/jobs.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="93" lean-forward="false" selection-start-line="11" selection-start-column="93" selection-end-line="11" selection-end-column="93" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="employees.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/administration/employees.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="29" column="90" lean-forward="false" selection-start-line="29" selection-start-column="90" selection-end-line="29" selection-end-column="90" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="41" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="41" />
+            <state relative-caret-position="340">
+              <caret line="29" column="67" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -92,8 +40,38 @@
       <file leaf-file-name="messageemployees_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/messageemployees_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="52" lean-forward="false" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+            <state relative-caret-position="272">
+              <caret line="16" column="38" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jobs.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/administration/jobs.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="85" lean-forward="false" selection-start-line="15" selection-start-column="85" selection-end-line="15" selection-end-column="85" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="works_related.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/categories/works_related.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="employees.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/administration/employees.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="36" column="11" lean-forward="false" selection-start-line="31" selection-start-column="2" selection-end-line="36" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -153,7 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/models/ability.rb" />
         <option value="$PROJECT_DIR$/app/views/companies/show.html.erb" />
         <option value="$PROJECT_DIR$/app/models/job.rb" />
         <option value="$PROJECT_DIR$/db/schema.rb" />
@@ -197,13 +174,14 @@
         <option value="$PROJECT_DIR$/app/views/bloques/_jobs.erb" />
         <option value="$PROJECT_DIR$/app/views/jobs/_show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/administration_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/administration/jobs.html.erb" />
         <option value="$PROJECT_DIR$/app/views/messageemployees/new.js.erb" />
-        <option value="$PROJECT_DIR$/app/views/administration/employees.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/messageemployees_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/messageemployees/_new.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/style.css" />
+        <option value="$PROJECT_DIR$/app/views/administration/categories.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/administration/employees.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/administration/jobs.html.erb" />
       </list>
     </option>
   </component>
@@ -281,19 +259,6 @@
               <item name="proy-jobstrat" type="b2602c69:ProjectViewProjectNode" />
               <item name="proy-jobstrat" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="proy-jobstrat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="proy-jobstrat" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="proy-jobstrat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="proy-jobstrat" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -302,6 +267,13 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="administration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proy-jobstrat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proy-jobstrat" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="categories" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="proy-jobstrat" type="b2602c69:ProjectViewProjectNode" />
@@ -333,18 +305,18 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files (x86)/nodejs/node" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Sites\proy-jobstrat\app\views\messageemployees" />
-      <recent name="C:\Sites\proy-jobstrat\app\views\companies" />
-      <recent name="C:\Sites\proy-jobstrat\app\views\employees" />
-      <recent name="C:\Sites\proy-jobstrat\app\views\categories" />
-      <recent name="C:\Sites\proy-jobstrat\app\views\articles" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Sites\proy-jobstrat\app\controllers" />
       <recent name="C:\Sites\proy-jobstrat\app\views\administration" />
       <recent name="C:\Sites\proy-jobstrat\app\assets\stylesheets" />
       <recent name="C:\Sites\proy-jobstrat\app\views\home" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Sites\proy-jobstrat\app\views\categories" />
+      <recent name="C:\Sites\proy-jobstrat\app\views\messageemployees" />
+      <recent name="C:\Sites\proy-jobstrat\app\views\companies" />
+      <recent name="C:\Sites\proy-jobstrat\app\views\employees" />
+      <recent name="C:\Sites\proy-jobstrat\app\views\articles" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -390,12 +362,12 @@
       <workItem from="1505225401815" duration="2336000" />
       <workItem from="1505484432353" duration="6581000" />
       <workItem from="1505659481345" duration="607000" />
-      <workItem from="1505662645550" duration="3415000" />
+      <workItem from="1505662645550" duration="7292000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="406492000" />
+    <option name="totallyTimeSpent" value="410369000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -434,20 +406,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/categories/_show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="43" lean-forward="false" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/administration/companies.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bloques/_slider.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -726,14 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/administration_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="27" column="48" lean-forward="false" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/companies_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -766,26 +716,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/messageemployees_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="52" lean-forward="false" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/administration/employees.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="29" column="90" lean-forward="false" selection-start-line="29" selection-start-column="90" selection-end-line="29" selection-end-column="90" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/administration/jobs.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="93" lean-forward="false" selection-start-line="11" selection-start-column="93" selection-end-line="11" selection-end-column="93" />
+        <state relative-caret-position="221">
+          <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -798,10 +732,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/style.css">
+    <entry file="file://$PROJECT_DIR$/app/controllers/administration_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="61" column="32" lean-forward="false" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+        <state relative-caret-position="340">
+          <caret line="29" column="67" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/messageemployees_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="38" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/administration/jobs.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="85" lean-forward="false" selection-start-line="15" selection-start-column="85" selection-end-line="15" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/categories/works_related.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/administration/categories.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="67" lean-forward="false" selection-start-line="0" selection-start-column="67" selection-end-line="0" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/administration/employees.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="36" column="11" lean-forward="false" selection-start-line="31" selection-start-column="2" selection-end-line="36" selection-end-column="11" />
           <folding />
         </state>
       </provider>

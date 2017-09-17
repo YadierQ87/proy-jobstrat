@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170901214913) do
+ActiveRecord::Schema.define(version: 20170917165315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -159,8 +159,10 @@ ActiveRecord::Schema.define(version: 20170901214913) do
     t.text     "mail"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "job_id"
     t.index ["company_id"], name: "index_messageemployees_on_company_id", using: :btree
     t.index ["employee_id"], name: "index_messageemployees_on_employee_id", using: :btree
+    t.index ["job_id"], name: "index_messageemployees_on_job_id", using: :btree
   end
 
   create_table "userfacebooks", id: :integer, force: :cascade do |t|
@@ -207,6 +209,7 @@ ActiveRecord::Schema.define(version: 20170901214913) do
   add_foreign_key "jobs", "m_countries"
   add_foreign_key "messageemployees", "companies"
   add_foreign_key "messageemployees", "employees"
+  add_foreign_key "messageemployees", "jobs"
   add_foreign_key "users", "companies"
   add_foreign_key "users", "employees"
 end

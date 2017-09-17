@@ -10,8 +10,19 @@
               <h4> <%= icon("paper-plane") %> <strong> Trabajo: </strong> <%= link_to  aplyjob.job.title , aplyjob.job , remote: true %></h4>
               <div> <strong> Empresa: </strong> <%= aplyjob.job.company.company %></div>
               <div> <strong> Detalle: </strong> <%= aplyjob.job.description[0...100] %></div>
-              <div> <strong> Estado: </strong> <label class="label label-default"> Esperando...</label></div>
-              <div class="red"> <span class="img-circle"> <%= icon("envelope-square")%> </span> <strong>  Mi propuesta: </strong> <%= aplyjob.description[0...200] %> </div>
+              <div> <strong> Estado: </strong>
+                <% @reply = Messageemployee.all.where(:employee_id => current_user.employee_id,:company_id => aplyjob.job.company_id, :job_id => aplyjob.job.id)  %>
+                <% if @reply.count() > 0 %>
+                   <span class="red"> <%= icon("envelope-o")%> Respuesta <br> </span>
+                    <div class="box"> <%= @mailer = (@reply[0].mail != "") ? @reply[0].mail   : "Correo en Blanco!" %> </div>
+                <%else %>
+                    <label class="label label-primary"> En Espera de Respuesta... </label>
+                <% end %>
+              </div>
+              <div > <span class="img-circle red"> <%= icon("envelope-square")%>
+                <strong>  Mi propuesta: </strong> </span>
+                <div class="box"> <%= aplyjob.description[0...200] %> </div>
+              </div>
               <span class="badge right"><%= @item %></span>
             </div>
           </div>
