@@ -971,8 +971,14 @@ a.view:hover {
     -ms-transition:0.5s all;
 }
 .modal-header {
-    padding: 15px;
+    margin-top: 10px;
+    padding-bottom: 0px !important;
     border-bottom: 1px solid #e5e5e5;
+}
+.label-cf {
+    font-size: 14px !important;
+    padding-bottom: 4px !important;;
+    padding-top: 4px !important;
 }
 .modal-header h4{
     color: #111;

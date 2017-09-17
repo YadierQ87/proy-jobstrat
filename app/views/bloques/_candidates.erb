@@ -4,7 +4,7 @@
       <h2 class="w3-abo col-lg-6"> Ultimos  Candidatos  </h2>
       <div class="col-lg-6">
         <%#= link_to icon("pencil-square-o","Publicar Trabajo"), new_job_path,:class => "btn btn-primary"%>
-        <%= link_to icon("list-alt","Ver Todos"), employees_path,:class => "btn btn-common btn-rm" %>
+        <%= link_to icon("list-alt","Ver Todos"), employees_path,:class => "btn btn-success btn-rm" %>
       </div>
     </div>
     <div class="row">
@@ -21,7 +21,7 @@
                     <% end %>
                   </figure>
                   <div class="item-body">
-                    <h3 class="job-title"><%= link_to employee.fullname, employee , remote: true  %></h3>
+                    <h3 class="job-title"><%= link_to icon("folder-open-o",employee.fullname) , employee  %></h3>
                     <div class="adderess"><%= employee.curriculum[0...25]%></div>
                   </div>
                 </div>
@@ -29,7 +29,8 @@
               <div class="item-foot">
                 <span><%= icon ("phone")%> <%= employee.contact %></span>
                 <span><%= icon ("envelope-o")%> <%= employee.email %> </span>
-                <div class="view-iocn">
+                <div class="view-iocn" data-toggle="tooltip"  data-placement="top" title=""
+                     data-original-title="<%="Ver Resumen" %>">
                   <%= link_to icon('male'), employee, remote: true %>
                 </div>
               </div>

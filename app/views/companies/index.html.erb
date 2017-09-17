@@ -19,10 +19,11 @@
           </div>
           <div class="col-lg-6">
             <div class="right">
-              Download:
-              <%= link_to icon('file-code-o','CSV'), companies_path(format: "csv") %> |
-              <%= link_to icon('file-excel-o','Excel'), companies_path(format: "xls") %>
+              <%#= link_to icon('file-code-o','CSV'), companies_path(format: "csv") %> |
+              <%#= link_to icon('file-excel-o','Excel'), companies_path(format: "xls") %>
+              <% if can? :create, Company %>
               <%= link_to icon('plus-circle','Add Company'), new_company_path , class: "btn-primary btn-sm" %>
+              <% end %>
             </div>
           </div>
         </div>

@@ -2,10 +2,10 @@
 <div class="" id="hotjobs">
   <div class="container">
     <div class="row">
-      <h2 class="w3-abo col-lg-6">Trabajos con m&aacute;s Demanda</h2>
+      <h2 class="w3-abo col-lg-6">Trabajos de mayor Demanda</h2>
       <div class="col-lg-6">
         <%= link_to icon("pencil-square-o","Publicar Trabajo"), new_job_path,:class => "btn btn-primary"%>
-        <%= link_to icon("list-alt","Ver Todos"), jobs_path,:class => "btn btn-common btn-rm" %>
+        <%= link_to icon("list-alt","Ver Todos"), jobs_path,:class => "btn btn-success btn-rm" %>
       </div>
     </div>
     <div class="row">
@@ -24,13 +24,14 @@
                 </div>
                 <div class="job-list-content">
                   <div class="link-apply" data-toggle="tooltip"  data-placement="top" title=""
-                       data-original-title="<%="Solicitar Trabajo #{job.id}" %>">
+                       data-original-title="<%="Solicitar # #{job.id}" %>">
                     <%= link_to icon("check-square-o"), "/aplicationjobs/new/#{job.id}" %>
                   </div>
-                  <h4 class="bold"><span class="red"> Trabajo</span> <%= link_to job.title, job,remote: true %></h4>
+                  <h5 class="bold"><span class="red"> Trabajo</span> </h5>
+                  <h4><%= link_to job.title, job,remote: true %></h4>
                   <h5><span class="red bold"> Empresa</span> <%= link_to job.company.company , job.company ,remote: true  %></h5><br>
                   <div id="<%= "collapse#{@item}" %>" class="" >
-                    <strong>Resumen: </strong><%=   job.description[0...140]  %>
+                    <strong>Resumen: </strong><%=   job.description[0...80]  %> ...&nbsp;
                     <%= link_to icon("angle-double-right","Ver Completo"), job,remote: true,class: "my-link" %>
                   </div>
                 </div>

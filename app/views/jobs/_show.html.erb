@@ -21,22 +21,17 @@
           <div class="col-md-8">
             <div class="text-left">
               <h3> <strong><%= @job.title %></strong></h3>
-                <%= link_to icon("list-alt",'Trabajos'), jobs_path ,:class=>"btn btn-default btn-xs" %>
-                <% if can? :edit, @job %>
-                    <%= link_to icon("pencil-square-o",'Editar'), edit_job_path(@job),:class=>"btn btn-default btn-xs" %>
-                <% end %>
-                <% if can? :delete, @job %>
-                    <%= link_to icon('trash-o','Eliminar'), @job, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-default btn-xs" %>
-                <% end %>
-              <p>Publicado por:<%= @job.company.company %></p>
+              <p><strong> Empresa:</strong><%= @job.company.company %></p>
               <div class="meta">
-                <span><%= icon ("briefcase") %> <%= @job.category.category %></span><br>
-                <span> <%= icon ("map-marker") %> <%= @job.m_country.ncountry %></span><br>
-                <span> <%= icon ("calendar") %> <%= @job.created_at %></span><br>
+                <span> <%= icon ("briefcase") %> <%= @job.category.category %></span><br>
+                <span> <%= icon ("globe") %> <%= @job.m_country.ncountry %></span><br>
+                <span> Publicado el: <%= icon ("calendar") %> <%= @job.created_at %></span><br>
               </div>
-              <strong class="price"><%= icon ("money") %> <%= @job.money %> $</strong>
+              <strong class="price"> Salario: <%= icon ("money") %> <%= @job.money %> $</strong>
               <a href="#" class="btn btn-border btn-sm">Freelance</a>
-              <a href="#" class="btn btn-common btn-sm">Aplicar</a>
+            </div>
+            <div class="">
+              <%= link_to icon("check-square-o","Solicitar"), "/aplicationjobs/new/#{@job.id}",class: "btn btn-common btn-sm" %>
             </div>
           </div>
           <hr>
@@ -48,7 +43,6 @@
             <p> <%= @job.requisitos %> </p><br>
             <h4>Benefits</h4>
             <p> <%= @job.beneficios %> </p>
-            <a href="#" class="btn btn-common">Apply for this Job Now</a>
           </div>
         </div>
 
