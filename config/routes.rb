@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :articles
 
   get 'aplicationjobs/new/:job_id', to: 'aplicationjobs#new'
+  get 'messageemployees/new/:candidate_id', to: 'messageemployees#new'
 
   #devise_for :users
   #match '/auth/:provider/callback', :to => 'sessions#create', via: :get

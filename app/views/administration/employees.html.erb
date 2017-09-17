@@ -27,7 +27,7 @@
                       <%= icon("list-alt") %> Ver Mensaje </a>
                     </td>
                     <td> Estado  </td>
-                    <td> <%= link_to icon("reply","Responder") , new_messageemployee_path , remote: true , class: "btn btn-danger" %></td>
+<td> <%= link_to icon("reply","Responder") , "/messageemployees/new/#{appjob.employee.id}" , remote: true , class: "btn btn-danger" %></td>
                   </tr>
                   <tr id="<%="accordion#{appjob.id}"%>" class="panel-collapse collapse">
                     <td colspan="5"><%= appjob.description %></td>

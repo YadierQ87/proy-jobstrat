@@ -15,6 +15,7 @@ class MessageemployeesController < ApplicationController
   # GET /messageemployees/new
   def new
     @messageemployee = Messageemployee.new
+    @employee = Employee.find(params[:candidate_id])
   end
 
   # GET /messageemployees/1/edit

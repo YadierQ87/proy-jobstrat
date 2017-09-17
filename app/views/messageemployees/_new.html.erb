@@ -1,5 +1,43 @@
-<h1>New Messageemployee</h1>
-
-<%= render 'form', messageemployee: @messageemployee %>
-
-<%= link_to 'Back', messageemployees_path %>
+<div id="product-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"> Responder mensaje </h4>
+      </div>
+      <!-- modal body -->
+      <div class="modal-body">
+        <div class="container-fluid">
+          <%= form_for(@messageemployee) do |f| %>
+              <% if @messageemployee.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@messageemployee.errors.count, "error") %> prohibited this messageemployee from being saved:</h2>
+                    <ul>
+                      <% @messageemployee.errors.full_messages.each do |message| %>
+                          <li><%= message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+              <% end %>
+              <div class="col-md-6 hidden">
+                <%= f.label "Candidato" %>
+                <%= f.text_field :employee_id , value: @employee.id , class: "form-control" %>
+              </div>
+              <div class="col-md-6 hidden">
+                <%= f.label :company_id %>
+                <%= f.text_field :company_id , value: current_user.company_id %>
+              </div>
+              <div class="col-md-12">
+                <%= f.label :mail %>
+                <%= f.text_area :mail , class: "form-control" %>
+              </div>
+              <div class="col-md-12 separate-5">
+                <%= f.submit class: "btn btn-primary",value: "Create" %>
+              </div>
+          <% end %>
+        </div>
+      </div>
+      <!-- end modal body -->
+    </div>
+  </div>
+</div>
