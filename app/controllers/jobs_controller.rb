@@ -12,7 +12,13 @@ class JobsController < ApplicationController
     #@jobs = Job.all.page(params[:page])
     @filterrific = initialize_filterrific(
         Job,
-        params[:filterrific]
+        params[:filterrific],
+        select_options: {
+            sorted_by: Job.options_for_sorted_by,
+            with_country_id: MCountry.options_for_select,
+            with_category_id: Category.options_for_select,
+            with_company_id: Company.options_for_select
+        },
     ) or return
     @jobs = @filterrific.find.page(params[:page]).per(params[:cantd])
 

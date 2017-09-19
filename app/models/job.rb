@@ -34,6 +34,8 @@ class Job < ApplicationRecord
           :sorted_by,
           :search_query,
           :with_country_id,
+          :with_company_id,
+          :with_category_id,
           :with_created_at_gte
       ]
   )
@@ -74,12 +76,21 @@ class Job < ApplicationRecord
         raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")
     end
   }
+
   scope :with_category_id, lambda { |category_ids|
     where(:category_id => [*category_ids])
   }
+
   scope :with_company_id, lambda { |company_ids|
     where(:company_id => [*company_ids])
   }
+
+  scope :with_country_id, lambda { |country_ids|
+    # Filters students with any of the given country_ids
+    where(:m_country_id => [*country_ids])
+  }
+
+
   scope :with_created_at_gte, lambda { |ref_date|
     where('jobs.created_at >= ?', ref_date)
   }

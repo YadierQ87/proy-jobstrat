@@ -99,4 +99,10 @@ class Company < ApplicationRecord
     created_at.to_date.to_s(:long)
   end
 
+
+  #select para ordenar
+  def self.options_for_select
+    order('LOWER(company)').map { |e| [e.company, e.id] }
+  end
+
 end

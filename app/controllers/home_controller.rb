@@ -5,5 +5,11 @@ class HomeController < ApplicationController
     @employees = Employee.all.limit(6)
     @categories = Category.all.order("category")
     @articles = Article.all.limit(6)
+
+
+
+
+
+
   end
 end

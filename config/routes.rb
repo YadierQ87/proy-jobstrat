@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   get 'administration/companies', to: 'administration#companies'  #donde se guardan las aplicaciones de trabajo para esa compannia
   get 'administration/employees', to: 'administration#employees' #donde se guardan los mensajes de los usuarios empleados
 
+  post 'search', to: 'home#search'
+
 end
 
 

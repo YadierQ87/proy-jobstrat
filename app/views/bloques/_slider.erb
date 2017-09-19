@@ -25,7 +25,7 @@
               </div>
               <div class="col-md-3 col-sm-6">
                 <div class="search-category-container">
-                      <select id="categorias_sel" class="form-control" onchange="buscar_categorias();">
+                      <select id="categorias_sel" class="form-control">
                         <option>Todas las Categorias</option>
                           <% @cat = Category.all
                              @cat.each do |category| %>
