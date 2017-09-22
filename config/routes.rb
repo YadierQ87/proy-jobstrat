@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :candidates
+  devise_for :companies
   devise_for :users
   resources :employees
   resources :m_countries
