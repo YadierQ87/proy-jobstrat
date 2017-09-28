@@ -1,6 +1,6 @@
-class AddDeviseToCompanies < ActiveRecord::Migration[5.0]
+class AddDeviseToEmployees < ActiveRecord::Migration[5.0]
   def self.up
-    change_table :companies do |t|
+    change_table :employees do |t|
       ## Database authenticatable
       t.string :encrypted_password, null: false, default: ""
 
@@ -34,10 +34,10 @@ class AddDeviseToCompanies < ActiveRecord::Migration[5.0]
       # t.timestamps null: false
     end
 
-    add_index :companies, :email,                unique: true
-    add_index :companies, :reset_password_token, unique: true
-    # add_index :companies, :confirmation_token,   unique: true
-    # add_index :companies, :unlock_token,         unique: true
+    add_index :employees, :email,                unique: true
+    add_index :employees, :reset_password_token, unique: true
+    # add_index :employees, :confirmation_token,   unique: true
+    # add_index :employees, :unlock_token,         unique: true
   end
 
   def self.down

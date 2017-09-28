@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170917165315) do
+ActiveRecord::Schema.define(version: 20170928181545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,23 @@ ActiveRecord::Schema.define(version: 20170917165315) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "candidates", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_candidates_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_candidates_on_reset_password_token", unique: true, using: :btree
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string   "category"
     t.string   "description"
@@ -59,21 +76,30 @@ ActiveRecord::Schema.define(version: 20170917165315) do
   create_table "companies", force: :cascade do |t|
     t.string   "company"
     t.string   "fullname"
-    t.string   "picture"
     t.text     "description"
-    t.string   "country"
     t.string   "contact"
     t.string   "email"
     t.string   "username"
     t.string   "password"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "m_country_id"
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.index ["email"], name: "index_companies_on_email", unique: true, using: :btree
     t.index ["m_country_id"], name: "index_companies_on_m_country_id", using: :btree
+    t.index ["reset_password_token"], name: "index_companies_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "educationalemployees", force: :cascade do |t|
@@ -94,8 +120,8 @@ ActiveRecord::Schema.define(version: 20170917165315) do
     t.string   "contact"
     t.string   "email"
     t.string   "sex"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.text     "curriculum"
     t.string   "username"
     t.string   "password"
@@ -105,7 +131,18 @@ ActiveRecord::Schema.define(version: 20170917165315) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "profesion"
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.index ["email"], name: "index_employees_on_email", unique: true, using: :btree
     t.index ["m_country_id"], name: "index_employees_on_m_country_id", using: :btree
+    t.index ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "experienceemployees", force: :cascade do |t|
